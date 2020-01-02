@@ -1,0 +1,93 @@
+.page {
+  padding: 0 20px;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__input {
+  display: none;
+}
+
+.slider__inner {
+  overflow: hidden;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
+
+.slider__slides {
+  width: 400%;
+  height: 200px;
+  transition: transform 0.8s ease;
+}
+
+.slider__img {
+  float: left;
+  width: 25%;
+  height: auto;
+  object-fit: contain;
+}
+
+.slider__controls {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  text-align: center;
+}
+
+.slider__label {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.slider__label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  //background: #ffffff;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.slider__label:hover::before {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+/* stylelint-disable */
+#btn-1:checked ~ .slider__controls .slider__label[for="btn-1"]::before,
+#btn-2:checked ~ .slider__controls .slider__label[for="btn-2"]::before,
+#btn-3:checked ~ .slider__controls .slider__label[for="btn-3"]::before,
+#btn-4:checked ~ .slider__controls .slider__label[for="btn-4"]::before {
+  background-color: $textColor;
+}
+
+#btn-1:checked ~ .slider__inner .slider__slides {
+  transform: translate(0);
+}
+
+#btn-2:checked ~ .slider__inner .slider__slides {
+  transform: translate(-25%);
+}
+
+#btn-3:checked ~ .slider__inner .slider__slides {
+  transform: translate(-50%);
+}
+
+#btn-4:checked ~ .slider__inner .slider__slides {
+  transform: translate(-75%);
+}
+/* stylelint-enable */
