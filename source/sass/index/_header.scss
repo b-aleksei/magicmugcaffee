@@ -1,0 +1,79 @@
+.header {
+  margin-bottom: 50px;
+}
+
+.header__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 14px 20px 0 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: calc(50% - 50px);
+}
+
+.header__nav {
+  padding-top: 20px;
+}
+
+.header__bg-wrap {
+  position: relative;
+
+  &::before {
+    content: "";
+    height: 15px;
+    background-image: url("../img/wave.svg");
+    background-repeat: repeat-x;
+    background-size: auto 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+}
+
+.header__bg-image {
+  width: 100%;
+  height: auto;
+}
+
+.header__nav--no-js .nav__menu-opener {
+  display: none;
+}
+
+.header__nav--no-js .nav__list {
+  display: block;
+}
+
+.header__nav--menu-open .nav__list {
+  display: block;
+  position: absolute;
+  width: 260px;
+  top: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.header__nav--menu-open .nav__button-icon {
+  width: 0;
+  transition: 0.3s;
+  right: 1px;
+
+  &::before,
+  &::after {
+    width: 42px;
+    transform: rotate(-45deg);
+    transform-origin: 87% 50%;
+    transition: 0.3s;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}
