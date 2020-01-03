@@ -3,16 +3,13 @@
 }
 
 .about-us__title {
-  font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
-  font-size: 26px;
+  margin-bottom: 30px;
   line-height: 42px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   color: #006c77;
-  text-align: center;
+  text-align: left;
 }
 
-.about-us__img img {
-  width: 100%;
-  height:auto;
+.about-us__content {
+  font-size: 16px;
+  font-weight: 500;
 }

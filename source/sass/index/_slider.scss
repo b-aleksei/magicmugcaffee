@@ -1,24 +1,70 @@
-.page {
-  padding: 0 20px;
-}
-
 .slider {
   position: relative;
 }
 
-.slider__input {
-  display: none;
+.slider__arrow-forward,
+.slider__arrow-back {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  top: calc(50% - 30px);
+  right: 5px;
+  cursor: pointer;
+  z-index: 7;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 40px;
+    height: 8px;
+    background-color: #ffffff;
+    z-index: 10;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    top: 39px;
+    transform: rotate(-45deg);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.slider__arrow-back {
+  left: 5px;
+  transform: rotate(180deg);
+}
+
+.slider__indicators {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+.slider__ind {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 2px #000000;
 }
 
 .slider__inner {
+  max-height: 300px;
   overflow: hidden;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
 }
 
 .slider__slides {
   width: 400%;
-  height: 200px;
   transition: transform 0.8s ease;
 }
 
@@ -29,65 +75,34 @@
   object-fit: contain;
 }
 
-.slider__controls {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
-  text-align: center;
-}
-
-.slider__label {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  position: relative;
-  font-size: 0;
-  cursor: pointer;
-}
-
-.slider__label::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  width: 30px;
-  height: 30px;
-  //background: #ffffff;
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.slider__label:hover::before {
-  background: #ffffff;
-  border-color: #ffffff;
-}
-/* stylelint-disable */
-#btn-1:checked ~ .slider__controls .slider__label[for="btn-1"]::before,
-#btn-2:checked ~ .slider__controls .slider__label[for="btn-2"]::before,
-#btn-3:checked ~ .slider__controls .slider__label[for="btn-3"]::before,
-#btn-4:checked ~ .slider__controls .slider__label[for="btn-4"]::before {
-  background-color: $textColor;
-}
-
-#btn-1:checked ~ .slider__inner .slider__slides {
+.translate-0 .slider__slides {
   transform: translate(0);
 }
 
-#btn-2:checked ~ .slider__inner .slider__slides {
+.translate-0 .slider__indicators .ind-1 {
+  background-color: orange;
+}
+
+.translate-25 .slider__slides {
   transform: translate(-25%);
 }
 
-#btn-3:checked ~ .slider__inner .slider__slides {
+.translate-25 .slider__indicators .ind-2 {
+  background-color: orange;
+}
+
+.translate-50 .slider__slides {
   transform: translate(-50%);
 }
 
-#btn-4:checked ~ .slider__inner .slider__slides {
+.translate-50 .slider__indicators .ind-3 {
+  background-color: orange;
+}
+
+.translate-75 .slider__slides {
   transform: translate(-75%);
 }
-/* stylelint-enable */
+
+.translate-75 .slider__indicators .ind-4 {
+  background-color: orange;
+}
