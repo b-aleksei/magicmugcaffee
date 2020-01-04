@@ -23,11 +23,12 @@
     background-color: #ffffff;
     z-index: 10;
     transform: rotate(45deg);
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
   }
 
   &::after {
-    top: 39px;
-    transform: rotate(-45deg);
+    top: 38px;
+    transform: rotate(-225deg);
   }
 
   &:active {
@@ -60,7 +61,7 @@
 .slider__inner {
   max-height: 300px;
   overflow: hidden;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.35), 0 7px 15px 0 rgba(0, 0, 0, 0.5);
 }
 
 .slider__slides {
@@ -80,7 +81,7 @@
 }
 
 .translate-0 .slider__indicators .ind-1 {
-  background-color: orange;
+  background-color: #f8cd60;
 }
 
 .translate-25 .slider__slides {
@@ -88,7 +89,7 @@
 }
 
 .translate-25 .slider__indicators .ind-2 {
-  background-color: orange;
+  background-color: #f8cd60;
 }
 
 .translate-50 .slider__slides {
@@ -96,7 +97,7 @@
 }
 
 .translate-50 .slider__indicators .ind-3 {
-  background-color: orange;
+  background-color: #f8cd60;
 }
 
 .translate-75 .slider__slides {
@@ -104,5 +105,5 @@
 }
 
 .translate-75 .slider__indicators .ind-4 {
-  background-color: orange;
+  background-color: #f8cd60;
 }

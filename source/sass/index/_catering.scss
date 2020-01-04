@@ -1,3 +1,83 @@
-.catering__title {
+.catering {
+  padding: 50px 20px 0 20px;
+  background-image: url("../img/bg/bg-orange.jpg");
+  background-repeat: repeat;
+}
 
+.catering__title {
+  font-size: 26px;
+  margin-top: 0;
+  color: $titleColor;
+
+  & strong {
+    font-size: 28px;
+  }
+}
+
+.catering__list {
+  outline: 1px dotted red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.catering__item span {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.catering__item {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: block;
+    margin-bottom: 30px;
+    background-image: url("../img/png/sprite-icon.png");
+    background-repeat: no-repeat;
+    background-position: 0 -754px;
+    width: 104px;
+    height: 95px;
+  }
+}
+
+.catering__item--festival::before {
+  background-position: 0 -185px;
+  width: 105px;
+  height: 105px;
+}
+
+.catering__item--event::before {
+  background-position: 0 -387px;
+  width: 87px;
+  margin-top: 10px;
+}
+
+.catering__item--birthday::before {
+  background-position: 0 -90px;
+}
+
+.catering__item--employee::before {
+  background-position: 0 -291px;
+  width: 127px;
+}
+
+.catering__item--party::before {
+  background-position: 0 -482px;
+  width: 88px;
+}
+
+.catering__link {
+  display: block;
+  text-align: center;
+}
+
+.catering__svg {
+  outline: 1px dotted red;
 }
