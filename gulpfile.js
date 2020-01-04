@@ -19,7 +19,6 @@ webp = require("gulp-webp"),
 imagemin = require("gulp-imagemin"),
 imageminJpegRecompress = require('imagemin-jpeg-recompress'),
 pngquant = require('imagemin-pngquant'),
-sprite = require('gulp-sprite-generator'),
 cache = require('gulp-cache');
 
 gulp.task("css", function () {
