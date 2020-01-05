@@ -1,23 +1,32 @@
 .price {
+  display: table;
   width: 100%;
   font-size: 14px;
   outline: 1px dotted red;
+  //border-spacing: ;
 }
 
-.price__title th {
+.price__caption {
+  display: table-caption;
+}
+
+.price ul {
+  display: flex;
+}
+
+/*.price__head,
+.price__cell {
+  display: table-cell;
+}*/
+
+.price__head {
   position: relative;
-  width: 50%;
   text-align: center;
   z-index: 0;
 }
 
-tr {
+ul {
   border-bottom: 1px solid $captionColor;
-}
-
-.price__title .price__svg {
-
-  //z-index: -1;
 }
 
 .price__svg {
@@ -34,15 +43,11 @@ tr {
   //transform: translate(-50%, -46%);
 }
 
-.price__head {
-  //height: 40px;
-}
-
-.price__column {
+.price__cell {
   text-align: center;
 }
 
-.price__cell .price__column {
+.price__row .price__cell {
   padding: 25px 0;
 }
 

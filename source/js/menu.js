@@ -1,7 +1,7 @@
 let select = document.querySelector('.sel'),
-  col2 = document.querySelectorAll('.price__column--2'),
-  col3 = document.querySelectorAll('.price__column--3'),
-  col4 = document.querySelectorAll('.price__column--4'),
+  col2 = document.querySelectorAll('.price__cell--2'),
+  col3 = document.querySelectorAll('.price__cell--3'),
+  col4 = document.querySelectorAll('.price__cell--4'),
   price = document.querySelector('.price');
 
 select.onchange = function() {
