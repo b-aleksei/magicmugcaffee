@@ -1,0 +1,13 @@
+.menu {
+  padding: 0 20px;
+}
+
+.menu__title {
+  font-size: 26px;
+  margin-top: 0;
+  color: $titleColor;
+
+  & strong {
+    font-size: 28px;
+  }
+}
