@@ -1,0 +1,13 @@
+.rate {
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+.rate__title {
+  font-size: 26px;
+  margin-top: 0;
+
+  & strong {
+    font-size: 28px;
+  }
+}

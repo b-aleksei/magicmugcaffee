@@ -1,13 +1,46 @@
 .menu {
   padding: 0 20px;
+  font-size: 14px;
 }
 
 .menu__title {
   font-size: 26px;
-  margin-top: 0;
-  color: $titleColor;
+  color: #ba0b11;
+}
 
-  & strong {
-    font-size: 28px;
-  }
+.menu__subtitle {
+  text-align: center;
+  margin: auto;
+}
+
+.menu__subtitle-bottom {
+  display: inline-flex;
+  min-width: 140px;
+}
+
+.menu__unit {
+  display: flex;
+  width: 320px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.menu__subunit--big {
+  width: 100%;
+}
+
+.menu__sublist--big {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu__item {
+  text-align: center;
+  font-weight: $fw500;
+}
+
+.menu__item--big {
+  width: 45%;
 }

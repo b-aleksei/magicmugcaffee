@@ -5,10 +5,8 @@
 .about-us__title {
   margin-bottom: 30px;
   line-height: 42px;
-  color: $titleColor;
 }
 
 .about-us__content {
-  font-size: 16px;
-  font-weight: 500;
+  font-weight: $fw500;
 }

@@ -1,92 +1,93 @@
 .price {
   display: table;
   width: 100%;
+  margin-bottom: 40px;
   font-size: 14px;
-  outline: 1px dotted red;
-  //border-spacing: ;
+}
+
+.price__no-js .price__invisible {
+  display: none;
 }
 
 .price__caption {
   display: table-caption;
 }
 
-.price ul {
+.price__row,
+.price__title {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
-
-/*.price__head,
-.price__cell {
-  display: table-cell;
-}*/
 
 .price__head {
   position: relative;
-  text-align: center;
-  z-index: 0;
 }
 
-ul {
+.price__row {
   border-bottom: 1px solid $captionColor;
 }
 
 .price__svg {
-  width: 140px;
+  display: block;
   color: $captionColor;
   filter: drop-shadow(3px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
-.price__sign {
-  position: absolute;
-  margin: 0;
-  top: 0;
-  right: 0;
-  //transform: translate(-50%, -46%);
-}
-
 .price__cell {
+  padding: 25px 0;
   text-align: center;
+  font-weight: $fw500;
 }
 
-.price__row .price__cell {
-  padding: 25px 0;
+.price__cell--1 {
+  width: 120px;
+}
+
+.price__cell--2,
+.price__cell--3,
+.price__cell--4 {
+  width: 160px;
 }
 
 .hide {
   display: none;
 }
 
-.sel {
-  padding-right: 5px;
+.price__select {
+  padding-right: 15px;
   border: 0;
   background-color: transparent;
   font: inherit;
   cursor: pointer;
-  text-align: right;
+  text-align: center;
+  appearance: none;
+  //letter-spacing: 1.2px;
 }
 
-.price__for-pseudo {
-  &::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    right: -2px;
-    width: 20px;
-    height: 30px;
-    background-color: #ffecb8;
-    pointer-events: none;
-    z-index: 5;
-  }
+.price__sign {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+  //letter-spacing: 1.2px;
+}
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 7px;
-    right: 0;
-    border: 12px solid $textColor;
-    border-right: 7px solid transparent;
-    border-left: 7px solid transparent;
-    border-bottom: 0;
-    pointer-events: none;
-    z-index: 6;
-  }
+.price__for-pseudo::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  border: 10px solid $textColor;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-bottom: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.price__small {
+  font-size: 14px;
+  font-weight: $fw500;
 }

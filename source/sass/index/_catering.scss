@@ -1,5 +1,5 @@
 .catering {
-  padding: 50px 20px 50px 20px;
+  padding: 50px 20px;
   background-image: url("../img/bg/bg-orange.jpg");
   background-repeat: repeat;
 }
@@ -7,7 +7,6 @@
 .catering__title {
   font-size: 26px;
   margin-top: 0;
-  color: $titleColor;
 
   & strong {
     font-size: 28px;
@@ -94,6 +93,6 @@
 
 .catering__svg {
   color: $textColor;
-  filter: drop-shadow(4px 3px 2px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(4px 3px 2px rgba(0, 0, 0, 0.54));
 }
 

@@ -1,8 +1,7 @@
 .social-net {
   display: flex;
   flex-direction: column;
-  height: 62px;
-  min-width: 75px;
+  height: 63px;
   flex-wrap: wrap;
   align-content: flex-start;
 }
@@ -10,11 +9,6 @@
 .social-net__item {
   margin-right: 12px;
 }
-
-/*.social-net__icon {
-  width: 55px;
-  height: 54px;
-}*/
 
 .social-net__color {
   fill: #673A27;
