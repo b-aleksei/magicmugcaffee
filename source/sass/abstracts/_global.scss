@@ -17,6 +17,12 @@ body {
   color: $textColor;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .container {
   min-width: 360px;
   margin: 0 auto;
@@ -50,15 +56,11 @@ body {
   z-index: -1;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .glob__h2 {
+  margin: 0 0 40px 0;
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: 22px;
+  line-height: 38px;
   letter-spacing: 1.3px;
   text-transform: uppercase;
   text-align: center;
@@ -66,13 +68,14 @@ ul {
 }
 
 .glob__h2 strong {
-  font-size: 24px;
+  font-size: 28px;
   color: #ba0b11;
 }
 
 .r {
   outline: 1px dotted red;
 }
+
 .b {
   outline: 1px dotted blue;
 }

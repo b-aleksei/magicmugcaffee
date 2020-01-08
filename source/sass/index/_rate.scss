@@ -1,13 +1,6 @@
 .rate {
-  padding: 0 20px;
-  margin-bottom: 50px;
-}
-
-.rate__title {
-  font-size: 26px;
-  margin-top: 0;
-
-  & strong {
-    font-size: 28px;
-  }
+  padding: 0 20px 130px 20px;
+  background-image: url("../img/bg/palm360_bottom.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }

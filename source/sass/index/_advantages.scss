@@ -1,11 +1,12 @@
 .advantages {
   padding: 50px 20px;
+  margin-bottom: 50px;
   background-image: url("../img/bg/bg-orange.jpg");
   background-repeat: repeat;
 }
 
 .advantages__title {
-  font-size: 26px;
+  font-size: 28px;
   color: #ba0b11;
 }
 
@@ -19,6 +20,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.advantages__item:not(:first-child) {
   margin-top: 40px;
 }
 

@@ -1,9 +1,100 @@
-.contact__title {
-  font-size: 24px;
-
-  & span {
-    font-size: 26px;
-    color: #ba0b11;
-  }
+.contact {
+  padding: 0 20px;
 }
 
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.contact__input,
+.contact__comment {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border-radius: 10px;
+  border: 2px solid $textColor;
+  background-color: $captionColor;
+  box-shadow: 4px 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.contact__input {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.contact__comment {
+  height: 144px;
+  margin-bottom: 30px;
+}
+
+.contact__btn-wrap {
+  min-width: 240px;
+  min-height: 65px;
+}
+
+.contact__btn {
+  margin: 0 auto;
+}
+
+.contact__btn-name {
+  margin: auto;
+  text-transform: uppercase;
+  font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.contact__btn-bg {
+  color: $textColor;
+}
+
+.contact__image {
+  position: relative;
+  width: 320px;
+  height: 290px;
+  margin-bottom: 50px;
+}
+
+.contact__img {
+  width: 200px;
+  position: absolute;
+  padding: 10px 10px 40px 10px;
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.44);
+  background-color: #ffffff;
+}
+
+.contact__img img {
+  width: 100%;
+  height: auto;
+}
+
+.contact__img-1 {
+  top: 0;
+  right: 0;
+}
+
+.contact__img-2 {
+  bottom: 0;
+  left: 0;
+}
+
+.contact__address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  font-style: normal;
+}
+
+.contact__link {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.contact__city {
+  margin: 0 0 20px 0;
+}

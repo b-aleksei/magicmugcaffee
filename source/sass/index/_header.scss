@@ -10,6 +10,12 @@
   align-items: center;
 }
 
+.header__social {
+  flex-direction: column;
+  height: 63px;
+  align-content: flex-start;
+}
+
 .header__logo {
   margin-right: calc(50% - 50px);
 }

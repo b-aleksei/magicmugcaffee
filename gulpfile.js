@@ -29,7 +29,7 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(sass({outputStyle: 'expanded'}))
+    // .pipe(sass({outputStyle: 'expanded'}))
     /*.pipe(gulp.dest("source/css"))
     .pipe(csso())
     .pipe(rename({suffix: '.min'}))*/

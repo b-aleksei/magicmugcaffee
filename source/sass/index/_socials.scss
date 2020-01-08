@@ -1,9 +1,6 @@
 .social-net {
   display: flex;
-  flex-direction: column;
-  height: 63px;
   flex-wrap: wrap;
-  align-content: flex-start;
 }
 
 .social-net__item {
@@ -11,5 +8,5 @@
 }
 
 .social-net__color {
-  fill: #673A27;
+  fill: $textColor;
 }

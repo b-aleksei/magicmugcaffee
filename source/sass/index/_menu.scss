@@ -1,21 +1,35 @@
 .menu {
-  padding: 0 20px;
+  padding: 130px 20px 0 20px;
+  margin-bottom: 50px;
   font-size: 14px;
+  background-image: url("../img/bg/palm360_top.png");
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 .menu__title {
-  font-size: 26px;
+  font-size: 28px;
   color: #ba0b11;
 }
 
 .menu__subtitle {
   text-align: center;
   margin: auto;
+  letter-spacing: 0.5px;
+}
+
+.menu__subtitle-top {
+  margin-bottom: 30px;
 }
 
 .menu__subtitle-bottom {
   display: inline-flex;
   min-width: 140px;
+  margin-bottom: 30px;
+}
+
+.menu__subtitle-bottom--last {
+  min-width: 120px;
 }
 
 .menu__unit {
@@ -28,6 +42,7 @@
 
 .menu__subunit--big {
   width: 100%;
+  margin-bottom: 40px;
 }
 
 .menu__sublist--big {
