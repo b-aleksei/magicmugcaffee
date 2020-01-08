@@ -28,10 +28,18 @@
   border-bottom: 1px solid $captionColor;
 }
 
-.price__svg {
-  display: block;
-  color: $captionColor;
-  filter: drop-shadow(3px 2px 2px rgba(0, 0, 0, 0.5));
+.price__subtitle-wrap {
+  min-width: 120px;
+}
+
+.price__subtitle-2-wrap {
+  min-width: 160px;
+}
+
+
+.price__sign {
+  margin: auto;
+  letter-spacing: 0.5px;
 }
 
 .price__cell {
@@ -65,26 +73,18 @@
   //letter-spacing: 1.2px;
 }
 
-.price__sign {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -54%);
-  //letter-spacing: 1.2px;
-}
+.price__for-pseudo {
+  position: relative;
 
-.price__for-pseudo::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  right: 0;
-  border: 10px solid $textColor;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-bottom: 0;
-  pointer-events: none;
-  z-index: 6;
+  &::before {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 6;
+  }
 }
 
 .price__small {

@@ -4,10 +4,10 @@ function trackScroll() {
   let scrolled = window.pageYOffset;
   let coords = document.documentElement.clientHeight;
   if (scrolled > coords) {
-    goToTop.classList.add('back_to_top-show');
+    goToTop.classList.add('to_top-show');
   }
   if (scrolled < coords) {
-    goToTop.classList.remove('back_to_top-show');
+    goToTop.classList.remove('to_top-show');
   }
 }
 
@@ -18,7 +18,7 @@ function backToTop() {
   }
 }
 
-const goToTop = document.querySelector('.back_to_top');
+const goToTop = document.querySelector('.to_top');
 window.addEventListener('scroll', trackScroll);
 goToTop.addEventListener('click', backToTop);
 

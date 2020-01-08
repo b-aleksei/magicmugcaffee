@@ -12,21 +12,28 @@
 .contact__comment {
   display: block;
   width: 100%;
-  padding: 0;
+  padding: 0 15px;
   border-radius: 10px;
   border: 2px solid $textColor;
   background-color: $captionColor;
   box-shadow: 4px 2px 4px 1px rgba(0, 0, 0, 0.2);
+  font: inherit;
+  letter-spacing: 1.2px;
 }
 
 .contact__input {
-  height: 60px;
+  height: 50px;
   margin-bottom: 20px;
+}
+
+.contact__input::placeholder {
+  opacity: 0.3;
 }
 
 .contact__comment {
   height: 144px;
   margin-bottom: 30px;
+  padding: 15px;
 }
 
 .contact__btn-wrap {

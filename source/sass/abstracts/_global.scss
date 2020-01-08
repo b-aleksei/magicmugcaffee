@@ -93,6 +93,33 @@ ul {
   overflow: hidden;
 }
 
+.to_top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: #76c8d6;
+  font-size: 18px;
+  color: #ba0b11;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 999;
+  opacity: 0.6;
+}
+
+.to_top:hover {
+  opacity: 1;
+  color: #000000;
+}
+
+.to_top-show {
+  display: block;
+}
+
 /*
 @media (min-width: $tablet) {
   .container {
