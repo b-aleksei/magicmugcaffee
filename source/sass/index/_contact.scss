@@ -1,11 +1,15 @@
 .contact {
-  padding: 0 20px;
+  padding: 0 6%;
 }
+/*
+.contact__wrap {
+  text-align: center;
+}*/
 
 .contact__form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .contact__input,
@@ -32,7 +36,7 @@
 
 .contact__comment {
   height: 144px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   padding: 15px;
 }
 
@@ -63,7 +67,7 @@
   position: relative;
   width: 320px;
   height: 290px;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 }
 
 .contact__img {

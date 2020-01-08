@@ -1,5 +1,5 @@
 .advantages {
-  padding: 50px 20px;
+  padding: 50px 6%;
   margin-bottom: 50px;
   background-image: url("../img/bg/bg-orange.jpg");
   background-repeat: repeat;
@@ -50,14 +50,14 @@
 }
 
 .advantages__topic {
-  font-size: 24px;
+  font-size: 6.67vmin;
   color: $titleColor;
   text-transform: uppercase;
 }
 
 .advantages__content {
   margin: 0;
-  font-size: 14px;
+  font-size: 4vmin;
   font-weight: $fw500;
   letter-spacing: 0.4px;
 }
