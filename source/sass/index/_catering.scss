@@ -12,8 +12,8 @@
 }
 
 .catering__item span {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 4vmin;
+  line-height: 4vmin;
 }
 
 .catering__item {
@@ -21,7 +21,7 @@
   flex-direction: column;
   width: 160px;
   margin-bottom: 50px;
-  font-size: 18px;
+  font-size: 5vmin;
   text-transform: uppercase;
   align-items: center;
 
@@ -75,13 +75,15 @@
 .catering__btn-wrap {
   min-width: 240px;
   min-height: 65px;
+  padding: 5vmin 7vmin;
 }
 
 .catering__btn-name {
   margin: auto;
+  text-transform: uppercase;
   font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
-  font-size: 20px;
-  letter-spacing: 1.5px;
+  font-size: 5.5vmin;
+  letter-spacing: 0.42vmin;
 }
 
 /*.catering__link p {
