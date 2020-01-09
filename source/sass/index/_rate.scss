@@ -5,3 +5,9 @@
   background-size: 100% auto;
   background-position: center bottom;
 }
+
+@media (min-width: $mobile) {
+  .rate {
+    background-image: url("../img/bg/palm768_bottom.png");
+  }
+}

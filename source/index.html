@@ -229,18 +229,18 @@
     </section>
     <section class="rate">
       <h2 class="rate__title glob__h2">Coffee bar<strong> package Prices</strong></h2>
-      <article class="rate__price price" aria-label="Coffee bar package Prices">
-        <h3 class="price__caption visually-hidden">Our prices</h3>
-        <ul class="price__title">
-          <li class="price__head price__head--1">
+      <table class="rate__price price" aria-label="Coffee bar package Prices">
+        <caption class="price__caption visually-hidden">Our prices</caption>
+        <tr class="price__title">
+          <th class="price__head price__head--1">
             <div class="price__subtitle-wrap glob__btn-wrap">
               <p class="price__sign">Guests</p>
               <svg width="120" height="40" class="glob__btn-bg">
                 <use xlink:href="#btn"></use>
               </svg>
             </div>
-       </li>
-          <li class="price__head price__head--2">
+       </th>
+          <th class="price__head price__head--2">
              <div class="price__subtitle-2-wrap glob__btn-wrap">
               <label class="price__for-pseudo price__sign price__no-js"><select class="price__select">
               <option id="col-2" value="2">2 hours</option>
@@ -251,47 +251,47 @@
                 <use xlink:href="#btn"></use>
               </svg>
             </div>
-            </li>
-          <li class="price__head price__head--3 hide">Extra hour</li>
-          <li class="price__head price__head--4 hide">Add smoothies and cappuchino</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-        <ul class="price__row">
-          <li class="price__cell price__cell--1">1-35</li>
-          <li class="price__cell price__cell--2">$425</li>
-          <li class="price__cell price__cell--3 hide">$150</li>
-          <li class="price__cell price__cell--4 hide">$30</li>
-        </ul>
-      </article>
+            </th>
+          <th class="price__head price__head--3 hide">Extra hour</th>
+          <th class="price__head price__head--4 hide">Add smoothies and cappuchino</th>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+        </tr>
+        <tr class="price__row">
+          <td class="price__cell price__cell--1">1-35</td>
+          <td class="price__cell price__cell--2">$425</td>
+          <td class="price__cell price__cell--3 hide">$150</td>
+          <td class="price__cell price__cell--4 hide">$30</td>
+        </tr>
+      </table>
       <small class="price__small">* Pricing includes: ulimited beverages, all paper products, 2 hours of service
         minimum.</small> <small class="price__small">* Tax and travel fee not included (travel outside of 25 mile radius
       of Mpls +$25 fee).</small>
@@ -342,8 +342,9 @@
         </span></button>
         </form>
         <div class="contact__image">
-          <div class="contact__img contact__img-1"><img src="img/bg/2cup300.jpg" alt="cup of coffee"></div>
-          <div class="contact__img contact__img-2"><img src="img/bg/1cup300.jpg" alt="cup of coffee"></div>
+          <div class="contact__img contact__img-1"><img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300" height="300"></div>
+          <div
+            class="contact__img contact__img-2"><img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300" height="300"></div>
         </div>
         <address class="contact__address">
           <a class="contact__link" href="tel:+10001231212">+1(000)1231212</a> <a class="contact__link"

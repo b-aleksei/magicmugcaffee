@@ -1,15 +1,12 @@
 .contact {
   padding: 0 6%;
 }
-/*
-.contact__wrap {
-  text-align: center;
-}*/
 
 .contact__form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 70px;
+  max-width: 500px;
+  margin: 0 auto 70px auto;
 }
 
 .contact__input,
@@ -31,7 +28,7 @@
 }
 
 .contact__input::placeholder {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .contact__comment {
@@ -65,13 +62,13 @@
 
 .contact__image {
   position: relative;
-  width: 320px;
-  height: 290px;
+  width: 87vw;
+  height: 87vw;
   margin: 0 auto 50px auto;
 }
 
 .contact__img {
-  width: 200px;
+  width: 62.5%;
   position: absolute;
   padding: 10px 10px 40px 10px;
   box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.44);
@@ -109,4 +106,11 @@
 
 .contact__city {
   margin: 0 0 20px 0;
+}
+
+@media (min-width: $mobile) {
+  .contact__image {
+    width: 75vw;
+    height: 75vw;
+  }
 }

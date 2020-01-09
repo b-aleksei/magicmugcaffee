@@ -98,4 +98,9 @@
   .header__img-logo {
     width: 90px;
   }
+
+  .header__bg-wrap::before {
+    height: 15px;
+    background-size: auto 15px;
+  }
 }

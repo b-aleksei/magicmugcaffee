@@ -1,20 +1,36 @@
 .price {
-  display: table;
   width: 100%;
   margin: 0 auto 40px auto;
   font-size: 4vmin;
 }
 
-.price__caption {
-  display: table-caption;
+.price__head--1 {
+  padding-right: 4.4vmin;
 }
 
-.price__row,
+.price__head--2 {
+  padding-left: 4.4vmin;
+}
+
+/*.price__caption {
+  display: table-caption;
+}*/
+
+/*.price__row,
 .price__title {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
+}*/
+/*.price__cell--1 {
+  width: 120px;
+}*/
+
+/*.price__cell--2,
+.price__cell--3,
+.price__cell--4 {
+  width: 160px;
+}*/
 
 .price__head {
   position: relative;
@@ -25,11 +41,11 @@
 }
 
 .price__subtitle-wrap {
-  min-width: 120px;
+  min-width: 100px;
 }
 
 .price__subtitle-2-wrap {
-  min-width: 160px;
+  min-width: 100px;
 }
 
 
@@ -44,22 +60,12 @@
   font-weight: $fw500;
 }
 
-.price__cell--1 {
-  width: 120px;
-}
-
-.price__cell--2,
-.price__cell--3,
-.price__cell--4 {
-  width: 160px;
-}
-
 .hide {
   display: none;
 }
 
 .price__select {
-  padding-right: 15px;
+  padding-right: 4vmin;
   border: 0;
   background-color: transparent;
   font: inherit;
@@ -77,28 +83,30 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 20px;
+    font-size: 4vmin;
     pointer-events: none;
     z-index: 6;
   }
 }
 
-
-.no-js .price__invisible {
+.price__no-js .price__invisible {
   display: none;
 }
 
-.no-js::before {
+.price__no-js::before {
   display: none;
 }
 
 .price__small {
+  display: block;
+  margin: 0 auto;
   font-size: 4vmin;
   font-weight: $fw500;
 }
 
 @media (min-width: $mobile) {
-  .price {
-
+  .price,
+  .price__small {
+    max-width: 440px;
   }
 }

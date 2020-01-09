@@ -8,7 +8,7 @@
 .catering__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .catering__item span {
@@ -19,7 +19,7 @@
 .catering__item {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
+  min-width: 120px;
   margin-bottom: 50px;
   font-size: 4.8vmin;
   text-transform: uppercase;
