@@ -2,10 +2,6 @@
   padding: 35% 6% 0 6%;
   margin-bottom: 50px;
   font-size: 4vmin;
-  background-image: url("../img/bg/palm480_top.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: center top;
 }
 
 .menu__title {
@@ -61,11 +57,14 @@
 }
 
 @media (min-width: $mobile) {
-  .menu {
-    background-image: url("../img/bg/palm768_top.png");
-  }
-
   .menu__unit {
     max-width: 440px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .menu {
+    padding: 0 0 50px 0;
+    margin-bottom: 0;
   }
 }

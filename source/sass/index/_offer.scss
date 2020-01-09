@@ -1,0 +1,30 @@
+.offer__rate {
+  padding: 0 6% 35% 6%;
+}
+
+.offer {
+  background-image: url("../img/bg/palm480_top.png"), url("../img/bg/palm480_bottom.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% auto, 100% auto;
+  background-position: center top, center bottom;
+}
+
+@media (min-width: $mobile) {
+  .offer {
+    background-image: url("../img/bg/palm768_top.png"), url("../img/bg/palm768_bottom.png");
+  }
+}
+
+@media (min-width: $tablet) {
+  .offer {
+    padding: 50px 6%;
+    background-image: url("../img/bg/palm1024_r.png"), url("../img/bg/palm1024_l.png"), url("../img/bg/palm1024_r.png");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 140px 477px, 140px 477px, 140px 477px;
+    background-position: right 150px, left center, 100% 85%;
+  }
+
+  .offer__rate {
+    padding: 0;
+  }
+}

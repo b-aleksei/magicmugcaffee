@@ -17,7 +17,7 @@
 }
 
 .header__logo {
-  margin-right: calc(50% - 50px);
+  margin-right: calc(50% - 46px);
 }
 
 .header__nav {
@@ -91,16 +91,15 @@
     align-content: unset;
   }
 
-  .header__logo {
-    margin-right: calc(50% - 55px);
-  }
-
-  .header__img-logo {
-    width: 90px;
-  }
-
   .header__bg-wrap::before {
     height: 15px;
     background-size: auto 15px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .header__img-logo {
+    width: 82px;
+    height: 60px;
   }
 }

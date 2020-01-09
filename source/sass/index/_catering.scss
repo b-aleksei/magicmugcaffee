@@ -100,3 +100,13 @@
     min-width: 40%;
   }
 }
+
+@media (min-width: $tablet) {
+  .catering__list {
+    justify-content: space-around;
+  }
+
+  .catering__item {
+    min-width: 30%;
+  }
+}
