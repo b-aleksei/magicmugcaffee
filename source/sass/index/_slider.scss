@@ -107,3 +107,9 @@
 .translate-75 .slider__indicators .ind-4 {
   background-color: #f8cd60;
 }
+
+.no-js .slider__arrow-back,
+.no-js .slider__arrow-forward,
+.no-js .slider__indicators {
+  display: none;
+}

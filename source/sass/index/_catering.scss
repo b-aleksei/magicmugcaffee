@@ -12,16 +12,16 @@
 }
 
 .catering__item span {
-  font-size: 4vmin;
-  line-height: 4vmin;
+  font-size: 3.8vmin;
+  line-height: 3.8vmin;
 }
 
 .catering__item {
   display: flex;
   flex-direction: column;
-  width: 160px;
+  min-width: 150px;
   margin-bottom: 50px;
-  font-size: 5vmin;
+  font-size: 4.8vmin;
   text-transform: uppercase;
   align-items: center;
 
@@ -86,16 +86,17 @@
   letter-spacing: 0.42vmin;
 }
 
-/*.catering__link p {
-  position: absolute;
-  top: calc(50% - 5px);
-  left: calc(50% - 4px);
-  transform: translate(-50%, -50%);
-  margin: 0;
-
-}*/
-
 .catering__btn-bg {
   color: $textColor;
 }
 
+
+@media (min-width: $mobile) {
+  .catering__list {
+    justify-content: space-around;
+  }
+
+  .catering__item {
+    min-width: 40%;
+  }
+}

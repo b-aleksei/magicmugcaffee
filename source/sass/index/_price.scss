@@ -1,12 +1,8 @@
 .price {
   display: table;
   width: 100%;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   font-size: 4vmin;
-}
-
-.price__no-js .price__invisible {
-  display: none;
 }
 
 .price__caption {
@@ -71,7 +67,6 @@
   text-align: center;
   appearance: none;
   color: $textColor;
-  //letter-spacing: 1.2px;
 }
 
 .price__for-pseudo {
@@ -88,7 +83,22 @@
   }
 }
 
+
+.no-js .price__invisible {
+  display: none;
+}
+
+.no-js::before {
+  display: none;
+}
+
 .price__small {
   font-size: 4vmin;
   font-weight: $fw500;
+}
+
+@media (min-width: $mobile) {
+  .price {
+
+  }
 }

@@ -1,4 +1,5 @@
 'use strict';
+(function () {
 
 function trackScroll() {
   let scrolled = window.pageYOffset;
@@ -18,17 +19,17 @@ function backToTop() {
   }
 }
 
-const goToTop = document.querySelector('.to_top');
+let goToTop = document.querySelector('.to_top');
 window.addEventListener('scroll', trackScroll);
 goToTop.addEventListener('click', backToTop);
 
-const anchors = document.querySelectorAll('.scroll-to');
+let anchors = document.querySelectorAll('.scroll-to');
 
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
 
-    const getId = anchor.getAttribute('href');
+    let getId = anchor.getAttribute('href');
 
     document.querySelector(getId).scrollIntoView({
       behavior: 'smooth',
@@ -36,3 +37,4 @@ for (let anchor of anchors) {
     })
   })
 }
+})();

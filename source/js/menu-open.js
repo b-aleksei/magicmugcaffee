@@ -1,8 +1,10 @@
-navButton = document.querySelector(".nav__menu-opener");
-navMain = document.querySelector(".nav");
+'use strict';
+(function () {
 
-navMain.classList.remove("header__nav--no-js");
-
-navButton.addEventListener("click", function () {
-  navMain.classList.toggle("header__nav--menu-open");
-});
+  let navButton = document.querySelector(".nav__menu-opener");
+  let navMain = document.querySelector(".nav");
+  navMain.classList.remove("header__nav--no-js");
+  navButton.addEventListener("click", function () {
+    navMain.classList.toggle("header__nav--menu-open");
+  });
+})();

@@ -120,7 +120,10 @@
       </nav>
     </div>
     <div class="header__bg-wrap">
-      <img class="header__bg-image" src="img/bg/BG-480.jpg" alt="background image Magic Mug" width="480" height="249">
+      <picture>
+        <source media="(min-width: 480px)" srcset="img/bg/BG-720.jpg 720w">
+        <img class="header__bg-image" src="img/bg/BG-480.jpg" alt="background image Magic Mug" width="480"
+        height="249"></picture>
     </div>
   </header>
   <main>
@@ -133,7 +136,7 @@
           laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
           esse cillum dolore eu fugiat nulla
         </p></div>
-      <div class="about-us__slider slider">
+      <div class="about-us__slider slider slider__no-js">
         <button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button>
         <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
         <div class="translate-0 slider__inner">
@@ -143,8 +146,10 @@
             <img class="slider__img" src="img/slider/4.webp" alt="slide four">
           </div>
           <div class="slider__indicators">
-            <span class="slider__ind ind-1"></span> <span class="slider__ind ind-2"></span> <span
-            class="slider__ind ind-3"></span> <span class="slider__ind ind-4"></span>
+            <span class="slider__ind ind-1">
+            </span> <span class="slider__ind ind-2"></span>
+            <span class="slider__ind ind-3"></span>
+            <span class="slider__ind ind-4"></span>
           </div>
         </div>
       </div>
@@ -237,7 +242,7 @@
        </li>
           <li class="price__head price__head--2">
              <div class="price__subtitle-2-wrap glob__btn-wrap">
-              <label class="price__for-pseudo price__sign"><select class="price__select price__no-js">
+              <label class="price__for-pseudo price__sign price__no-js"><select class="price__select">
               <option id="col-2" value="2">2 hours</option>
               <option class="price__invisible" id="col-3" value="3">3hours Guests</option>
               <option class="price__invisible" id="col-4" value="4">Add smoothies</option>

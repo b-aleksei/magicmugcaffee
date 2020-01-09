@@ -83,3 +83,19 @@
     transform: rotate(45deg);
   }
 }
+
+@media (min-width: $mobile) {
+  .header__social {
+    flex-direction: row;
+    height: auto;
+    align-content: unset;
+  }
+
+  .header__logo {
+    margin-right: calc(50% - 55px);
+  }
+
+  .header__img-logo {
+    width: 90px;
+  }
+}
