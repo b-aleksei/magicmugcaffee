@@ -43,8 +43,8 @@
 }
 
 .contact__btn-wrap {
-  min-width: 240px;
-  min-height: 65px;
+  min-width: 200px;
+  min-height: 55px;
   padding: 5vmin 7vmin;
 }
 
@@ -52,9 +52,9 @@
   margin: auto;
   text-transform: uppercase;
   font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
-  font-size: 5.5vmin;
-  line-height: 5.5vmin;
-  letter-spacing: 0.42vmin;
+  font-size: $font16;
+  line-height: $font16;
+  letter-spacing: 1.5px;
   color: #ffffff;
 }
 

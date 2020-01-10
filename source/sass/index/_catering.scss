@@ -14,8 +14,8 @@
 }
 
 .catering__item span {
-  font-size: 3.8vmin;
-  line-height: 3.8vmin;
+  font-size: $font14;
+  line-height: $font14;
 }
 
 .catering__item {
@@ -23,7 +23,7 @@
   flex-direction: column;
   width: 50%;
   margin-bottom: 50px;
-  font-size: 4.8vmin;
+  font-size: $font16;
   text-transform: uppercase;
   align-items: center;
 
@@ -73,8 +73,8 @@
 }
 
 .catering__btn-wrap {
-  min-width: 240px;
-  min-height: 65px;
+  min-width: 200px;
+  min-height: 55px;
   padding: 5vmin 7vmin;
 }
 
@@ -82,8 +82,8 @@
   margin: auto;
   text-transform: uppercase;
   font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
-  font-size: 5.5vmin;
-  letter-spacing: 0.42vmin;
+  font-size: $font16;
+  letter-spacing: 1.5px;
 }
 
 .catering__btn-bg {

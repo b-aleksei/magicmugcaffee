@@ -1,7 +1,7 @@
 .price {
   width: 100%;
   margin: 0 auto 40px auto;
-  font-size: 4vmin;
+  font-size: $font14;
 }
 
 .price__head--1 {
@@ -87,7 +87,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 4vmin;
+    font-size: $font14;
     pointer-events: none;
     z-index: 6;
   }
@@ -104,7 +104,7 @@
 .price__small {
   display: block;
   margin: 0 auto;
-  font-size: 4vmin;
+  font-size: $font14;
   font-weight: $fw500;
 }
 

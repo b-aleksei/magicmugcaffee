@@ -6,7 +6,7 @@
 }
 
 .advantages__title {
-  font-size: 8vmin;
+  font-size: $font24;
   color: #ba0b11;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .advantages__topic {
-  font-size: 6.67vmin;
+  font-size: $font20;
   color: $titleColor;
   text-transform: uppercase;
 }
@@ -58,7 +58,7 @@
 .advantages__content {
   max-width: 440px;
   margin: 0;
-  font-size: 4vmin;
+  font-size: $font14;
   font-weight: $fw500;
   letter-spacing: 0.4px;
 }
