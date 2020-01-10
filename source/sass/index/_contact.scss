@@ -5,8 +5,13 @@
 .contact__form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 500px;
   margin: 0 auto 70px auto;
+}
+
+.contact__label {
+  width: 100%;
 }
 
 .contact__input,
@@ -43,15 +48,12 @@
   padding: 5vmin 7vmin;
 }
 
-.contact__btn {
-  margin: 0 auto;
-}
-
 .contact__btn-name {
   margin: auto;
   text-transform: uppercase;
   font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
   font-size: 5.5vmin;
+  line-height: 5.5vmin;
   letter-spacing: 0.42vmin;
   color: #ffffff;
 }

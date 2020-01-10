@@ -75,6 +75,10 @@
   color: $textColor;
 }
 
+.price__select::-ms-expand {
+  display: none;
+}
+
 .price__for-pseudo {
   position: relative;
 

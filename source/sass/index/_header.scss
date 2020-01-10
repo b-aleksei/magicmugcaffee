@@ -26,6 +26,7 @@
 
 .header__bg-wrap {
   position: relative;
+  outline: 1px dotted red;
 
   &::before {
     content: "";
@@ -59,11 +60,12 @@
   position: absolute;
   width: 260px;
   top: 20px;
-  bottom: 0;
-  left: 0;
+  //bottom: 0;
+  //left: 0;
   right: 0;
-  margin: 0 auto;
+  //margin: 0 auto;
   z-index: 5;
+  outline: 1px dotted blue;
 }
 
 .header__nav--menu-open .nav__button-icon {
