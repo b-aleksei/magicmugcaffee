@@ -53,7 +53,6 @@
   text-transform: uppercase;
   font-family: "AdelleCyrillic-SemiBold", "Georgia", serif;
   font-size: $font16;
-  line-height: $font16;
   letter-spacing: 1.5px;
   color: #ffffff;
 }
@@ -101,18 +100,34 @@
 }
 
 .contact__link {
-  color: #000000;
+  color: $textColor;
   text-decoration: none;
   margin-bottom: 20px;
+  font-size: $font18;
 }
 
 .contact__city {
   margin: 0 0 20px 0;
+  font-size: $font18;
 }
 
 @media (min-width: $mobile) {
   .contact__image {
     width: 75vw;
     height: 75vw;
+  }
+}
+
+@media (min-width: $mobileWide) {
+  .catering__btn-name,
+  .contact__btn-name {
+    font-size: $font20;
+  }
+
+  .catering__btn-wrap,
+  .contact__btn-wrap {
+    min-width: 240px;
+    min-height: 65px;
+    padding: 25px 40px;
   }
 }

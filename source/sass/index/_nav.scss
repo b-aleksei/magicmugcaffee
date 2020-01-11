@@ -61,3 +61,9 @@
   color: inherit;
   text-decoration: none;
 }
+
+@media (min-width: $mobileWide) {
+  .nav__link {
+    font-size: $font16;
+  }
+}

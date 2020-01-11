@@ -56,7 +56,7 @@ gulp.task("js", function () {
 });
 
 gulp.task("images", function () {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
+  return gulp.src("source/img/111/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
@@ -67,7 +67,7 @@ gulp.task("images", function () {
     ],{
       verbose: true
     }))
-    .pipe(gulp.dest("source/img/img-compress"))
+    .pipe(gulp.dest("source/img/222"))
 });
 
 gulp.task('clear', () =>

@@ -89,6 +89,12 @@
     align-content: unset;
   }
 
+  @media (min-width: $mobileWide) {
+    .header__nav--menu-open .nav__list {
+      width: 180px;
+    }
+  }
+
   .header__bg-wrap::before {
     height: 15px;
     background-size: auto 15px;

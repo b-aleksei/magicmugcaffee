@@ -55,7 +55,7 @@ ul {
   z-index: -1;
 }
 
-.glob__h2 {
+.glob-h2 {
   margin: 0 0 40px 0;
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font14;
@@ -66,10 +66,31 @@ ul {
   color: $titleColor;
 }
 
-.glob__h2 strong {
+.glob-h2-red {
+  font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font24;
-  line-height: 30px;
+  line-height: 36px;
   color: #ba0b11;
+  text-transform: uppercase;
+}
+
+@media (min-width: $mobileMini) {
+  .glob-h2-red {
+    font-size: $font26;
+    line-height: 40px;
+    color: #ba0b11;
+  }
+}
+
+@media (min-width: $mobileWide) {
+  .glob-h2 {
+    font-size: $font18;
+  }
+
+  .glob-h2-red {
+    font-size: $font30;
+    line-height: 45px;
+  }
 }
 
 .r {
@@ -98,10 +119,10 @@ ul {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  line-height: 30px;
+  line-height: 40px;
   background-color: #76c8d6;
   font-size: 18px;
   color: #ba0b11;
@@ -111,7 +132,7 @@ ul {
   opacity: 0.6;
 }
 
-.to_top:hover {
+.to_top:active {
   opacity: 1;
   color: #000000;
 }

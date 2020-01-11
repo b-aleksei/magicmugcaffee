@@ -4,8 +4,8 @@
 }
 
 .menu__title {
-  font-size: $font24;
-  color: #ba0b11;
+  text-align: center;
+  margin: 0 0 40px 0;
 }
 
 .menu__subtitle {
@@ -57,7 +57,7 @@
 
 @media (min-width: $mobile) {
   .menu__unit {
-    max-width: 440px;
+    max-width: 400px;
   }
 }
 

@@ -16,16 +16,22 @@
   }
 }
 
-@media (min-width: $tablet) {
+@media (min-width: 667px) {
   .offer {
     padding: 50px 6%;
     background-image: url("../img/bg/palm1024_r.png"), url("../img/bg/palm1024_l.png"), url("../img/bg/palm1024_r.png");
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 140px 477px, 140px 477px, 140px 477px;
+    background-size: 130px 477px, 130px 477px, 130px 477px;
     background-position: right 150px, left center, 100% 85%;
   }
 
   .offer__rate {
     padding: 0;
+  }
+}
+
+@media (min-width: 730px) {
+  .offer {
+    background-size: 140px 477px, 140px 477px, 140px 477px;
   }
 }
