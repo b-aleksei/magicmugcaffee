@@ -94,4 +94,14 @@
   .catering__item {
     width: 33.33%;
   }
+
+  .catering__item {
+    font-size: 24px;
+  }
+
+  .catering__item span {
+    font-size: $font16;
+    line-height: $font18;
+  }
+
 }

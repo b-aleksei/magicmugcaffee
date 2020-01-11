@@ -22,8 +22,8 @@
   flex-direction: column;
 }
 
-.advantages__item:not(:first-child) {
-  margin-top: 40px;
+.advantages__item:not(:last-child) {
+  margin-bottom: 40px;
 }
 
 .advantages__img {
@@ -61,4 +61,27 @@
   font-size: $font14;
   font-weight: $fw500;
   letter-spacing: 0.4px;
+}
+
+@media (min-width: $tablet) {
+  .advantages__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .advantages__item {
+    width: 40%;
+    margin: auto;
+  }
+
+  .advantages__topic {
+    font-size: $font30;
+  }
+
+  .advantages__content {
+    max-width: unset;
+    font-size: $font18;
+  }
 }

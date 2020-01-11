@@ -67,3 +67,13 @@
     font-size: $font16;
   }
 }
+
+@media (min-width: $tablet) {
+  .nav__link {
+    font-size: $font18;
+  }
+
+  .nav__item {
+    padding: 0 30px 40px 30px;
+  }
+}

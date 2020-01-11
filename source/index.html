@@ -189,7 +189,7 @@
           <caption class="price__caption visually-hidden">Our prices</caption>
           <tr class="price__title">
             <th class="price__head price__head--1">
-              <div class="price__subtitle-wrap glob__btn-wrap">
+              <div class="glob__btn-wrap">
                 <p class="price__sign">Guests</p>
                 <svg width="120" height="40" class="glob__btn-bg">
                   <use xlink:href="#btn"></use>
@@ -197,7 +197,7 @@
               </div>
             </th>
             <th class="price__head price__head--2">
-              <div class="price__subtitle-2-wrap glob__btn-wrap">
+              <div class="glob__btn-wrap">
                 <label class="price__for-pseudo price__sign price__no-js"><select class="price__select">
                   <option id="col-2" value="2">2 hours</option>
                   <option class="price__invisible" id="col-3" value="3">3hours Guests</option>
@@ -208,8 +208,20 @@
                 </svg>
               </div>
             </th>
-            <th class="price__head price__head--3 hide">Extra hour</th>
-            <th class="price__head price__head--4 hide">Add smoothies and cappuchino</th>
+            <th class="price__head price__head--3 hide">
+              <div class="glob__btn-wrap">
+                <p class="price__sign">Extra hour</p>
+                <svg width="120" height="40" class="glob__btn-bg">
+                  <use xlink:href="#btn"></use>
+                </svg>
+              </div></th>
+            <th class="price__head price__head--4 hide">
+              <div class="glob__btn-wrap">
+                <p class="price__sign">Add smoothies</p>
+                <svg width="120" height="40" class="glob__btn-bg">
+                  <use xlink:href="#btn"></use>
+                </svg>
+              </div></th>
           </tr>
           <tr class="price__row">
             <td class="price__cell price__cell--1">1-35</td>
@@ -299,9 +311,10 @@
         </span></button>
         </form>
         <div class="contact__image">
-          <div class="contact__img contact__img-1"><img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300" height="300"></div>
-          <div
-            class="contact__img contact__img-2"><img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300" height="300"></div>
+          <div class="contact__img contact__img-1"><img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300"
+            height="300"></div>
+          <div class="contact__img contact__img-2"><img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300"
+            height="300"></div>
         </div>
         <address class="contact__address">
           <a class="contact__link" href="tel:+10001231212">+1(000)1231212</a> <a class="contact__link"
@@ -344,7 +357,7 @@
   <footer class="footer">
     <a class="to_top" title="to top">
       &#9650;</a>
-    <p>© 2020 Magic Mug. All rights reserved</p>
+    <p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
   </footer>
 </div>
 <script src="js/menu-open.js"></script>

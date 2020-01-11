@@ -4,3 +4,9 @@
   background-repeat: repeat;
   font-weight: 500;
 }
+
+@media (min-width: $tablet) {
+.footer__copyright {
+  font-size: 16px;
+}
+}

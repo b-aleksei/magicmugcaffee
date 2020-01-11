@@ -38,9 +38,9 @@ ul {
 .glob__btn-wrap {
   position: relative;
   display: flex;
-  min-width: 140px;
+  min-width: 100px;
   min-height: 40px;
-  padding: 3vmin;
+  padding: 10px 3vmin;
   z-index: 0;
 }
 
@@ -82,6 +82,17 @@ ul {
   }
 }
 
+@media (min-width: $mobile) {
+  .glob__btn-wrap {
+    position: relative;
+    display: flex;
+    min-width: 100px;
+    min-height: 40px;
+    padding: 10px 30px;
+    z-index: 0;
+  }
+}
+
 @media (min-width: $mobileWide) {
   .glob-h2 {
     font-size: $font18;
@@ -90,6 +101,21 @@ ul {
   .glob-h2-red {
     font-size: $font30;
     line-height: 45px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .glob-h2 {
+    font-size: $font22;
+  }
+
+  .glob-h2-red {
+    font-size: $font34;
+    line-height: 48px;
+  }
+
+  .glob__btn-wrap {
+    padding: 17px 30px;
   }
 }
 

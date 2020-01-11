@@ -65,5 +65,14 @@
   .menu {
     padding: 0;
     margin-bottom: 50px;
+    font-size: $font18;
+  }
+
+  .menu__unit {
+    max-width: 60%;
+  }
+
+  .menu__item:not(:last-child) {
+    margin-bottom: 10px;
   }
 }
