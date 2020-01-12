@@ -7,7 +7,7 @@
 
 .advantages__title {
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0;
 }
 
 .advantages__list {
@@ -20,10 +20,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-
-.advantages__item:not(:last-child) {
-  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .advantages__img {
@@ -73,7 +70,7 @@
 
   .advantages__item {
     width: 40%;
-    margin: auto;
+    margin: 40px auto 0 auto;
   }
 
   .advantages__topic {
