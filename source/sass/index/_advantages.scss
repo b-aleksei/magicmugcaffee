@@ -1,8 +1,11 @@
 .advantages {
-  padding: 50px 6%;
-  margin-bottom: 50px;
   background-image: url("../img/bg/bg-orange.jpg");
   background-repeat: repeat;
+}
+
+.advantages .container {
+  padding: 50px 6%;
+  margin-bottom: 50px;
 }
 
 .advantages__title {
@@ -61,16 +64,21 @@
 }
 
 @media (min-width: $tablet) {
+  .advantages .container {
+    padding: 80px 6%;
+    margin-bottom: 80px;
+  }
+
   .advantages__list {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .advantages__item {
     width: 40%;
-    margin: 40px auto 0 auto;
+    margin-top: 60px;
   }
 
   .advantages__topic {
@@ -80,5 +88,11 @@
   .advantages__content {
     max-width: unset;
     font-size: $font18;
+  }
+}
+
+@media (min-width: $medium) {
+  .advantages__item {
+    width: 25%;
   }
 }

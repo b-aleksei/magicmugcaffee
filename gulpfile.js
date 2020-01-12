@@ -129,16 +129,16 @@ gulp.task("refresh", function (done) {
   done();
 });
 
-/*gulp.task("watch", function () {
-gulp.watch("source/sass/!**!/!*.{scss,sass}", gulp.series("css"));
-gulp.watch("source/!*.html", gulp.series("refresh"));
-gulp.watch("source/js/!*.js", gulp.series("js")).on("change", server.reload);
-});*/
-
-gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
+gulp.task("watch", function () {
+gulp.watch("source/sass/**/*.{scss,sass}", {usePolling: true}, gulp.series("css"));
 gulp.watch("source/*.html", gulp.series("refresh"));
 gulp.watch("source/js/*.js", gulp.series("js")).on("change", server.reload);
+});
+
+/*gulp.watch("source/sass/!**!/!*.{scss,sass}", gulp.series("css"));
+gulp.watch("source/!*.html", gulp.series("refresh"));
+gulp.watch("source/js/!*.js", gulp.series("js")).on("change", server.reload);*/
 
 // gulp.task("build", gulp.series("clean", "copy", "css", "posthtml", "minhtml", "js"));
-// gulp.task("start", gulp.parallel("server", "watch"));
-gulp.task("start", gulp.series("css", "server"));
+gulp.task("start", gulp.parallel("server", "watch"));
+// gulp.task("start", gulp.series("css", "server"));

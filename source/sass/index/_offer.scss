@@ -1,8 +1,4 @@
-/*.offer__rate {
-  padding: 0 6% 35% 6%;
-}*/
-
-.offer {
+.offer .container {
   padding: 35% 6% 35% 6%;
   background-image: url("../img/bg/palm480_top.png"), url("../img/bg/palm480_bottom.png");
   background-repeat: no-repeat, no-repeat;
@@ -11,13 +7,13 @@
 }
 
 @media (min-width: $mobile) {
-  .offer {
+  .offer .container {
     background-image: url("../img/bg/palm768_top.png"), url("../img/bg/palm768_bottom.png");
   }
 }
 
 @media (min-width: 667px) {
-  .offer {
+  .offer .container {
     padding: 50px 6%;
     background-image: url("../img/bg/palm1024_r.png"), url("../img/bg/palm1024_l.png"), url("../img/bg/palm1024_r.png");
     background-repeat: no-repeat, no-repeat, no-repeat;
@@ -31,7 +27,13 @@
 }
 
 @media (min-width: 730px) {
-  .offer {
+  .offer .container {
     background-size: 140px 477px, 140px 477px, 140px 477px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .offer .container {
+    padding: 80px 6%;
   }
 }

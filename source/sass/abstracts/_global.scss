@@ -15,6 +15,7 @@ body {
   font-weight: 400;
   line-height: 24px;
   color: $textColor;
+  background-color: #ffecb8
 }
 
 ul {
@@ -25,8 +26,8 @@ ul {
 
 .container {
   min-width: 320px;
+  max-width: 1920px;
   margin: 0 auto;
-  background-color: #ffecb8;
 }
 
 .glob__btn {
@@ -74,6 +75,33 @@ ul {
   text-transform: uppercase;
 }
 
+.to_top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #76c8d6;
+  font-size: 18px;
+  color: #ba0b11;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 999;
+  opacity: 0.7;
+}
+
+.to_top:active {
+  opacity: 1;
+  color: #000000;
+}
+
+.to_top-show {
+  display: block;
+}
+
 @media (min-width: $mobileMini) {
   .glob-h2-red {
     font-size: $font26;
@@ -119,6 +147,15 @@ ul {
   }
 }
 
+@media (min-width: $medium) {
+  .to_top {
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+    font-size: 24px;
+  }
+}
+
 .r {
   outline: 1px dotted red;
 }
@@ -140,32 +177,6 @@ ul {
   overflow: hidden;
 }
 
-.to_top {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  background-color: #76c8d6;
-  font-size: 18px;
-  color: #ba0b11;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 999;
-  opacity: 0.6;
-}
-
-.to_top:active {
-  opacity: 1;
-  color: #000000;
-}
-
-.to_top-show {
-  display: block;
-}
 
 /*
 @media (min-width: $tablet) {

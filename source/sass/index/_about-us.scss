@@ -54,3 +54,19 @@
     font-size: 18px;
   }
 }
+
+@media (min-width: $tabletWide) {
+  .about-us .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .about-us__slider {
+    order: -1;
+    width: 50%;
+  }
+
+  .about-us__info {
+    width: 50%;
+  }
+}

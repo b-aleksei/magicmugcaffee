@@ -46,11 +46,11 @@
 
 .nav__list {
   display: none;
+  background-color: #ffecb8;
 }
 
 .nav__item {
   padding: 0 30px 20px 30px;
-  background-color: #ffecb8;
 }
 
 .nav__link {
@@ -79,5 +79,40 @@
 
   .nav__item {
     padding: 0 30px 40px 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__list {
+    padding-top: 40px;
+  }
+
+  .nav__link {
+    font-size: $font22;
+  }
+
+  .nav__item {
+    padding: 0 30px 60px 30px;
+  }
+}
+
+@media (min-width: $medium) {
+  .nav {
+    width: auto;
+    padding-top: 0;
+    margin-right: 6%;
+  }
+
+  .nav__list {
+    display: flex;
+    padding-top: 0;
+  }
+
+  .nav__item {
+    padding: 0;
+  }
+
+  .nav__item:not(:first-child) {
+    padding-left: 30px;
   }
 }

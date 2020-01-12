@@ -12,27 +12,7 @@
 .price__head--2 {
   padding-left: 4.4vmin;
 }
-//=================================
-/*.price__caption {
-  display: table-caption;
-}*/
 
-/*.price__row,
-.price__title {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}*/
-/*.price__cell--1 {
-  width: 120px;
-}*/
-
-/*.price__cell--2,
-.price__cell--3,
-.price__cell--4 {
-  width: 160px;
-}*/
-//=======================================
 .price__head {
   position: relative;
 }
@@ -82,11 +62,15 @@
   }
 }
 
-.price__no-js .price__invisible {
+.price__no-js .price__for-pseudo {
   display: none;
 }
 
-.price__no-js::before {
+.price__no-js .price__sign--hide {
+  display: block;
+}
+
+.price__sign--hide {
   display: none;
 }
 
@@ -110,7 +94,7 @@
 
 @media (min-width: $tablet) {
   .price {
-    max-width: 60%;
+    max-width: 500px;
     font-size: $font18;
   }
 
@@ -122,9 +106,7 @@
 
 @media (min-width: $medium) {
   .price {
-    width: 90%;
-    max-width: unset;
-    //font-size: $font16;
+    max-width: 1130px;
   }
 
   .hide {
@@ -157,8 +139,12 @@
     width: 150px;
   }
 
-  .price__invisible {
+  .price__for-pseudo {
     display: none;
+  }
+
+  .price__sign--hide {
+    display: block;
   }
 
   .price__for-pseudo::before {

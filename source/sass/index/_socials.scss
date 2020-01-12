@@ -33,3 +33,10 @@
     height: 30px;
   }
 }
+
+@media (min-width: $medium) {
+  .social-net__icon {
+    width: 55px;
+    height: 54px;
+  }
+}

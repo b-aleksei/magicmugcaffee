@@ -1,10 +1,13 @@
 .catering {
+  background-image: url("../img/bg/bg-orange.jpg");
+  background-repeat: repeat;
+}
+
+.catering .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 6%;
-  background-image: url("../img/bg/bg-orange.jpg");
-  background-repeat: repeat;
 }
 
 .catering__list {
@@ -91,11 +94,12 @@
 }
 
 @media (min-width: $tablet) {
-  .catering__item {
-    width: 33.33%;
+  .catering__container {
+    padding: 80px 6%;
   }
 
   .catering__item {
+    width: 33.33%;
     font-size: 24px;
   }
 
@@ -103,5 +107,11 @@
     font-size: $font16;
     line-height: $font18;
   }
+}
 
+@media (min-width: $medium) {
+  .catering__item {
+    width: 16.66%;
+    margin-bottom: 80px;
+  }
 }
