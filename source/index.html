@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Magic Mug</title>
   <link rel="stylesheet" href="css/style.css">
-  <!--  <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin="anonymous">-->
+    <link rel="preload" href="fonts/montserrat-v14-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
 <body>
 <div style="display: none;">
@@ -61,41 +62,40 @@
     </symbol>
   </svg>
 </div>
-<!--<div class="container">-->
   <header class="header">
     <div class="container">
     <div class="header__wrap">
       <ul class="header__social social-net">
         <li class="social-net__item">
-          <a href="">
+          <a href="www.fb.com/magic-mug" aria-label="our facebook page">
             <svg class="social-net__icon" width="26" height="25">
               <use xlink:href="#fb"></use>
             </svg>
           </a>
         </li>
         <li class="social-net__item">
-          <a href="">
+          <a href="www.twitter.com/magic-mug" aria-label="our twitter page">
             <svg class="social-net__icon" width="26" height="25">
               <use xlink:href="#twit"></use>
             </svg>
           </a>
         </li>
         <li class="social-net__item">
-          <a href="">
+          <a href="www.gp.com/magic-mug" aria-label="our google plus page">
             <svg class="social-net__icon" width="26" height="25">
               <use xlink:href="#Gplus"></use>
             </svg>
           </a>
         </li>
         <li class="social-net__item">
-          <a href="">
+          <a href="www.pinterest.com/magic-mug" aria-label="our pinterest page">
             <svg class="social-net__icon" width="26" height="25">
               <use xlink:href="#pinterest"></use>
             </svg>
           </a>
         </li>
       </ul>
-      <a class="header__logo" id="top">
+      <a class="header__logo" id="top" aria-label="Logo Magic Mug">
         <svg class="header__img-logo" width="77" height="55">
           <use xlink:href="#logo"></use>
         </svg>
@@ -123,7 +123,7 @@
     </div>
     <div class="header__bg-wrap">
       <picture>
-        <source media="(min-width: 480px)" srcset="img/bg/BG-720.jpg 720w">
+        <source media="(min-width: 480px)" srcset="img/bg/BG-720.jpg">
         <img class="header__bg-image" src="img/bg/BG-480.jpg" alt="background image Magic Mug" width="480"
           height="249"></picture>
     </div>
@@ -189,6 +189,7 @@
       </div>
     </section>
     <section class="offer">
+      <h2 class="visually-hidden">Menu and Price</h2>
       <div class="container">
       <section class="offer__menu menu">
         <h2 class="menu__title glob-h2-red" id="menu">MENU</h2>
@@ -260,7 +261,7 @@
             </th>
             <th class="price__head price__head--2">
               <div class="glob__btn-wrap price__no-js">
-                <label class="price__for-pseudo price__sign"><select class="price__select">
+                <label class="price__for-pseudo price__sign" aria-label="item selection"><select class="price__select">
                   <option id="col-2" value="2">2 hours</option>
                   <option id="col-3" value="3">3hours Guests</option>
                   <option id="col-4" value="4">Add smoothies</option>
@@ -363,7 +364,7 @@
       <div class="container">
       <h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
       <div class="contact__wrap">
-        <form class="contact__form" method="post" name="form">
+        <form class="contact__form" action="form/mail.php" method="post" name="form">
           <label class="contact__label">Your name <input class="contact__input" type="text" name="name" id="name"
             placeholder="Name"
             required></label> <label class="contact__label">Your phone <input class="contact__input" type="tel"
@@ -390,28 +391,28 @@
           <p class="contact__city">City, Country</p>
           <ul class="contact__social social-net">
             <li class="social-net__item">
-              <a href="">
+              <a href="www.fb.com/magic-mug" aria-label="our facebook page">
                 <svg class="social-net__icon" width="26" height="25">
                   <use xlink:href="#fb"></use>
                 </svg>
               </a>
             </li>
             <li class="social-net__item">
-              <a href="">
+              <a href="www.twitter.com/magic-mug" aria-label="our twitter page">
                 <svg class="social-net__icon" width="26" height="25">
                   <use xlink:href="#twit"></use>
                 </svg>
               </a>
             </li>
             <li class="social-net__item">
-              <a href="">
+              <a href="www.google.com/magic-mug" aria-label="our google plus page">
                 <svg class="social-net__icon" width="26" height="25">
                   <use xlink:href="#Gplus"></use>
                 </svg>
               </a>
             </li>
             <li class="social-net__item">
-              <a href="">
+              <a href="www.pinterest.com/magic-mug" aria-label="our pinterest page">
                 <svg class="social-net__icon" width="26" height="25">
                   <use xlink:href="#pinterest"></use>
                 </svg>
@@ -429,11 +430,9 @@
     <p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
     </div>
   </footer>
-<!--</div>-->
 <script src="js/menu-open.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/price.js"></script>
 <script src="js/smooth-scroll.js"></script>
-<!--<script src="js/test.js"></script>-->
 </body>
 </html>
