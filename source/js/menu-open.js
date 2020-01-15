@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 (function () {
 
   let navButton = document.querySelector(".nav__menu-opener");

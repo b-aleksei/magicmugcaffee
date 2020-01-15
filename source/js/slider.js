@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 (function () {
 
 let buttonForward = document.querySelector(".slider__arrow-forward"),
  buttonBack = document.querySelector(".slider__arrow-back"),
  slider = document.querySelector(".slider__inner"),
  arr = ["translate-0", "translate-25", "translate-50", "translate-75"],
- noJs = document.querySelector('.slider__no-js'),
+ noJs = document.querySelector(".slider__no-js"),
  i = 0;
 
 noJs.classList.remove("slider__no-js");
