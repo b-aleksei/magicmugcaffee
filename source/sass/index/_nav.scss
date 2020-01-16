@@ -80,6 +80,17 @@
   .nav__item {
     padding: 0 30px 40px 30px;
   }
+
+  .nav__menu-opener {
+    position: absolute;
+    top: -59px;
+    right: 6%;
+    width: 35px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -100,7 +111,6 @@
   .nav {
     width: auto;
     padding-top: 0;
-    margin-right: 6%;
   }
 
   .nav__list {

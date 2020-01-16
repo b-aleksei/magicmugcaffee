@@ -1,11 +1,12 @@
 .header {
   margin-bottom: 50px;
+  padding: 20px 0 0 0;
 }
 
 .header__wrap {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0 0 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -18,7 +19,10 @@
 }
 
 .header__logo {
-  margin-right: calc(50% - 46px);
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-40%);
 }
 
 .header__nav {
@@ -85,8 +89,7 @@
 @media (min-width: $mobile) {
   .header__social {
     flex-direction: row;
-    height: auto;
-    align-content: unset;
+    align-content: center;
   }
 }
 
@@ -94,12 +97,33 @@
   .header__nav--menu-open .nav__list {
     width: 180px;
   }
+
+  .header__img-logo {
+    width: 90px;
+    height: 70px;
+  }
+
+  .header__social {
+    height: 77px;
+  }
+
+  .header__nav--no-js {
+    padding-top: 40px;
+  }
 }
 
 @media (min-width: $tablet) {
+  .header {
+    margin-bottom: 80px;
+  }
+
   .header__img-logo {
-    width: 82px;
-    height: 60px;
+    width: 110px;
+    height: 85px;
+  }
+
+  .header__social {
+    height: 92px;
   }
 
   .header__nav--menu-open .nav__list {
@@ -110,11 +134,9 @@
     height: 15px;
     background-size: 50px 15px;
   }
-}
 
-@media (min-width: $tablet) {
-  .header {
-    margin-bottom: 80px;
+  .header__nav--no-js {
+    padding-top: 60px;
   }
 }
 
@@ -126,24 +148,53 @@
   .header__nav--menu-open .nav__list {
     width: 260px;
   }
+
+  .header__img-logo {
+    width: 130px;
+    height: 105px;
+  }
+
+  .header__social {
+    height: 112px;
+  }
 }
 
 @media (min-width: $medium) {
+  .header {
+    padding: 30px 0 0 0;
+  }
+
   .header__img-logo {
-    width: 192px;
-    height: 135px;
+    width: 150px;
+    height: 120px;
   }
 
   .header__logo {
-    margin-right: 0;
+    position: static;
+    transform: none;
+    order: -1;
+  }
+
+  .header__social {
+    height: 112px;
+    margin-left: 0;
+    order: 1;
   }
 
   .nav__menu-opener {
     display: none;
   }
 
+  .header__wrap {
+    padding: 0 6% 30px 6%;
+  }
+
   .header__bg-wrap::before {
     height: 30px;
     background-size: 100px 30px;
+  }
+
+  .header__nav--no-js .nav__list {
+    display: flex;
   }
 }

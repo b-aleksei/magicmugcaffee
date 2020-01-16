@@ -12,16 +12,16 @@ $message = urldecode($message);
 $name = trim($name);
 $phone = trim($phone);
 $email = trim($email);
-if (mail("103301@mail.ru", "Заявка с сайта", "Оставил заявку: " .$name. "<br />Его телефон: " .$phone. "<br />Почта
-этого
-пользователя: " .$email. "<br />Его сообщение: " .$message, "From: pochta@bugaev13.tmweb.ru \r\n"))
-    {     echo "Сообщение отправлено. Спасибо Вам " . $name . ", мы скоро свяжемся с Вами.";
+if (mail("103301@mail.ru", "Заявка с сайта", "Оставил заявку: $name \r\n Его телефон: $phone \r\n Почта этого пользователя: $email \r\n Его сообщение: $message", "From: pochta@bugaev13.tmweb.ru \r\n"))
+    {     echo "$name Your message has been successfully sent";
    	echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
    } else {
        echo "при отправке сообщения возникли ошибки";
+       echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
    }
 ?>
 <script>
-function changeurl(){eval(self.location="index.html");}
-window.setTimeout("changeurl();",6000);
+(function changeurl(){eval(self.location="index.html");})();
+/*function changeurl(){eval(self.location="index.html");}
+window.setTimeout("changeurl();",3000);*/
 </script>

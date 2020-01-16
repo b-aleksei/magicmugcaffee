@@ -30,13 +30,20 @@
 @media (min-width: $tablet) {
   .social-net__icon {
     width: 30px;
-    height: 30px;
+    height: 29px;
+  }
+}
+
+@media (min-width: $tabletWide) {
+  .social-net__icon {
+    width: 42px;
+    height: 41px;
   }
 }
 
 @media (min-width: $medium) {
   .social-net__icon {
-    width: 55px;
-    height: 54px;
+    width: 50px;
+    height: 49px;
   }
 }
