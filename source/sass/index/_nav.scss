@@ -1,13 +1,10 @@
 .nav {
-  width: 100%;
   position: relative;
-  text-align: center;
+  text-align: right;
 }
 
 .nav__menu-opener {
-  position: absolute;
-  top: -49px;
-  right: 6%;
+  position: relative;
   width: 35px;
   height: 30px;
   border: 0;
@@ -47,10 +44,15 @@
 .nav__list {
   display: none;
   background-color: #ffecb8;
+  text-align: center;
 }
 
 .nav__item {
   padding: 0 30px 20px 30px;
+}
+
+.nav__item:last-child {
+  padding-bottom: 15px;
 }
 
 .nav__link {
@@ -62,13 +64,19 @@
   text-decoration: none;
 }
 
-@media (min-width: $mobileWide) {
-  .nav__link {
-    font-size: $font16;
-  }
-
+@media (min-width: $mobile) {
   .nav__item {
     padding: 0 30px 30px 30px;
+  }
+}
+
+@media (min-width: $mobileWide) {
+  .nav__list {
+    padding-top: 20px;
+  }
+
+  .nav__link {
+    font-size: $font16;
   }
 }
 
@@ -80,20 +88,9 @@
   .nav__item {
     padding: 0 30px 40px 30px;
   }
-
-  .nav__menu-opener {
-    position: absolute;
-    top: -59px;
-    right: 6%;
-    width: 35px;
-    height: 30px;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $tabletWide) {
   .nav__list {
     padding-top: 40px;
   }
@@ -104,6 +101,10 @@
 
   .nav__item {
     padding: 0 30px 60px 30px;
+  }
+
+  .nav__item:last-child {
+    padding-bottom: 30px;
   }
 }
 
@@ -120,6 +121,10 @@
 
   .nav__item {
     padding: 0;
+  }
+
+  .nav__item:last-child {
+    padding-bottom: 0;
   }
 
   .nav__item:not(:first-child) {
