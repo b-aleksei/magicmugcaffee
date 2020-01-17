@@ -21,6 +21,7 @@
 .header__logo {
   width: 33.3%;
   text-align: center;
+  padding-left: 12px;
 }
 
 .header__img-logo {
@@ -99,6 +100,7 @@
   .header__social {
     flex-direction: row;
     align-content: center;
+    height: auto;
   }
 
   .header__nav--no-js .nav__list {
@@ -121,13 +123,13 @@
     width: 180px;
   }
 
+  .header__logo {
+    padding-left: 15px;
+  }
+
   .header__img-logo {
     width: 90px;
     height: 70px;
-  }
-
-  .header__social {
-    height: 77px;
   }
 
   .header__nav--no-js {
@@ -145,8 +147,8 @@
     height: 85px;
   }
 
-  .header__social {
-    height: 92px;
+  .header__logo {
+    padding-left: 17px;
   }
 
   .header__bg-wrap::before {
@@ -185,8 +187,8 @@
     height: 105px;
   }
 
-  .header__social {
-    height: 112px;
+  .header__logo {
+    padding-left: 20px;
   }
 }
 
@@ -204,11 +206,10 @@
     position: static;
     transform: none;
     order: -1;
+    padding-left: 0;
   }
 
   .header__social {
-    height: 112px;
-    margin-left: 0;
     order: 1;
   }
 
