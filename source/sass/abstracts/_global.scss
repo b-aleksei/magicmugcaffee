@@ -85,17 +85,15 @@ ul {
   height: 40px;
   text-align: center;
   line-height: 40px;
-  background-color: #76c8d6;
+  box-shadow: 0 0 5px 1px rgba(103, 58, 39, 0.8);
   font-size: 18px;
   color: #ba0b11;
   cursor: pointer;
   border-radius: 5px;
   z-index: 999;
-  opacity: 0.7;
 }
 
 .to_top:active {
-  opacity: 1;
   color: #000000;
 }
 

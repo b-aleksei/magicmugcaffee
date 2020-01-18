@@ -124,9 +124,10 @@
     </div>
     <div class="header__bg-wrap">
       <picture>
-        <source media="(min-width: 480px)" srcset="img/bg/BG-720.jpg">
-        <img class="header__bg-image" src="img/bg/BG-480.jpg" alt="background image Magic Mug" width="480"
-          height="249"></picture>
+        <source media="(min-width: 1366px)" srcset="img/bg/bg-MM-1920.jpg">
+        <source media="(min-width: 768px)" srcset="img/bg/bg-MM-1366.jpg">
+        <img class="header__bg-image" src="img/bg/bg-MM-808.jpg" alt="background image Magic Mug" width="808" height="420">
+      </picture>
     </div>
     </div>
   </header>
@@ -366,13 +367,14 @@
       <h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
       <div class="contact__wrap">
         <form class="contact__form" action="mail.php" method="post" name="form">
-          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text" name="user_name" placeholder="Name" ></label>
+          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text"
+            name="user_name" placeholder="Name" required></label>
           <label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel"
             name="user_phone"
             pattern="\+[1-9]{1}[0-9]{10}"
-            placeholder="+19991234567" ></label>
+            placeholder="+19991234567" required></label>
           <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" type="email" name="user_email" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
-            placeholder="address@example.com" ></label>
+            placeholder="address@example.com" required></label>
           <label class="contact__label">Your question <textarea
           class="contact__comment" name="user_message" cols="30" rows="10"></textarea></label>
           <button class="contact__btn glob__btn" type="submit" aria-label="send form"><span
@@ -438,5 +440,6 @@
 <script src="js/slider.js"></script>
 <script src="js/price.js"></script>
 <script src="js/smooth-scroll.js"></script>
+<script src="js/picturefill.min.js"></script>
 </body>
 </html>

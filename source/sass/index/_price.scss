@@ -100,22 +100,18 @@
 
   .price__small {
     font-size: $font16;
-    max-width: 60%;
+    max-width: 500px;
   }
 }
 
 @media (min-width: $medium) {
-  .price {
+  .price,
+  .price__small {
     max-width: 1130px;
   }
 
   .hide {
     display: table-cell;
-  }
-
-  .price__small {
-    max-width: unset;
-    margin-left: 5%;
   }
 
   .price__head--1 {
