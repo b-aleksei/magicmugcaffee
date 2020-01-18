@@ -1,6 +1,6 @@
 .nav {
-  position: relative;
-  text-align: right;
+  width: 100%;
+  text-align: center;
 }
 
 .nav__menu-opener {
@@ -45,6 +45,7 @@
   display: none;
   background-color: #ffecb8;
   text-align: center;
+  padding-top: 30px;
 }
 
 .nav__item {
@@ -66,27 +67,27 @@
 
 @media (min-width: $mobile) {
   .nav__item {
-    padding: 0 30px 30px 30px;
+    padding: 0 0 0 30px;
+  }
+
+  .nav__item:first-child {
+    padding-left: 0;
   }
 }
 
 @media (min-width: $mobileWide) {
-  .nav__list {
-    padding-top: 20px;
-  }
-
   .nav__link {
     font-size: $font16;
   }
 }
 
 @media (min-width: $tablet) {
-  .nav__link {
-    font-size: $font18;
+  .nav__list {
+    padding-top: 40px;
   }
 
-  .nav__item {
-    padding: 0 30px 40px 30px;
+  .nav__link {
+    font-size: $font18;
   }
 }
 
@@ -99,12 +100,8 @@
     font-size: $font22;
   }
 
-  .nav__item {
-    padding: 0 30px 60px 30px;
-  }
-
-  .nav__item:last-child {
-    padding-bottom: 30px;
+  .nav__item:not(:first-child) {
+    padding-left: 40px;
   }
 }
 
@@ -114,20 +111,16 @@
     padding-top: 0;
   }
 
-  .nav__list {
-    display: flex;
-    padding-top: 0;
+  .nav__menu-opener {
+    display: none;
   }
 
-  .nav__item {
+  .nav__list {
     padding: 0;
+    display: flex;
   }
 
   .nav__item:last-child {
     padding-bottom: 0;
-  }
-
-  .nav__item:not(:first-child) {
-    padding-left: 40px;
   }
 }
