@@ -113,4 +113,12 @@
     width: 16.66%;
     margin-bottom: 80px;
   }
+
+  .catering__link {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }

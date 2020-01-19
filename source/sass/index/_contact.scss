@@ -195,4 +195,12 @@
     letter-spacing: 3px;
     margin-bottom: 53px;
   }
+
+  .contact__btn {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }

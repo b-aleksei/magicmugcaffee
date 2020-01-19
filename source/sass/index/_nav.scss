@@ -59,10 +59,18 @@
 .nav__link {
   display: block;
   width: auto;
-  border-bottom: 1px solid rgba(103, 58, 39, 0.3);
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
+  line-height: 1.5;
   color: inherit;
   text-decoration: none;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(103, 58, 39, 0.5);
+  }
 }
 
 @media (min-width: $mobile) {
@@ -72,6 +80,20 @@
 
   .nav__item:first-child {
     padding-left: 0;
+  }
+
+  .nav__link {
+    transition: 0.3s;
+
+    &::after {
+      transform: scale(0);
+      transition: 0.3s;
+    }
+
+    &:hover::after,
+    &:active::after {
+      transform: scale(1);
+    }
   }
 }
 
