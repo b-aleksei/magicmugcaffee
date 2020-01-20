@@ -199,8 +199,13 @@
   .contact__btn {
     transition: 0.3s;
 
-    &:hover {
-      transform: scale(1.05);
+    &:active .contact__btn-name {
+      color: #dba101;
     }
+
+    &:hover .contact__btn-bg {
+      color: $hoverColor;
+    }
+
   }
 }

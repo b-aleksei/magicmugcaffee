@@ -117,8 +117,12 @@
   .catering__link {
     transition: 0.3s;
 
-    &:hover {
-      transform: scale(1.05);
+    &:active {
+      color: #dba101;
+    }
+
+    &:hover .catering__btn-bg {
+      color: $hoverColor;
     }
   }
 }

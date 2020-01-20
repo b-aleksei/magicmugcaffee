@@ -90,6 +90,10 @@
       transition: 0.3s;
     }
 
+    &:hover {
+      color: $hoverColor;
+    }
+
     &:hover::after,
     &:active::after {
       transform: scale(1);
@@ -144,5 +148,25 @@
 
   .nav__item:last-child {
     padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .nav__link {
+    font-size: $font28;
+  }
+
+  .nav__item:not(:first-child) {
+    padding-left: 50px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .nav__link {
+    font-size: $font32;
+  }
+
+  .nav__item:not(:first-child) {
+    padding-left: 60px;
   }
 }

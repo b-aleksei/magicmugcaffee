@@ -4,10 +4,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Magic Mug</title>
   <link rel="stylesheet" href="css/style.css">
-    <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <title>Magic Mug</title>
+  <meta name="title" content="Magic Mug">
+  <meta name="description" content="We do the best coffee in the world">
+  <meta name="keywords" content="coffee, mug, food track, mobile cafe, cafe">
+  <meta name="application-name" content="MagicMugCafe">
+  <meta name="apple-mobile-web-app-title" content="MagicMugCafe">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="mask-icon" href="favicon.svg" color="#c3743c">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="mstile-144x144.png">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <link rel="icon" sizes="16x16 32x32 48x48" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
 <body>
 <div style="display: none;">
@@ -369,7 +381,7 @@
       <div class="container">
       <h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
       <div class="contact__wrap">
-        <form class="contact__form" action="mail.php" method="post" name="form">
+        <form class="contact__form" id="form">
           <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text"
             name="user_name" placeholder="Name" required></label>
           <label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel"
@@ -442,7 +454,9 @@
 <script src="js/menu-open.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/price.js"></script>
-<script src="js/smooth-scroll.js"></script>
 <script src="js/picturefill.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/send.js"></script>
 </body>
 </html>
