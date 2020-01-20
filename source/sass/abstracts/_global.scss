@@ -13,7 +13,7 @@ body {
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.6;
   color: $textColor;
   background-color: #ffecb8;
 }
@@ -61,7 +61,7 @@ ul {
   margin: 0 0 40px 0;
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font14;
-  line-height: 28px;
+  //line-height: 28px;
   letter-spacing: 1.3px;
   text-transform: uppercase;
   text-align: center;
@@ -71,7 +71,7 @@ ul {
 .glob-h2-red {
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font24;
-  line-height: 36px;
+  //line-height: 36px;
   color: #ba0b11;
   text-transform: uppercase;
 }
@@ -80,22 +80,20 @@ ul {
   display: none;
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  right: 10px;
   width: 40px;
   height: 40px;
   text-align: center;
   line-height: 40px;
-  background-color: #76c8d6;
+  box-shadow: 0 0 5px 1px rgba(103, 58, 39, 0.8);
   font-size: 18px;
   color: #ba0b11;
   cursor: pointer;
   border-radius: 5px;
   z-index: 999;
-  opacity: 0.7;
 }
 
 .to_top:active {
-  opacity: 1;
   color: #000000;
 }
 
@@ -106,7 +104,7 @@ ul {
 @media (min-width: $mobileMini) {
   .glob-h2-red {
     font-size: $font26;
-    line-height: 40px;
+    //line-height: 40px;
     color: #ba0b11;
   }
 }
@@ -129,7 +127,11 @@ ul {
 
   .glob-h2-red {
     font-size: $font30;
-    line-height: 45px;
+    //line-height: 45px;
+  }
+
+  .to_top {
+    right: 20px;
   }
 }
 
@@ -140,11 +142,15 @@ ul {
 
   .glob-h2-red {
     font-size: $font34;
-    line-height: 48px;
+    //line-height: 48px;
   }
 
   .glob__btn-wrap {
     padding: 17px 30px;
+  }
+
+  .to_top {
+    right: 30px;
   }
 }
 
@@ -152,8 +158,18 @@ ul {
   .to_top {
     width: 50px;
     height: 50px;
-    line-height: 48px;
     font-size: 24px;
+    //line-height: 48px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .glob-h2 {
+    font-size: $font28;
+  }
+
+  .glob-h2-red {
+    font-size: $font44;
   }
 }
 

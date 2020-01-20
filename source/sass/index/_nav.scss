@@ -1,6 +1,6 @@
 .nav {
-  position: relative;
-  text-align: right;
+  width: 100%;
+  text-align: center;
 }
 
 .nav__menu-opener {
@@ -45,6 +45,7 @@
   display: none;
   background-color: #ffecb8;
   text-align: center;
+  padding-top: 30px;
 }
 
 .nav__item {
@@ -58,35 +59,61 @@
 .nav__link {
   display: block;
   width: auto;
-  border-bottom: 1px solid rgba(103, 58, 39, 0.3);
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
+  line-height: 1.5;
   color: inherit;
   text-decoration: none;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(103, 58, 39, 0.5);
+  }
 }
 
 @media (min-width: $mobile) {
   .nav__item {
-    padding: 0 30px 30px 30px;
+    padding: 0 0 0 30px;
+  }
+
+  .nav__item:first-child {
+    padding-left: 0;
+  }
+
+  .nav__link {
+    transition: 0.3s;
+
+    &::after {
+      transform: scale(0);
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: $hoverColor;
+    }
+
+    &:hover::after,
+    &:active::after {
+      transform: scale(1);
+    }
   }
 }
 
 @media (min-width: $mobileWide) {
-  .nav__list {
-    padding-top: 20px;
-  }
-
   .nav__link {
     font-size: $font16;
   }
 }
 
 @media (min-width: $tablet) {
-  .nav__link {
-    font-size: $font18;
+  .nav__list {
+    padding-top: 40px;
   }
 
-  .nav__item {
-    padding: 0 30px 40px 30px;
+  .nav__link {
+    font-size: $font18;
   }
 }
 
@@ -99,12 +126,8 @@
     font-size: $font22;
   }
 
-  .nav__item {
-    padding: 0 30px 60px 30px;
-  }
-
-  .nav__item:last-child {
-    padding-bottom: 30px;
+  .nav__item:not(:first-child) {
+    padding-left: 40px;
   }
 }
 
@@ -114,20 +137,36 @@
     padding-top: 0;
   }
 
-  .nav__list {
-    display: flex;
-    padding-top: 0;
+  .nav__menu-opener {
+    display: none;
   }
 
-  .nav__item {
+  .nav__list {
     padding: 0;
+    display: flex;
   }
 
   .nav__item:last-child {
     padding-bottom: 0;
   }
+}
+
+@media (min-width: 1600px) {
+  .nav__link {
+    font-size: $font28;
+  }
 
   .nav__item:not(:first-child) {
-    padding-left: 30px;
+    padding-left: 50px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .nav__link {
+    font-size: $font32;
+  }
+
+  .nav__item:not(:first-child) {
+    padding-left: 60px;
   }
 }

@@ -189,15 +189,23 @@
     margin: 0;
   }
 
-  .contact__link {
-    font-size: $font30;
+  .contact__link,
+  .contact__city {
+    font-size: $font20;
     letter-spacing: 3px;
     margin-bottom: 53px;
   }
 
-  .contact__city {
-    font-size: $font30;
-    letter-spacing: 3px;
-    margin-bottom: 53px;
+  .contact__btn {
+    transition: 0.3s;
+
+    &:active .contact__btn-name {
+      color: #dba101;
+    }
+
+    &:hover .contact__btn-bg {
+      color: $hoverColor;
+    }
+
   }
 }
