@@ -14,18 +14,15 @@
 .about-us__title strong {
   display: block;
   font-size: $font20;
-  //line-height: 30px;
 
   @media (min-width: 414px) {
     font-size: 26px;
-    //line-height: 40px;
   }
 }
 
 @media (min-width: $mobileMini) {
   .about-us__title strong {
     font-size: 23px;
-    //line-height: 34px;
   }
 
   .about-us__title {
@@ -36,7 +33,6 @@
 @media (min-width: $mobileWide) {
   .about-us__title strong {
     font-size: $font30;
-    //line-height: 45px;
   }
 
   .about-us__content {
@@ -47,7 +43,6 @@
 @media (min-width: $tablet) {
   .about-us__title strong {
     font-size: $font34;
-    //line-height: 48px;
   }
 
   .about-us__content {
@@ -74,6 +69,5 @@
 @media (min-width: 1600px) {
   .about-us__title strong {
     font-size: $font44;
-    //line-height: 1.5;
   }
 }

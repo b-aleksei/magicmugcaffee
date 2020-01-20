@@ -61,7 +61,6 @@ ul {
   margin: 0 0 40px 0;
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font14;
-  //line-height: 28px;
   letter-spacing: 1.3px;
   text-transform: uppercase;
   text-align: center;
@@ -71,7 +70,6 @@ ul {
 .glob-h2-red {
   font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
   font-size: $font24;
-  //line-height: 36px;
   color: #ba0b11;
   text-transform: uppercase;
 }
@@ -104,7 +102,6 @@ ul {
 @media (min-width: $mobileMini) {
   .glob-h2-red {
     font-size: $font26;
-    //line-height: 40px;
     color: #ba0b11;
   }
 }
@@ -127,7 +124,6 @@ ul {
 
   .glob-h2-red {
     font-size: $font30;
-    //line-height: 45px;
   }
 
   .to_top {
@@ -142,7 +138,6 @@ ul {
 
   .glob-h2-red {
     font-size: $font34;
-    //line-height: 48px;
   }
 
   .glob__btn-wrap {
@@ -159,7 +154,6 @@ ul {
     width: 50px;
     height: 50px;
     font-size: 24px;
-    //line-height: 48px;
   }
 }
 
@@ -193,24 +187,3 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-
-/*
-@media (min-width: $tablet) {
-  .container {
-    min-width: 720px;
-  }
-}
-*/
-
-/*@media (min-width: $medium) {
-  .container {
-    min-width: 1200px;
-  }
-}*/
-
-/*@media (min-width: $large) {
-  .container {
-    width: 1800px;
-  }
-}*/
