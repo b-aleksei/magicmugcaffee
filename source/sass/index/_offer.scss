@@ -1,11 +1,3 @@
-/*.offer .container {
-   padding: 35% 6% 35% 6%;
-   background-image: url("../img/bg/palm480_top.png"), url("../img/bg/palm480_bottom.png");
-   background-repeat: no-repeat, no-repeat;
-   background-size: 100% auto, 100% auto;
-   background-position: center top, center bottom;
- }*/
-
 .offer .container {
   position: relative;
   padding: 35% 0;
@@ -17,7 +9,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 140px;
+    height: 120px;
     background-image: url("../img/png/palm-sprite@1x.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -31,6 +23,24 @@
   }
 }
 
+@media (min-width: 400px) {
+  .offer .container {
+    &::before,
+    &::after {
+      height: 140px;
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .offer .container {
+    &::before,
+    &::after {
+      background-image: url("../img/png/palm-sprite@2x.png");
+    }
+  }
+}
+
 .offer__rate,
 .offer__menu {
   padding: 0 6%;
@@ -40,7 +50,16 @@
   .offer .container {
     &::before,
     &::after {
-      height: 220px;
+      height: 180px;
+    }
+  }
+}
+
+@media (min-width: 628px) {
+  .offer .container {
+    &::before,
+    &::after {
+      height: 200px;
     }
   }
 }
@@ -51,18 +70,19 @@
 
     &::before {
       width: 477px;
+      height: 150px;
       transform: rotate(-90deg);
-      top: 35%;
-      left: -129px;
+      top: 45%;
+      left: -164px;
     }
 
     &::after {
       width: 1150px;
+      height: 150px;
       transform: rotate(-90deg);
       left: auto;
       bottom: 40%;
-      right: -465px;
-      background-image: url("../img/png/palm-sprite@1x.png");
+      right: -500px;
       background-repeat: space;
       background-size: 477px auto;
     }
@@ -74,12 +94,28 @@
     padding: 80px 0;
 
     &::before {
-      top: 50%;
+      top: 52%;
     }
 
     &::after {
       width: 1430px;
-      right: -605px;
+      right: -640px;
+      bottom: 43%;
+    }
+  }
+}
+
+@media (min-width: $medium) {
+  .offer .container {
+    padding: 80px 0;
+
+    &::before {
+      top: 45%;
+    }
+
+    &::after {
+      width: 1278px;
+      right: -564px;
     }
   }
 }
@@ -88,13 +124,15 @@
   .offer .container {
     &::before {
       width: 666px;
+      height: 220px;
       left: -223px;
     }
 
     &::after {
-      width: 1600px;
-      right: -690px;
-      background-size: 666px auto;
+      width: 1380px;
+      height: 200px;
+      right: -591px;
+      background-size: 560px auto;
     }
   }
 }
