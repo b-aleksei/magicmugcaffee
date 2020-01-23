@@ -20,8 +20,3 @@ if (mail("magicmugcafe@gmail.com", "Заявка с сайта", "Оставил
        echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
    }
 ?>
-/*<script>
-(function changeurl(){eval(self.location="index.html");})();
-function changeurl(){eval(self.location="index.html");}
-window.setTimeout("changeurl();",3000);
-</script>*/
