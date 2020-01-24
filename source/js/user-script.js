@@ -95,7 +95,7 @@ select.onchange = function () {
 let buttonForward = document.querySelector(".slider__arrow-forward"),
   buttonBack = document.querySelector(".slider__arrow-back"),
   slider = document.querySelector(".slider__inner"),
-  arr = ["translate-0", "translate-25", "translate-50", "translate-75"],
+  arr = ["translate-0", "translate-25", "translate-50"],
   noJScript = document.querySelector(".slider__no-js"),
   i = 0;
 
