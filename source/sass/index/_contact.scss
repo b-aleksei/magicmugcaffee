@@ -64,6 +64,17 @@
 
 .contact__btn-bg {
   color: $textColor;
+  transition: color 0.3s;
+}
+
+.contact__btn {
+  &:active .contact__btn-name {
+    color: #dba101;
+  }
+
+  &:hover .contact__btn-bg {
+    color: $hoverColor;
+  }
 }
 
 .contact__images {
@@ -194,18 +205,5 @@
     font-size: $font20;
     letter-spacing: 3px;
     margin-bottom: 53px;
-  }
-
-  .contact__btn {
-    transition: 0.3s;
-
-    &:active .contact__btn-name {
-      color: #dba101;
-    }
-
-    &:hover .contact__btn-bg {
-      color: $hoverColor;
-    }
-
   }
 }

@@ -132,7 +132,7 @@ gulp.task("refresh", function (done) {
 gulp.task("watch", function () {
 gulp.watch("source/sass/**/*.{scss,sass}", {usePolling: true}, gulp.series("css"));
 gulp.watch("source/*.html", gulp.series("refresh"));
-gulp.watch("source/js/*.js", gulp.series("js")).on("change", server.reload);
+// gulp.watch("source/js/*.js", gulp.series("js")).on("change", server.reload);
 });
 
 /*gulp.watch("source/sass/!**!/!*.{scss,sass}", gulp.series("css"));

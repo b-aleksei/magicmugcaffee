@@ -397,12 +397,11 @@
       <div class="contact__wrap">
         <form class="contact__form" id="form" action="mail.php" method="post">
           <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text"
-            name="user_name" placeholder="Name"
+            name="user_name" placeholder="Name" pattern="[A-z, А-я]{2,}"
             required></label>
           <label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel"
-            name="user_phone"
-            pattern="\+[1-9]{1}[0-9]{10}"
-            placeholder="+19991234567" required></label>
+            name="user_phone" id="phone"
+            placeholder="+1(999)999-99-99" required></label>
           <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" type="email"
             name="user_email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
@@ -425,7 +424,7 @@
             height="300"></div>
         </div>
         <address class="contact__address">
-          <a class="contact__link" href="tel:+10001231212">+1(954)3301638</a> <a class="contact__link"
+          <a class="contact__link" href="tel:+19543301638">+1(954)3301638</a> <a class="contact__link"
           href="mailto:info@magicmugcafe.com">info@magicmugcafe.com</a>
           <p class="contact__city">Hollywood, Florida, USA</p>
           <ul class="contact__social social-net">
@@ -462,8 +461,20 @@
     <p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
   </div>
 </footer>
+<div class="success-send hide">
+  <div class="success-send__wrap">
+    <h1 class="success-send__title">Your application is accepted. Thanks!<br>We will contact you soon.</h1>
+    <button class="success-send__button" aria-label="close"></button>
+  </div>
+</div>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/user-script.js"></script>
 <script src="js/picturefill.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#phone").mask("+1 (999) 999-99-99");
+  });
+</script>
 </body>
 </html>
