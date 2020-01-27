@@ -133,7 +133,6 @@ $(document).ready(function() {
       data: $(this).serialize()
     }).done(function() {
       $(this).find("input").val("");
-      // alert("Your application is accepted! Thanks.");
       successSend.classList.remove("hide");
       form.trigger("reset");
     });

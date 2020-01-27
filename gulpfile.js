@@ -29,18 +29,16 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
-    // .pipe(sass({outputStyle: "expanded"}))
-    /*.pipe(gulp.dest("source/css"))
     .pipe(csso())
-    .pipe(rename({suffix: ".min"}))*/
+    .pipe(rename({suffix: ".min"}))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
 gulp.task("server", function () {
   server.init({
-    server: "source/",
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -52,7 +50,7 @@ gulp.task("js", function () {
   return gulp.src(["source/js/*.js", "!source/js/*.min.js"])
     .pipe(uglify())
     .pipe(rename({suffix: ".min"}))
-    .pipe(gulp.dest("source/js/"));
+    .pipe(gulp.dest("build/js/"));
 });
 
 gulp.task("images", function () {
@@ -69,10 +67,6 @@ gulp.task("images", function () {
     }))
     .pipe(gulp.dest("source/img/222"))
 });
-
-gulp.task("clear", () =>
-  cache.clearAll()
-);
 
 gulp.task("webp", function () {
   return gulp.src("source/img/**/*.{png,jpg}")
@@ -98,7 +92,7 @@ gulp.task("posthtml", function () {
 });
 
 gulp.task("minhtml", () => {
-  return gulp.src("build/*.html")
+  return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
 });
@@ -107,11 +101,15 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/*.min.js",
-    "source/*.ico"
+    "source/js/*.min.js"
   ], {
     base: "source"
   })
+    .pipe(gulp.dest("build"))
+});
+
+gulp.task("favicon", function () {
+  return gulp.src("source/favicon/**")
     .pipe(gulp.dest("build"))
 });
 
@@ -131,14 +129,11 @@ gulp.task("refresh", function (done) {
 
 gulp.task("watch", function () {
 gulp.watch("source/sass/**/*.{scss,sass}", {usePolling: true}, gulp.series("css"));
-gulp.watch("source/*.html", gulp.series("refresh"));
+gulp.watch("source/*.html", gulp.series("minhtml", "refresh"));
 // gulp.watch("source/js/*.js", gulp.series("js")).on("change", server.reload);
 });
 
-/*gulp.watch("source/sass/!**!/!*.{scss,sass}", gulp.series("css"));
-gulp.watch("source/!*.html", gulp.series("refresh"));
-gulp.watch("source/js/!*.js", gulp.series("js")).on("change", server.reload);*/
-
-// gulp.task("build", gulp.series("clean", "copy", "css", "posthtml", "minhtml", "js"));
-gulp.task("start", gulp.parallel("server", "watch"));
-// gulp.task("start", gulp.series("css", "server"));
+gulp.task("build", gulp.series("clean", "copy", "favicon", "css", "minhtml"));
+gulp.task("updater", gulp.parallel("watch", "server"));
+// gulp.task("start", gulp.parallel("server", "watch"));
+gulp.task("start", gulp.series("build", "updater"));
