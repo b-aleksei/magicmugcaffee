@@ -118,6 +118,12 @@ buttonBack.addEventListener("click", function () {
 });
 
 //=====================send===========================================
+let successSend = document.querySelector('.success-send');
+let successSendButton = document.querySelector('.success-send__button');
+successSendButton.addEventListener("click", function () {
+  successSend.classList.add("hide")
+});
+
 $(document).ready(function() {
   let form = $("#form");
   form.submit(function() {
@@ -127,7 +133,8 @@ $(document).ready(function() {
       data: $(this).serialize()
     }).done(function() {
       $(this).find("input").val("");
-      alert("Your application is accepted! Thanks.");
+      // alert("Your application is accepted! Thanks.");
+      successSend.classList.remove("hide");
       form.trigger("reset");
     });
     return false;
