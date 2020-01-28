@@ -118,10 +118,24 @@ buttonBack.addEventListener("click", function () {
 });
 
 //=====================send===========================================
+let tmp = document.querySelector('.contact__btn');
 let successSend = document.querySelector('.success-send');
 let successSendButton = document.querySelector('.success-send__button');
+
 successSendButton.addEventListener("click", function () {
-  successSend.classList.add("hide")
+  successSend.classList.add("hide");
+});
+
+document.addEventListener("keydown", function (evt) {
+  if (evt.code === "Escape") {
+    successSend.classList.add("hide");
+  }
+});
+
+tmp.addEventListener("click", function () {
+  successSend.classList.remove("hide");
+  successSendButton.focus()
+
 });
 
 $(document).ready(function() {
