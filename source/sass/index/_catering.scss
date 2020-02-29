@@ -82,7 +82,8 @@
     color: #dba101;
   }
 
-  &:active .catering__btn-bg {
+  &:active .catering__btn-bg,
+  &:focus .catering__btn-bg {
     color: $hoverColor;
   }
 }

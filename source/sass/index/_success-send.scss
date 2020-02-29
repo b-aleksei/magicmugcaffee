@@ -8,13 +8,13 @@
   z-index: 999;
 }
 
-.success-send.hide {
+.success-send.display-none {
   display: none;
 }
 
 .success-send__title {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .success-send__wrap {
@@ -34,32 +34,21 @@
 
 .success-send__button {
   position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: transparent;
-  background-color: transparent;
+  width: 120px;
+  height: 60px;
+  //border-radius: 50%;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  background-color: $textColor;
   transition: 0.3s;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 39px;
-    left: 0;
-    width: 80px;
-    height: 2px;
-    background-color: #ba0b11;
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
+  font: inherit;
+  font-size: $font24;
+  color: #ffffff;
+  letter-spacing: 2px;
 
   &:active {
-    background-color: #ffffff;
+    background-color: $hoverColor;
+    color: #dba101;
   }
 }
-
-
