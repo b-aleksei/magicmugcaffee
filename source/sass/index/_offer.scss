@@ -122,17 +122,41 @@
 
 @media (min-width: 1680px) {
   .offer .container {
-    &::before {
+    &::before,
+    &::after {
+      top: 35%;
+      left: -280px;
+      height: 495px;
       width: 666px;
-      height: 220px;
-      left: -223px;
+      background-image: url("../img/png/palm_1332.png");
+      background-position: 0 0;
     }
 
     &::after {
-      width: 1380px;
-      height: 200px;
-      right: -591px;
-      background-size: 560px auto;
+      left: initial;
+      right: -840px;
+      width: 1680px;
+      background-size: 666px auto;
+    }
+  }
+}
+
+@media (min-width: 1921px) {
+  .offer .container {
+    &::before,
+    &::after {
+      top: 33%;
+      left: -250px;
+      height: 495px;
+      background-image: url("../img/png/palm_1332.png");
+      background-position: 0 0;
+    }
+
+    &::after {
+      left: initial;
+      right: -780px;
+      width: 1680px;
+      background-size: 666px auto;
     }
   }
 }

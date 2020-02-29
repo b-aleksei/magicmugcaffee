@@ -17,6 +17,6 @@ if (mail("magicmugcafe@gmail.com", "Заявка с сайта", "Оставил
    	echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
    } else {
        echo "при отправке сообщения возникли ошибки";
-       echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
+       echo "<br /><br /><a href='index.html'>comeback to the site</a>";
    }
 ?>
