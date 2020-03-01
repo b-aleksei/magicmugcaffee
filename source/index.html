@@ -23,6 +23,8 @@
   <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <script defer src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/jquery.maskedinput.min.js"></script>
+  <script defer src="js/script.min.js"></script>
 </head>
 <body>
 <div style="display: none;">
@@ -425,10 +427,14 @@
 </span></button>
         </form>
         <div class="contact__images">
-          <div class="contact__img contact__img-1"><img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300"
-            height="300" loading="lazy"></div>
-          <div class="contact__img contact__img-2"><img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300"
-            height="300" loading="lazy"></div>
+          <picture class="contact__img contact__img-1">
+            <source type="image/webp" srcset="img/bg/1cup300.webp">
+            <img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300"
+            height="300" loading="lazy"></picture>
+          <picture class="contact__img contact__img-2">
+            <source type="image/webp" srcset="img/bg/2cup300.webp">
+            <img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300"
+            height="300" loading="lazy"></picture>
         </div>
         <address class="contact__address">
           <a class="contact__link" href="tel:+19543301638">+1(954)3301638</a> <a class="contact__link"
@@ -474,13 +480,6 @@
     <button class="success-send__button" aria-label="close">close</button>
   </div>
 </div>
-<script src="js/picturefill.min.js"></script>
-<script src="js/script.min.js"></script>
-<script src="js/jquery.maskedinput.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $("#phone").mask("+1 (999) 999-99-99");
-  });
-</script>
+<!--<script src="js/picturefill.min.js"></script>-->
 </body>
 </html>
