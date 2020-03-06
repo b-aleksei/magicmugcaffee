@@ -138,7 +138,7 @@ gulp.task("watch", function () {
   gulp.watch("source/js/*.js", gulp.series("js")).on("change", server.reload);
 });
 
-gulp.task("build", gulp.series("clean", "copy", "favicon", "css", "minhtml"));
+gulp.task("build", gulp.series("clean", "copy", "favicon", "css", "minhtml", "js"));
 gulp.task("updater", gulp.parallel("watch", "server"));
 // gulp.task("start", gulp.parallel("server", "watch"));
 gulp.task("start", gulp.series("build", "updater"));

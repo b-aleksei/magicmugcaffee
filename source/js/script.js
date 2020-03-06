@@ -179,4 +179,9 @@ for (let anchor of anchors) {
     });
   });
 
+//  phone mask
+  $(document).ready(function () {
+    $("#phone").mask("+1 (999) 999-99-99");
+  });
+
 })();
