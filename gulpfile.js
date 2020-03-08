@@ -22,7 +22,7 @@ const gulp = require("gulp"),
   terser = require('gulp-terser');
 
 gulp.task("css", function () {
-  return gulp.src("source/sass/style.scss")
+  return gulp.src("source/sass/*.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
