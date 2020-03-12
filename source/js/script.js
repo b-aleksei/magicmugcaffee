@@ -100,30 +100,49 @@ for (let anchor of anchors) {
 
 //=====================slider===========================================
 (function () {
-  let buttonForward = document.querySelector(".slider__arrow-forward"),
-    buttonBack = document.querySelector(".slider__arrow-back"),
-    slider = document.querySelector(".slider__inner"),
-    arr = ["translate-0", "translate-25", "translate-50"],
-    noJScript = document.querySelector(".slider__no-js"),
-    i = 0;
+  let slider = document.querySelector('.slider'),
+    buttonForward = slider.querySelector(".slider__arrow-forward"),
+    buttonBack = slider.querySelector(".slider__arrow-back"),
+    slideContainer = document.querySelector('.slider__slides'),
+    amountSlides = slider.querySelectorAll('.slider__item').length,
+    indicatorContainer = slider.querySelector('.slider__indicators'),
+    translate = 0;
 
-  noJScript.classList.remove("slider__no-js");
+  for (let i = 0; i < amountSlides; i++) {
+    indicatorContainer.insertAdjacentHTML("beforeend", `<span class="slider__ind">`)
+  }
+
+  indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+
+  buttonBack.hidden = true;
+  slider.classList.remove("slider__no-js");
 
   buttonForward.addEventListener("click", function () {
-    if (i < arr.length - 1) {
-      slider.classList.remove(arr[i]);
-      i += 1;
-      slider.classList.add(arr[i]);
+    indicatorContainer.children[translate].style.backgroundColor = '';
+    if (translate < amountSlides - 1) {
+      buttonBack.hidden = false;
+      translate += 1;
+      slideContainer.style.transform = `translate(-${translate * 100}%)`;
+      indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+      if (translate === amountSlides - 1) {
+        buttonForward.hidden = true;
+      }
     }
   });
 
   buttonBack.addEventListener("click", function () {
-    if (i > 0) {
-      slider.classList.remove(arr[i]);
-      i -= 1;
-      slider.classList.add(arr[i]);
+    indicatorContainer.children[translate].style.backgroundColor = '';
+    if (translate > 0) {
+      buttonForward.hidden = false;
+      translate -= 1;
+      slideContainer.style.transform = `translate(-${translate * 100}%)`;
+      indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+      if (translate === 0) {
+        buttonBack.hidden = true;
+      }
     }
   });
+
 })();
 
 //=====================send===========================================
