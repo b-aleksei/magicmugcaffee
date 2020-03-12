@@ -133,16 +133,6 @@ for (let anchor of anchors) {
   let btnText = document.querySelector('.contact__btn-name');
   let preloader = document.querySelector('.sk-three-bounce');
 
-  successSend.addEventListener("click", function (evt) {
-    successSend.classList.add("display-none");
-  });
-
-  document.addEventListener("keydown", function (evt) {
-    if (evt.code === "Escape") {
-      successSend.classList.add("display-none");
-    }
-  });
-
   let showPreload = function () {
     btnText.textContent = 'SENDING';
     btnText.classList.add('sending');
@@ -156,11 +146,11 @@ for (let anchor of anchors) {
     preloader.classList.add('display-none');
   };
 
-  document.addEventListener('keydown', function (e) {
-    if(e.key === 'Escape') {
-      sendSuccess()
-    }
-  });
+  let closePopup = function () {
+      successSend.classList.add("display-none");
+      document.removeEventListener("keydown", closePopup);
+    successSend.removeEventListener("click", closePopup);
+  };
 
   $(document).ready(function () {
     let form = $("#form");
@@ -172,6 +162,12 @@ for (let anchor of anchors) {
         data: $(this).serialize()
       }).done(function () {
         sendSuccess();
+        document.addEventListener("keydown", function (evt) {
+          if (evt.code === "Escape") {
+            closePopup()
+          }
+        });
+        successSend.addEventListener("click", closePopup);
         $(this).find("input").val("");
         form.trigger("reset");
       });

@@ -27,26 +27,29 @@
 }
 
 .advantages__img {
-  background-image: url("../img/png/sprite-icon.png");
+  background-image: url("../img/png/sprite-icon@1x.png");
   background-repeat: no-repeat;
+  background-size: 171px 916px;
+  height: 100px;
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../img/png/sprite-icon@2x.png");
+  }
 }
 
 .advantages__img--one {
-  background-position: 0 -674px;
-  width: 132px;
-  height: 79px;
+  background-position: 0 -612px;
+  width: 171px;
 }
 
 .advantages__img--two {
-  background-position: 0 0;
-  width: 90px;
-  height: 89px;
+  background-position: 0 -714px;
+  width: 100px;
 }
 
 .advantages__img--three {
-  background-position: 0 -577px;
-  width: 95px;
-  height: 96px;
+  background-position: 0 -816px;
+  width: 101px;
 }
 
 .advantages__topic {
