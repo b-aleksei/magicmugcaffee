@@ -16,42 +16,42 @@
 //=====================scroll===========================================
 (function () {
 
-function trackScroll() {
-  let scrolled = window.pageYOffset;
-  let coords = document.documentElement.clientHeight;
-  if (scrolled > coords) {
-    goToTop.classList.add("to_top-show");
+  function trackScroll() {
+    let scrolled = window.pageYOffset;
+    let coords = document.documentElement.clientHeight;
+    if (scrolled > coords) {
+      goToTop.classList.add("to_top-show");
+    }
+    if (scrolled < coords) {
+      goToTop.classList.remove("to_top-show");
+    }
   }
-  if (scrolled < coords) {
-    goToTop.classList.remove("to_top-show");
+
+  function backToTop() {
+    if (window.pageYOffset > 0) {
+      window.scrollBy(0, -80);
+      setTimeout(backToTop, 0);
+    }
   }
-}
 
-function backToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -80);
-    setTimeout(backToTop, 0);
-  }
-}
+  let goToTop = document.querySelector(".to_top");
+  window.addEventListener("scroll", trackScroll);
+  goToTop.addEventListener("click", backToTop);
 
-let goToTop = document.querySelector(".to_top");
-window.addEventListener("scroll", trackScroll);
-goToTop.addEventListener("click", backToTop);
+  let anchors = document.querySelectorAll(".scroll-to");
 
-let anchors = document.querySelectorAll(".scroll-to");
+  for (let anchor of anchors) {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
 
-for (let anchor of anchors) {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+      let getId = anchor.getAttribute("href");
 
-    let getId = anchor.getAttribute("href");
-
-    document.querySelector(getId).scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+      document.querySelector(getId).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      })
     })
-  })
-}
+  }
 })();
 //=====================price===========================================
 (function () {
@@ -119,27 +119,23 @@ for (let anchor of anchors) {
 
   buttonForward.addEventListener("click", function () {
     indicatorContainer.children[translate].style.backgroundColor = '';
-    if (translate < amountSlides - 1) {
-      buttonBack.hidden = false;
-      translate += 1;
-      slideContainer.style.transform = `translate(-${translate * 100}%)`;
-      indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
-      if (translate === amountSlides - 1) {
-        buttonForward.hidden = true;
-      }
+    buttonBack.hidden = false;
+    translate += 1;
+    slideContainer.style.transform = `translate(-${translate * 100}%)`;
+    indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+    if (translate === amountSlides - 1) {
+      this.hidden = true;
     }
   });
 
   buttonBack.addEventListener("click", function () {
     indicatorContainer.children[translate].style.backgroundColor = '';
-    if (translate > 0) {
-      buttonForward.hidden = false;
-      translate -= 1;
-      slideContainer.style.transform = `translate(-${translate * 100}%)`;
-      indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
-      if (translate === 0) {
-        buttonBack.hidden = true;
-      }
+    buttonForward.hidden = false;
+    translate -= 1;
+    slideContainer.style.transform = `translate(-${translate * 100}%)`;
+    indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+    if (translate === 0) {
+      this.hidden = true;
     }
   });
 
@@ -166,8 +162,8 @@ for (let anchor of anchors) {
   };
 
   let closePopup = function () {
-      successSend.classList.add("display-none");
-      document.removeEventListener("keydown", closePopup);
+    successSend.classList.add("display-none");
+    document.removeEventListener("keydown", closePopup);
     successSend.removeEventListener("click", closePopup);
   };
 
