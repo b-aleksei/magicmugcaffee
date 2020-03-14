@@ -112,60 +112,74 @@
     isActivateSlider = false,
     delaySlide, intervalSlider, timer;
 
+  let hideArrow = function () {
+    if (translate === 0) {
+      buttonBack.hidden = true;
+    } else if (translate === amountSlides - 1) {
+      buttonForward.hidden = true;
+    } else {
+      buttonBack.hidden = buttonForward.hidden = false;
+    }
+  };
+
   for (let i = 0; i < amountSlides; i++) {
     indicatorContainer.insertAdjacentHTML("beforeend", `<span class="slider__ind">`)
   }
-
-  indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
 
   buttonBack.hidden = true;
   slider.classList.remove("slider__no-js");
 
   let onClickSlider = function () {
-    if (isActivateSlider) {
+    clearTimeout(timer);
+
       clearTimeout(delaySlide);
-      clearTimeout(timer);
       clearInterval(intervalSlider);
-      slideContainer.classList.add('animated');
+      slideContainer.classList.add('click-duration');
       isActivateSlider = false;
-    }
 
     let forward = this === buttonForward;
-    let back = this === buttonBack;
     indicatorContainer.children[translate].style.backgroundColor = '';
-    if(forward) {
+    if (forward) {
       buttonBack.hidden = false;
       translate += 1;
-    } else {
+    } else if (translate > 0) {
       buttonForward.hidden = false;
       translate -= 1;
     }
     slideContainer.style.transform = `translate(-${translate * 100}%)`;
     indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
-    if (forward && translate === amountSlides - 1 || back && translate === 0) {
-      this.hidden = true;
-    }
+    hideArrow();
+    startAutoScroll();
   };
 
   buttonForward.addEventListener("click", onClickSlider);
   buttonBack.addEventListener("click", onClickSlider);
 
   function scrollAuto() {
-    slideContainer.classList.add('animated');
-    slideContainer.style.transform = 'translateX(-100%)';
+    indicatorContainer.children[translate].style.backgroundColor = '';
+    translate === amountSlides - 1 ? translate = 2 : translate += 1;
+    slideContainer.classList.remove('click-duration');
+    slideContainer.classList.add('auto-duration');
+    slideContainer.style.transform = `translateX(-${translate * 100}%)`;
+    hideArrow();
+    translate -= 1;
     delaySlide = setTimeout(function () {
-      slideContainer.classList.remove('animated');
-      slideContainer.style.transform = 'translateX(0)';
+      slideContainer.classList.remove('auto-duration');
+      slideContainer.style.transform = `translateX(-${translate * 100}%)`;
       slideContainer.append(slideContainer.firstElementChild);
-    }, 1100)
+    }, 1600)
   }
 
-  timer = setTimeout(function () {
-    intervalSlider = setInterval(function () {
-      scrollAuto();
-      isActivateSlider = true;
-    }, changeSlide);
-  }, delayTimerSlider)
+  let startAutoScroll = function () {
+    timer = setTimeout(function () {
+      intervalSlider = setInterval(function () {
+        scrollAuto();
+        isActivateSlider = true;
+      }, changeSlide);
+    }, delayTimerSlider)
+  };
+
+  startAutoScroll()
 
 })();
 
