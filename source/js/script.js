@@ -135,7 +135,6 @@
       clearInterval(intervalSlider);
       slideContainer.classList.add('click-duration');
     slideContainer.classList.remove('auto-duration');
-
     let forward = this === buttonForward;
     indicatorContainer.children[translate].style.backgroundColor = '';
     if (forward) {
