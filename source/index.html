@@ -28,9 +28,7 @@
   <meta name="msapplication-starturl" content="/index.html">
   <meta name="theme-color" content="#efd283">
   <script defer src="js/jquery-3.4.1.min.js"></script>
-<!--  <script defer src="js/jquery.maskedinput.min.js"></script>-->
   <script defer src="js/script.min.js"></script>
-  <script defer src="js/phone.min.js"></script>
 </head>
 <body>
 <div style="display: none;">
@@ -394,13 +392,13 @@
       <h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
       <div class="contact__wrap">
         <form class="contact__form" id="form" action="mail.php" method="post">
-          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text"
+          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" id="name" type="text"
             name="user_name" placeholder="Name" pattern="[A-z, А-я]{2,}"
             required></label>
           <label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel"
-            name="user_phone" id="phone"
-            placeholder="+1(999)999-99-99" required></label>
-          <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" type="email"
+            name="user_phone" id="phone" pattern="\+1 \(\d{3}\) \d{3}-\d{2}-\d{2}"
+            placeholder="+1(999) 999-99-99" required></label>
+          <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" id="email" type="email"
             name="user_email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             placeholder="address@example.com"

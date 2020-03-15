@@ -179,13 +179,62 @@
   startAutoScroll()
 
 })();
+//=================validation form======================================
+(function () {
 
+  let checkValidity = function () {
+    if(this.validity.patternMismatch || this.value === '') {
+      this.style.borderColor = '#ba0b11';
+      this.parentElement.classList.remove('valid')
+    } else {
+      this.style.borderColor = '';
+      this.parentElement.classList.add('valid')
+    }
+  };
+
+  let phone = document.getElementById('phone');
+  phone.addEventListener('input', function (e) {
+    let result = '+1 (';
+    let arrStr = Array.from(this.value);
+    for (let i = 4; i < arrStr.length; i++) {
+      if (i === 18) break;
+
+      if (arrStr[i]) {
+        let item = arrStr[i].match(/\d+/);
+        if (item) {
+          switch (result.length) {
+            case 6:
+              (!e.data && arrStr.length < 9) ? result += item : result += item + ') ';
+              break;
+            case 8: result += ' ' + item;
+              break;
+            case 12:
+            case 15: result += '-' + item;
+              break;
+            default : result += item;
+          }
+        }
+      }
+    }
+    this.value = result.trim();
+
+    checkValidity.call(this)
+  });
+
+  let name = document.getElementById('name');
+  name.addEventListener('input', checkValidity);
+
+  let email = document.getElementById('email');
+  email.addEventListener('input', checkValidity);
+
+})();
 //=====================send===========================================
 (function () {
 
+  let form = document.getElementById('form');
   let successSend = document.querySelector('.success-send');
-  let btnText = document.querySelector('.contact__btn-name');
-  let preloader = document.querySelector('.sk-three-bounce');
+  let btnText = form.querySelector('.contact__btn-name');
+  let preloader = form.querySelector('.sk-three-bounce');
 
   let showPreload = function () {
     btnText.textContent = 'SENDING';
@@ -193,17 +242,28 @@
     preloader.classList.remove('display-none')
   };
 
-  let sendSuccess = function () {
-    successSend.classList.remove("display-none");
-    btnText.textContent = 'SEND';
-    btnText.classList.remove('sending');
-    preloader.classList.add('display-none');
-  };
-
   let closePopup = function () {
     successSend.classList.add("display-none");
     document.removeEventListener("keydown", closePopup);
     successSend.removeEventListener("click", closePopup);
+  };
+
+  let sendSuccess = function () {
+
+    successSend.classList.remove("display-none");
+    btnText.textContent = 'SEND';
+    btnText.classList.remove('sending');
+    preloader.classList.add('display-none');
+
+    document.addEventListener("keydown", function (evt) {
+      if (evt.code === "Escape") {
+        closePopup()
+      }
+    });
+    successSend.addEventListener("click", closePopup);
+
+    let inputsWraps = form.querySelectorAll('label:not(:last-of-type)');
+    inputsWraps.forEach((item) => item.classList.remove('valid'));
   };
 
   $(document).ready(function () {
@@ -216,22 +276,11 @@
         data: $(this).serialize()
       }).done(function () {
         sendSuccess();
-        document.addEventListener("keydown", function (evt) {
-          if (evt.code === "Escape") {
-            closePopup()
-          }
-        });
-        successSend.addEventListener("click", closePopup);
         $(this).find("input").val("");
         form.trigger("reset");
       });
       return false;
     });
   });
-
-//  phone mask
-/*  $(document).ready(function () {
-    $("#phone").mask("+1 (999) 999-99-99");
-  });*/
 
 })();

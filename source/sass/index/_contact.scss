@@ -16,7 +16,17 @@
 }
 
 .contact__label {
+  position: relative;
   width: 100%;
+}
+
+.valid {
+  &::after {
+    content: url("../img/png/green-tick.png");
+    position: absolute;
+    bottom: 25px;
+    right: -40px;
+  }
 }
 
 .contact__input,
