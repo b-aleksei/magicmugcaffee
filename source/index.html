@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Magic Mug - a mobile Coffee Bar</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Magic Mug - a mobile Coffee Bar</title>
+  <link rel="manifest" href="manifest.webmanifest">
   <meta name="description"
     content="Magic Mug is a mobile coffee truck delivering and serving freshly roasted coffee, espresso drinks, tea , smoothies right to your doorstep">
   <meta name="keywords"
     content="Mobile coffee truck, coffee truck near me, mobile coffee shop, mobile drink service, Florida coffee, Magic Mug, espresso bar, event catering, food tuck, coffeeshop, espresso, mocha, cappuccino, cold brew, smoothie, local coffee shop, Miami coffee">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Magic Mug">
   <meta name="apple-mobile-web-app-title" content="Magic Mug">
-  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#dd8019">
   <meta name="msapplication-config" content="browserconfig.xml">
   <meta name="msapplication-TileColor" content="#efd283">
+  <meta name="msapplication-navbutton-color" content="#efd283">
+  <meta name="msapplication-starturl" content="/index.html">
   <meta name="theme-color" content="#efd283">
-  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script defer src="js/jquery-3.4.1.min.js"></script>
+  <script defer src="js/script.min.js"></script>
 </head>
 <body>
 <div style="display: none;">
   <svg xmlns="http://www.w3.org/2000/svg">
     <symbol id="logo" viewBox="0 0 239.8 170.4">
-      <style>.st00 {
-        fill: #bd171d;
-      }
-
-      .st11 {
-        fill: #673a27;
-      }</style>
+      <style>
+        .st00{fill: #bd171d}.st11 {fill: #673a27}
+      </style>
       <path class="st00"
         d="M162.7 37.3c-5.5.7-11.3 1.2-17.5 1.7-1.1.1-1.8 1.1-1.5 2.1 4.6 17.7 3.1 38.7-1 50.8-.3 1 .4 2 1.5 1.9 6.3-.5 12.1-1.1 17.7-1.9 1.1-.2 1.8-1.2 1.5-2.3-3.3-12.3-3.1-33 1.2-50.2.2-1.2-.8-2.3-1.9-2.1zM44 37.7c-3.8-.4-7.4-.9-10.9-1.4-1.6-.3-3.2.7-3.8 2.3l-4.4 13.9c-.3 1-1.8 1-2.1-.1L19.2 36c-.3-1.5-1.5-2.7-3-3-3.9-.9-7.6-1.9-11.1-3.1C2.6 29.1 0 31 0 33.6c-.1 8.7.5 26.9 5 47.8.2 1.1 1.1 2.1 2.2 2.4 2.3.8 4.6 1.6 7.1 2.3.8.2 1.5-.5 1.3-1.3-1-4.6-3.3-16.5-2-23.4.2-.9 1.5-1 1.7 0C19 76.5 19.5 80.8 23 87.3c.5.8 1.2 1.4 2.2 1.6 2 .4 4 .8 6.1 1.2.8.2 1.5-.6 1.3-1.4-1.1-4.8-3-14.8-1.3-23.6.1-1.1 1.7-1.3 2.1-.2 2.4 6.5 4 16.2 3.5 24.8 0 .8.5 1.4 1.3 1.6 3.6.6 7.4 1 11.3 1.5 1 .1 1.8-.8 1.6-1.8-3-13.4-2.8-29.9-1.8-47 .2-3.2-2.1-6-5.3-6.3zm45.9 2.5c-7.4-.1-14.3-.3-20.9-.6-1.1 0-2.1.3-2.9 1.1-14.3 13.5-14 38.2-8.7 51.8.3.7 1 1.2 1.8 1.3 3.2.3 6.5.5 9.9.7.9.1 1.5-.8 1.3-1.6-1-4-1.7-7.6-2.1-11.1-.1-.8.6-1.5 1.4-1.4 2 .2 4.4.4 7.2.6.7 0 1.2.6 1.2 1.3-.1 3.7-.2 7.3-.6 10.9-.1.9.6 1.7 1.5 1.7 4.1.1 8.3.2 12.7.3.9 0 1.7-.8 1.5-1.8-1.9-11.5-2.3-38.5-1.1-50.6.3-1.4-.8-2.6-2.2-2.6zM75 68.5c-1.3-.1-2.6-.3-4-.4-1.5-.2-2.6-1.7-2.3-3.2 1-5.1 2.8-9.4 5.3-13.3.9-1.4 3.1-.8 3.2.9.3 4.4.5 8.8.7 13.2.1 1.6-1.3 3-2.9 2.8zm65.3-7c-.1-1-.9-1.8-1.9-1.7l-18.8.4c-.5 0-1 .3-1.2.8-.8 1.7-2.3 6.2-1.8 13.1.1 1.1 1.3 1.6 2.2 1 1.9-1.5 3.7-2.7 5-3.5 1.4-.8 3.1.4 2.8 2l-1.1 6.3c-.2 1.1-1 1.8-2.1 2-3.1.3-5.6.5-8.8.4-.6 0-1.2-.4-1.4-1.1-1.1-3.7-4.2-16.6 2.4-26.1.4-.6 1-.9 1.7-.9 7.1-.3 16.3-.5 20.5-.6.6 0 1.1-.6.9-1.2-.9-3.5-2.1-7.1-3.6-10.9-.4-1.1-1.5-1.8-2.7-1.8-6.3.3-13 .5-20.1.5-5.1.1-9.8 3.1-11.8 7.8-3.5 8-4.1 17.4-3.4 26 .4 5.2 1.4 10.4 3 15.3 1 3 4.7 5.8 7.8 5.8 7.3-.1 14.2-.2 20.7-.5 4-.2 7.5-2.9 8.6-6.8 2.9-9.7 3.9-18 3.1-26.3zm47.4 10.6c-.5 1.3-1.4 2.8-2.6 3.5-.3.2-.6.3-.9.3-.5 0-.9-.3-1.3-.8-.1-.1-.2-.3-.3-.4-1.3-2.1-1.6-4.6-2-7-.6-3.5-.6-7.1-.1-10.6.2-1.8.9-4.7 1.4-6.4.6-1.8 1.3-3.7 3.1-4.6 1.8-1 3.7-.3 4.5 1.6.7 1.5.6 4.1.5 6.3-.1.8.6 1.4 1.4 1.3 2.5-.3 6-1 9.5-2 .8-.3 1.4-1 1.5-1.8.2-2.9.4-5.6.5-8 .3-7.3-6.5-12.8-13.6-11-3.1.8-6.4 1.5-9.8 2.2-4.5.9-8.2 4-10 8.2-4.9 11.9-5.6 25-2.4 37.7 1.5 5.8 7.2 9.3 13 7.9 5.5-1.3 10.6-2.8 15.4-4.4 1.3-.5 2.3-1.6 2.6-2.9 1.2-5.6 2.1-10.9 2.8-15.9.1-.8-.6-1.4-1.3-1.3-2.1.4-5.3 1.1-9.1 1.8-.8.2-1.4.8-1.6 1.6-.2 1.5-.6 3.2-1.2 4.7z"/>
       <ellipse class="st11" cx="101.6" cy="23.2" rx="86.6" ry="11.6"/>
@@ -146,10 +149,12 @@
     </div>
     <div class="header__bg-wrap">
       <picture>
+        <source type="image/webp" media="(min-width: 1366px)" srcset="img/bg/bg-MM-1920@1x.webp 1x, img/bg/bg-MM-1920@2x.svg 2x">
         <source media="(min-width: 1366px)" srcset="img/bg/bg-MM-1920@1x.jpg 1x, img/bg/bg-MM-1920@2x.svg 2x">
+        <source type="image/webp" media="(min-width: 768px)" srcset="img/bg/bg-MM-1366@1x.webp 1x, img/bg/bg-MM-1366@2x.webp 2x">
         <source media="(min-width: 768px)" srcset="img/bg/bg-MM-1366@1x.jpg 1x, img/bg/bg-MM-1366@2x.jpg 2x">
         <img class="header__bg-image" src="img/bg/bg-MM-808@1x.jpg"
-          srcset="img/bg/bg-MM-808@1x.jpg 1x, img/bg/bg-MM-808@2x.jpg 2x"
+          srcset="img/bg/bg-MM-808@2x.jpg 2x, img/bg/bg-MM-808@1x.webp 1x, img/bg/bg-MM-808@2x.webp 2x"
           alt="background image Magic Mug" width="808"
           height="420">
       </picture>
@@ -174,30 +179,21 @@
           anywhere.<br>100% satisfaction
           guaranteed!</p>
       </div>
-      <div class="about-us__slider slider slider__no-js">
-        <div class="translate-0 slider__inner">
+      <div class="about-us__slider slider__no-js slider">
           <div class="slider__slides">
-            <picture>
-                            <source type="image/webp" srcset="img/slider/coffee.webp">
-              <img class="slider__img" src="img/slider/coffee.jpg" alt="slide one" loading="lazy"></picture>
-            <picture>
-                            <source type="image/webp" srcset="img/slider/Lemonade.webp">
-              <img class="slider__img" src="img/slider/Lemonade.jpg" alt="slide two" loading="lazy"></picture>
-            <picture>
-                            <source type="image/webp" srcset="img/slider/buter.webp">
-              <img class="slider__img" src="img/slider/buter.jpg" alt="slide third" loading="lazy"></picture>
-            <!--  <picture>
-                <source type="image/webp" srcset="img/slider/4.webp">
-                <img class="slider__img" src="img/slider/4.jpg" alt="slide four"></picture>-->
+            <picture class="slider__item" id="first">
+                            <source type="image/webp" srcset="img/slider/coffee@1x.webp 1x, img/slider/coffee@2x.webp 2x">
+              <img class="slider__img" src="img/slider/coffee@1x.jpg" srcset="img/slider/coffee@2x.jpg 2x" alt="slide one"></picture>
+            <picture class="slider__item" id="second">
+                            <source type="image/webp" srcset="img/slider/Lemonade@1x.webp 1x, img/slider/Lemonade@2x.webp 2x">
+              <img class="slider__img" src="img/slider/Lemonade@1x.jpg" srcset="img/slider/Lemonade@2x.jpg 2x" alt="slide two"></picture>
+            <picture class="slider__item" id="third">
+                            <source type="image/webp" srcset="img/slider/buter@1x.webp 1x, img/slider/buter@2x.webp 2x">
+              <img class="slider__img" src="img/slider/buter@1x.jpg" srcset="img/slider/buter@2x.jpg 2x" alt="slide third"></picture>
           </div>
           <button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button>
           <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
-          <div class="slider__indicators">
-            <span class="slider__ind ind-1"></span> <span class="slider__ind ind-2"></span> <span
-            class="slider__ind ind-3"></span>
-            <!--            <span class="slider__ind ind-4"></span>-->
-          </div>
-        </div>
+          <div class="slider__indicators"></div>
       </div>
     </div>
   </section>
@@ -271,7 +267,7 @@
               </svg>
             </div>
             <ul class="menu__sublist">
-              <li class="menu__item">Caramel</li>
+              <li class="menu__item">Caramell</li>
               <li class="menu__item">Vanila</li>
               <li class="menu__item">Hazelnut</li>
               <li class="menu__item">Lavender</li>
@@ -396,18 +392,18 @@
       <h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
       <div class="contact__wrap">
         <form class="contact__form" id="form" action="mail.php" method="post">
-          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" type="text"
+          <label class="contact__label">Your name<sup>*</sup> <input class="contact__input" id="name" type="text"
             name="user_name" placeholder="Name" pattern="[A-z, А-я]{2,}"
             required></label>
           <label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel"
-            name="user_phone" id="phone"
-            placeholder="+1(999)999-99-99" required></label>
-          <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" type="email"
+            name="user_phone" id="phone" pattern="\+1 \(\d{3}\) \d{3}-\d{2}-\d{2}"
+            placeholder="+1(999) 999-99-99" required></label>
+          <label class="contact__label">Your email<sup>*</sup> <input class="contact__input" id="email" type="email"
             name="user_email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             placeholder="address@example.com"
             required></label>
-          <label class="contact__label">Your question <textarea
+          <label class="contact__label">Subject<textarea
             class="contact__comment" name="user_message" cols="30" rows="10"></textarea></label>
           <button class="contact__btn glob__btn" type="submit" aria-label="send form"><span
             class="contact__btn-wrap glob__btn-wrap">
@@ -425,12 +421,12 @@
         </form>
         <div class="contact__images">
           <picture class="contact__img contact__img-1">
-            <source type="image/webp" srcset="img/bg/1cup300.webp">
-            <img src="img/bg/1cup300.jpg" alt="cup of coffee" width="300"
+            <source type="image/webp" srcset="img/bg/1cup@1x.webp 1x, img/bg/1cup@2x.webp 2x">
+            <img src="img/bg/1cup@1x.jpg" srcset="img/bg/1cup@2x.jpg 2x" alt="cup of coffee" width="300"
             height="300" loading="lazy"></picture>
           <picture class="contact__img contact__img-2">
-            <source type="image/webp" srcset="img/bg/2cup300.webp">
-            <img src="img/bg/2cup300.jpg" alt="cup of coffee" width="300"
+            <source type="image/webp" srcset="img/bg/2cup@1x.webp 1x, img/bg/2cup@2x.webp 2x">
+            <img src="img/bg/2cup@1x.jpg" srcset="img/bg/2cup@2x.jpg 2x" alt="cup of coffee" width="300"
             height="300" loading="lazy"></picture>
         </div>
         <address class="contact__address">
@@ -477,9 +473,7 @@
     <button class="success-send__button" aria-label="close">close</button>
   </div>
 </div>
-<script defer src="js/jquery-3.4.1.min.js"></script>
-<script defer src="js/jquery.maskedinput.min.js"></script>
-<script defer src="js/script.min.js"></script>
-<!--<script src="js/picturefill.min.js"></script>-->
+<!--<script defer src="js/index.min.js"></script>
+<script defer src="sw.js"></script>-->
 </body>
 </html>

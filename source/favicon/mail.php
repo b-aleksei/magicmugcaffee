@@ -12,11 +12,12 @@ $message = urldecode($message);
 $name = trim($name);
 $phone = trim($phone);
 $email = trim($email);
-if (mail("magicmugcafe@gmail.com", "Заявка с сайта", "Оставил заявку: $name \r\n Его телефон: $phone \r\n Почта этого пользователя: $email \r\n Его сообщение: $message", "From: info@magicmugcafe.com \r\n"))
-    {     echo "$name Your message has been successfully sent";
+#magicmugcafe@gmail.com
+if ($name && $phone && $email) {
+      mail("103301@mail.ru", "Заявка с сайта", "Оставил заявку: $name \r\n Его телефон: $phone \r\n Почта этого пользователя: $email \r\n Его сообщение: $message", "From: info@magicmugcafe.com \r\n");
+      echo "$name Your message has been successfully sent";
    	echo "<br /><br /><a href='index.html'>Вернуться на сайт.</a>";
    } else {
        echo "при отправке сообщения возникли ошибки";
        echo "<br /><br /><a href='index.html'>comeback to the site</a>";
    }
-?>
