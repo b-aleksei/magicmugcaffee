@@ -232,6 +232,7 @@
 (function () {
 
   let form = document.getElementById('form');
+  // let btnSubmit = form.querySelector('.contact__btn');
   let successSend = document.querySelector('.success-send');
   let btnText = form.querySelector('.contact__btn-name');
   let preloader = form.querySelector('.sk-three-bounce');
@@ -242,10 +243,11 @@
     preloader.classList.remove('display-none')
   };
 
-  let closePopup = function () {
+  let closePopup = function (evt) {
+    if (evt.code === "Escape") {
     successSend.classList.add("display-none");
     document.removeEventListener("keydown", closePopup);
-    successSend.removeEventListener("click", closePopup);
+    }
   };
 
   let sendSuccess = function () {
@@ -255,32 +257,25 @@
     btnText.classList.remove('sending');
     preloader.classList.add('display-none');
 
-    document.addEventListener("keydown", function (evt) {
-      if (evt.code === "Escape") {
-        closePopup()
-      }
-    });
-    successSend.addEventListener("click", closePopup);
+    document.addEventListener("keydown", closePopup);
+    successSend.addEventListener("click", function () {
+      successSend.classList.add("display-none");
+    }, {once: true});
 
     let inputsWraps = form.querySelectorAll('label:not(:last-of-type)');
     inputsWraps.forEach((item) => item.classList.remove('valid'));
   };
 
-  $(document).ready(function () {
-    let form = $("#form");
-    form.submit(function () {
-      showPreload();
-      $.ajax({
-        type: "POST",
-        url: "mail.php",
-        data: $(this).serialize()
-      }).done(function () {
-        sendSuccess();
-        $(this).find("input").val("");
-        form.trigger("reset");
-      });
-      return false;
-    });
-  });
+  form.addEventListener('submit', function (e) {
+    showPreload();
+    fetch('mail.php', {
+      method: 'post',
+      body: new FormData(form)
+    }).then(() => {
+      sendSuccess();
+      form.reset()
+    }).catch(() => alert('There are network problems. Send the application again'));
+    e.preventDefault()
+  })
 
 })();
