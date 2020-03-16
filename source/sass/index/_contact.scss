@@ -20,13 +20,13 @@
   width: 100%;
 }
 
-.valid {
-  &::after {
-    content: url("../img/png/green-tick.png");
-    position: absolute;
-    bottom: 25px;
-    right: -40px;
-  }
+.valid::after {
+  content: url("../img/green-tick.svg");
+  position: absolute;
+  width: 34px;
+  height: 30px;
+  bottom: 31%;
+  right: 5px;
 }
 
 .contact__input,
@@ -45,6 +45,7 @@
 .contact__input {
   height: 50px;
   margin-bottom: 20px;
+  padding-right: 40px;
 }
 
 .contact__input::placeholder {
