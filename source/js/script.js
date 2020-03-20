@@ -192,33 +192,108 @@
     }
   };
 
+  const START_INDEX = 4;
+  const CLOSE_BRACE = 6;
   let phone = document.getElementById('phone');
-  phone.addEventListener('input', function (e) {
-    let result = '+1 (';
-    let arrStr = Array.from(this.value);
-    for (let i = 4; i < arrStr.length; i++) {
-      if (i === 18) break;
+  // phone.maxLength = 18;
+  let startSelection = 0;
+  let endSelection = 0;
+  let pastePattern = ['+', '9', ' ', '(', '9', '9', '9', ')', ' ', '9', '9', '9', '-', '9', '9', '-', '9', '9'];
+  let pattern = ['+', '1', ' ', '(', '_', '_', '_', ')', ' ', '_', '_', '_', '-', '_', '_', '-', '_', '_'];
+  let result = pattern.slice();
+  let focus = START_INDEX;
 
-      if (arrStr[i]) {
-        let item = arrStr[i].match(/\d+/);
-        if (item) {
-          switch (result.length) {
-            case 6:
-              (!e.data && arrStr.length < 9) ? result += item : result += item + ') ';
-              break;
-            case 8: result += ' ' + item;
-              break;
-            case 12:
-            case 15: result += '-' + item;
-              break;
-            default : result += item;
+  phone.addEventListener('paste', function () {
+    setTimeout(() => {
+      let value = Array.from(this.value).filter(item => /\d/.test(item));
+      value.reverse();
+      let pattern = pastePattern.slice();
+      for (let i = 0; i < pattern.length; i++) {
+        if (pattern[i] !== '9') continue;
+        pattern[i] = value.pop() || '_';
+      }
+      pattern[1] = '1';
+      result = pattern;
+      this.value = pattern.join('');
+      startSelection = endSelection = 0;
+      checkValidity.call(this);
+    })
+  });
+
+  phone.addEventListener('select', function () {
+    startSelection = this.selectionStart;
+    endSelection = this.selectionEnd;
+  });
+
+  phone.addEventListener('keydown', function (e) {
+
+    let IsSelectionTrue = startSelection !== endSelection;
+    if (!e.ctrlKey) {
+      focus = this.selectionStart < START_INDEX ? this.selectionStart = START_INDEX : this.selectionStart;
+    }
+
+    if (e.key !== 'Tab' && e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && !e.ctrlKey) {
+      e.preventDefault();
+      if (IsSelectionTrue) {
+        let clearData = pattern.slice(startSelection, endSelection);
+        result.splice(startSelection, endSelection - startSelection, ...clearData);
+      }
+
+      if (/\d/.test(e.key) && focus < result.length) {
+        let index = result.indexOf('_');
+        let separator = result.indexOf('-', this.selectionStart);
+
+        if (index === -1) {
+          for (let i = this.selectionStart; i < result.length; i++) {
+            index = i;
+            if (/\d/.test(result[i])) break;
+          }
+        }
+        result[index] = e.key;
+        focus = (index === CLOSE_BRACE) ? CLOSE_BRACE + 2 : (separator - index === 1) ? index + 1 : index;
+
+      } else {
+        if (e.key === 'Backspace') {
+          if (!IsSelectionTrue && result[focus - 1] !== '(') {
+            let insert;
+            switch (result[this.selectionStart - 1]) {
+              case '-' :
+                insert = '-';
+                break;
+              case ' ' :
+                insert = ' ';
+                break;
+              case ')' :
+                insert = ')';
+                break;
+              default :
+                insert = '_';
+            }
+
+            result.splice(this.selectionStart - 1, 1, insert);
+            focus -= 1
+          }
+        }
+
+        if (e.key === 'Delete' && !IsSelectionTrue) {
+          let index = result.slice(focus).findIndex(item => {
+            return /\d/.test(item)
+          });
+          if (~index) {
+            result[focus + index] = '_';
           }
         }
       }
-    }
-    this.value = result.trim();
 
-    checkValidity.call(this)
+      this.value = result.join('');
+
+      this.selectionStart = this.selectionEnd = focus + 1;
+
+      if (!/\d/.test(e.key)) {
+        this.selectionStart = this.selectionEnd = focus;
+      }
+    }
+    checkValidity.call(this);
   });
 
   let name = document.getElementById('name');
@@ -232,7 +307,6 @@
 (function () {
 
   let form = document.getElementById('form');
-  // let btnSubmit = form.querySelector('.contact__btn');
   let successSend = document.querySelector('.success-send');
   let btnText = form.querySelector('.contact__btn-name');
   let preloader = form.querySelector('.sk-three-bounce');

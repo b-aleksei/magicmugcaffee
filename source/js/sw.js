@@ -1,65 +1,133 @@
-"use strict";
+'use strict';
 
-const precacheVersion = 2;
-const precacheName = 'precache-v' + precacheVersion;
-// "/assets/images/profile.png", "/assets/images/profile.webp", /offline
-const precacheFiles = [
-  "/fonts"
-];
+var config = {
+  version: 'achilles',
+  staticCacheItems: [
+    '/style.min.css',
+    '/img/wave.svg',
+    '/js/script.min.js',
+    '/offline/',
+    '/'
+  ],
+  cachePathPattern: /^\/(?:(20[0-9]{2}|about|blog|css|images|js)\/(.+)?)?$/,
+  offlineImage: '<svg role="img" aria-labelledby="offline-title"'
+    + ' viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">'
+    + '<title id="offline-title">Offline</title>'
+    + '<g fill="none" fill-rule="evenodd"><path fill="#D8D8D8" d="M0 0h400v300H0z"/>'
+    + '<text fill="#9B9B9B" font-family="Times New Roman,Times,serif" font-size="72" font-weight="bold">'
+    + '<tspan x="93" y="172">offline</tspan></text></g></svg>',
+  offlinePage: '/offline/'
+};
 
-self.addEventListener('install', (e) => {
-  console.log('[ServiceWorker] Installed');
-  self.skipWaiting();
+function cacheName (key, opts) {
+  return `${opts.version}-${key}`;
+}
 
-  e.waitUntil(
-    caches.open(precacheName).then((cache) => {
-      console.log('[ServiceWorker] Precaching files');
-      return cache.addAll(precacheFiles);
-    }) // end caches.open()
-  ); // end e.waitUntil
-});
+function addToCache (cacheKey, request, response) {
+  if (response.ok) {
+    var copy = response.clone();
+    caches.open(cacheKey).then( cache => {
+      cache.put(request, copy);
+    });
+  }
+  return response;
+}
 
-self.addEventListener('activate', (e) => {
-  console.log('[ServiceWorker] Activated');
+function fetchFromCache (event) {
+  return caches.match(event.request).then(response => {
+    if (!response) {
+      throw Error(`${event.request.url} not found in cache`);
+    }
+    return response;
+  });
+}
 
-  e.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(cacheNames.map((thisCacheName) => {
+function offlineResponse (resourceType, opts) {
+  if (resourceType === 'image') {
+    return new Response(opts.offlineImage,
+      { headers: { 'Content-Type': 'image/svg+xml' } }
+    );
+  } else if (resourceType === 'content') {
+    return caches.match(opts.offlinePage);
+  }
+  return undefined;
+}
 
-        if (thisCacheName.includes("precache") && thisCacheName !== precacheName) {
-          console.log('[ServiceWorker] Removing cached files from old cache - ', thisCacheName);
-          return caches.delete(thisCacheName);
-        }
-
-      }));
-    }) // end caches.keys()
-  ); // end e.waitUntil
-});
-
-self.addEventListener('fetch', (e) => {
-
-  const requestURL = new URL(e.request.url);
-  if (!e.request.referrer.includes(requestURL.hostname)) {
-    return e.respondWith(fetch(e.request));
+self.addEventListener('install', event => {
+  function onInstall (event, opts) {
+    var cacheKey = cacheName('static', opts);
+    return caches.open(cacheKey)
+      .then(cache => cache.addAll(opts.staticCacheItems));
   }
 
-  e.respondWith(
-    caches.match(e.request)
-      .then((response) => {
+  event.waitUntil(
+    onInstall(event, config).then( () => self.skipWaiting() )
+  );
+});
 
-        if (response) {
-          console.log("[ServiceWorker] Found in cache", e.request.url);
-          return response;
-        }
+self.addEventListener('activate', event => {
+  function onActivate (event, opts) {
+    return caches.keys()
+      .then(cacheKeys => {
+        var oldCacheKeys = cacheKeys.filter(key => key.indexOf(opts.version) !== 0);
+        var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey));
+        return Promise.all(deletePromises);
+      });
+  }
 
-        return fetch(e.request)
-          .then((fetchResponse) => fetchResponse)
-          .catch((err) => {
-            // If offline
-            const isHTMLPage = e.request.method === "GET" && e.request.headers.get("accept").includes("text/html");
-            if (isHTMLPage) return caches.match("/fonts");
-          });
+  event.waitUntil(
+    onActivate(event, config)
+      .then( () => self.clients.claim() )
+  );
+});
 
-      }) // end caches.match(e.request)
-  ); // end e.respondWith
+self.addEventListener('fetch', event => {
+
+  function shouldHandleFetch (event, opts) {
+    var request            = event.request;
+    var url                = new URL(request.url);
+    var criteria           = {
+      matchesPathPattern: opts.cachePathPattern.test(url.pathname),
+      isGETRequest      : request.method === 'GET',
+      isFromMyOrigin    : url.origin === self.location.origin
+    };
+    var failingCriteria    = Object.keys(criteria)
+      .filter(criteriaKey => !criteria[criteriaKey]);
+    return !failingCriteria.length;
+  }
+
+  function onFetch (event, opts) {
+    var request = event.request;
+    var acceptHeader = request.headers.get('Accept');
+    var resourceType = 'static';
+    var cacheKey;
+
+    if (acceptHeader.indexOf('text/html') !== -1) {
+      resourceType = 'content';
+    } else if (acceptHeader.indexOf('image') !== -1) {
+      resourceType = 'image';
+    }
+
+    cacheKey = cacheName(resourceType, opts);
+
+    if (resourceType === 'content') {
+      event.respondWith(
+        fetch(request)
+          .then(response => addToCache(cacheKey, request, response))
+          .catch(() => fetchFromCache(event))
+          .catch(() => offlineResponse(resourceType, opts))
+      );
+    } else {
+      event.respondWith(
+        fetchFromCache(event)
+          .catch(() => fetch(request))
+            .then(response => addToCache(cacheKey, request, response))
+          .catch(() => offlineResponse(resourceType, opts))
+      );
+    }
+  }
+  if (shouldHandleFetch(event, config)) {
+    onFetch(event, config);
+  }
+
 });

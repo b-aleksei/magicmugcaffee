@@ -7,6 +7,6 @@ if ('serviceWorker' in navigator) {
             // Регистрация не успешна
             console.log('ServiceWorker registration failed: ', err);
         });
-    });
+    }, {once: true});
 }
 
