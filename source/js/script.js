@@ -62,7 +62,6 @@
   noJs.classList.remove("price__no-js");
 
   select.addEventListener('change', function () {
-    console.log(this);
     let dictionary = {
       2 : [".price__cell--3", ".price__cell--4"],
       3 : [".price__cell--2", ".price__cell--4"],
