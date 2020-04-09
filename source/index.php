@@ -181,21 +181,15 @@
       </div>
       <div class="about-us__slider slider__no-js slider">
           <div class="slider__slides">
-            <picture class="slider__item">
-                            <source type="image/webp" srcset="img/slider/coffee@1x.webp 1x, img/slider/coffee@2x.webp 2x">
-              <img class="slider__img" src="img/slider/coffee@1x.jpg" srcset="img/slider/coffee@1x.jpg 1x, img/slider/coffee@2x.jpg 2x" alt="image for the slider"></picture>
-            <picture class="slider__item">
-                            <source type="image/webp" srcset="img/slider/2/Lemonade@1x.webp 1x, img/slider/2/Lemonade@2x.webp 2x">
-              <img class="slider__img" src="img/slider/2/Lemonade@1x.jpg" srcset="img/slider/2/Lemonade@1x.jpg 1x, img/slider/2/Lemonade@2x.jpg 2x" alt="image for the slider"></picture>
-            <picture class="slider__item">
-                            <source type="image/webp" srcset="img/slider/3/buter@1x.webp 1x, img/slider/3/buter@2x.webp 2x">
-              <img class="slider__img" src="img/slider/3/buter@1x.jpg" srcset="img/slider/3/buter@1x.jpg 1x, img/slider/3/buter@2x.jpg 2x" alt="image for the slider"></picture>
-            <picture class="slider__item">
-              <source type="image/webp" srcset="img/slider/4/buter@1x.webp 1x, img/slider/4/buter@2x.webp 2x">
-              <img class="slider__img" src="img/slider/4/buter@1x.jpg" srcset="img/slider/4/buter@1x.jpg 1x, img/slider/4/buter@2x.jpg 2x" alt="image for the slider"></picture>
-            <picture class="slider__item">
-              <source type="image/webp" srcset="img/slider/5/buter@1x.webp 1x, img/slider/5/buter@2x.webp 2x">
-              <img class="slider__img" src="img/slider/5/buter@1x.jpg" srcset="img/slider/5/buter@1x.jpg 1x, img/slider/5/buter@2x.jpg 2x" alt="image for the slider"></picture>
+            <?php
+            $dir = './img/slider/';
+            $arr_slides = scandir($dir);
+            unset($arr_slides[0], $arr_slides[1]);
+            foreach ($arr_slides as $value) : ?>
+              <picture class="slider__item">
+                <source type="image/webp" srcset="img/slider/<?= $value ?>/1x.webp 1x, img/slider/<?= $value ?>/2x.webp 2x">
+                <img class="slider__img" src="img/slider/<?= $value ?>/1x.jpg" srcset="img/slider/<?= $value ?>/1x.jpg 1x, img/slider/<?= $value ?>/2x.jpg 2x" alt="image for the slider"></picture>
+            <?php endforeach; ?>
           </div>
           <button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button>
           <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
@@ -299,13 +293,13 @@
               <div class="glob__btn-wrap price__no-js">
                 <label class="price__for-pseudo price__sign" aria-label="item selection"><select class="price__select">
                   <option id="col-2" value="2">2 hours</option>
-                  <option id="col-3" value="3">3hours Guests</option>
+                  <option id="col-3" value="3">Extra hour</option>
                   <option id="col-4" value="4">Add smoothies</option>
                 </select></label>
                 <svg width="160" height="40" class="glob__btn-bg">
                   <use xlink:href="#btn"></use>
                 </svg>
-                <p class="price__sign price__sign--hide">2 hour</p>
+                <p class="price__sign price__sign--hide">2 hours</p>
               </div>
             </th>
             <th class="price__head price__head--3 hide">
@@ -473,13 +467,11 @@
     <p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
   </div>
 </footer>
-<div class="success-send display-none">
+<div class="success-send display-none" role="dialog" aria-labelledby="modal">
   <div class="success-send__wrap">
-    <h1 class="success-send__title">Your application is accepted. Thanks!<br>We will contact you soon.</h1>
+    <h2 id="modal" class="success-send__title">Your application is accepted. Thanks!<br>We will contact you soon.</h2>
     <button class="success-send__button" aria-label="close">close</button>
   </div>
 </div>
-<!--<script src="js/workerLoader.js"></script>
-<script src="sw.js"></script>-->
 </body>
 </html>

@@ -1,6 +1,6 @@
 "use strict";
 //====================menu-opener=================================
-(function () {
+( function () {
 
   let navButton = document.querySelector(".nav__menu-opener"),
     navMain = document.querySelector(".nav");
@@ -11,10 +11,10 @@
     navMain.classList.toggle("header__nav--menu-open");
     navButton.classList.toggle("header__nav--menu-open");
   });
-})();
+} )();
 
 //=====================scroll===========================================
-(function () {
+( function () {
 
   function trackScroll() {
     let scrolled = window.pageYOffset;
@@ -46,26 +46,28 @@
 
       let getId = anchor.getAttribute("href");
 
-      document.querySelector(getId).scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      })
+      if (getId) {
+        document.querySelector(getId).scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        })
+      }
     })
   }
-})();
+} )();
 //=====================price===========================================
-(function () {
-    let table = document.querySelector('.price');
+( function () {
+  let table = document.querySelector('.price');
   let select = table.querySelector(".price__select");
-   let noJs = table.querySelector(".price__no-js");
+  let noJs = table.querySelector(".price__no-js");
 
   noJs.classList.remove("price__no-js");
 
   select.addEventListener('change', function () {
     let dictionary = {
-      2 : [".price__cell--3", ".price__cell--4"],
-      3 : [".price__cell--2", ".price__cell--4"],
-      4 : [".price__cell--2", ".price__cell--3"],
+      2: [".price__cell--3", ".price__cell--4"],
+      3: [".price__cell--2", ".price__cell--4"],
+      4: [".price__cell--2", ".price__cell--3"],
     };
     let showColumns = table.querySelectorAll(".price__cell--" + this.value);
     let hideColumns1 = table.querySelectorAll(dictionary[this.value][0]);
@@ -78,10 +80,10 @@
     }
   })
 
-})();
+} )();
 
 //=====================slider===========================================
-(function () {
+( function () {
   let slider = document.querySelector('.slider'),
     buttonForward = slider.querySelector(".slider__arrow-forward"),
     buttonBack = slider.querySelector(".slider__arrow-back"),
@@ -93,76 +95,79 @@
     changeSlide = 4000,
     delaySlide, intervalSlider, timer;
 
-  let hideArrow = function () {
-    if (translate === 0) {
-      buttonBack.hidden = true;
-    } else if (translate === amountSlides - 1) {
-      buttonForward.hidden = true;
-    } else {
-      buttonBack.hidden = buttonForward.hidden = false;
+  if (amountSlides > 1) {
+
+    let hideArrow = function () {
+      if (translate === 0) {
+        buttonBack.hidden = true;
+      } else if (translate === amountSlides - 1) {
+        buttonForward.hidden = true;
+      } else {
+        buttonBack.hidden = buttonForward.hidden = false;
+      }
+    };
+
+    for (let i = 0; i < amountSlides; i++) {
+      indicatorContainer.insertAdjacentHTML("beforeend", `<span class="slider__ind">`)
     }
-  };
 
-  for (let i = 0; i < amountSlides; i++) {
-    indicatorContainer.insertAdjacentHTML("beforeend", `<span class="slider__ind">`)
-  }
+    buttonBack.hidden = true;
+    slider.classList.remove("slider__no-js");
 
-  buttonBack.hidden = true;
-  slider.classList.remove("slider__no-js");
-
-  let onClickSlider = function () {
-    clearTimeout(timer);
-
-    clearTimeout(delaySlide);
-    clearInterval(intervalSlider);
-    slideContainer.classList.add('click-duration');
-    slideContainer.classList.remove('auto-duration');
-    let forward = this === buttonForward;
-    indicatorContainer.children[translate].style.backgroundColor = '';
-    if (forward) {
-      buttonBack.hidden = false;
-      translate += 1;
-    } else if (translate > 0) {
-      buttonForward.hidden = false;
-      translate -= 1;
-    }
-    slideContainer.style.transform = `translate(-${translate * 100}%)`;
-    indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
-    hideArrow();
-    startAutoScroll();
-  };
-
-  buttonForward.addEventListener("click", onClickSlider);
-  buttonBack.addEventListener("click", onClickSlider);
-
-  function scrollAuto() {
-    indicatorContainer.children[translate].style.backgroundColor = '';
-    translate === amountSlides - 1 ? translate = 2 : translate += 1;
-    slideContainer.classList.remove('click-duration');
-    slideContainer.classList.add('auto-duration');
-    slideContainer.style.transform = `translateX(-${translate * 100}%)`;
-    hideArrow();
-    translate -= 1;
-    delaySlide = setTimeout(function () {
+    let onClickSlider = function () {
+      clearTimeout(timer);
+      clearTimeout(delaySlide);
+      clearInterval(intervalSlider);
+      slideContainer.classList.add('click-duration');
       slideContainer.classList.remove('auto-duration');
+      let forward = this === buttonForward;
+      indicatorContainer.children[translate].style.backgroundColor = '';
+      if (forward) {
+        buttonBack.hidden = false;
+        translate += 1;
+      } else if (translate > 0) {
+        buttonForward.hidden = false;
+        translate -= 1;
+      }
+      slideContainer.style.transform = `translate(-${translate * 100}%)`;
+      indicatorContainer.children[translate].style.backgroundColor = '#f8cd60';
+      hideArrow();
+      startAutoScroll();
+    };
+
+    buttonForward.addEventListener("click", onClickSlider);
+    buttonBack.addEventListener("click", onClickSlider);
+
+    function scrollAuto() {
+      indicatorContainer.children[translate].style.backgroundColor = '';
+      if (translate !== amountSlides - 1) {
+        translate += 1;
+      }
+      slideContainer.classList.remove('click-duration');
+      slideContainer.classList.add('auto-duration');
       slideContainer.style.transform = `translateX(-${translate * 100}%)`;
-      slideContainer.append(slideContainer.firstElementChild);
-    }, 2100)
+      hideArrow();
+      translate -= 1;
+      delaySlide = setTimeout(function () {
+        slideContainer.classList.remove('auto-duration');
+        slideContainer.style.transform = `translateX(-${translate * 100}%)`;
+        slideContainer.append(slideContainer.firstElementChild);
+      }, 2100)
+    }
+
+    let startAutoScroll = function () {
+      timer = setTimeout(function () {
+        intervalSlider = setInterval(function () {
+          scrollAuto();
+        }, changeSlide);
+      }, delayTimerSlider)
+    };
+
+    startAutoScroll()
   }
-
-  let startAutoScroll = function () {
-    timer = setTimeout(function () {
-      intervalSlider = setInterval(function () {
-        scrollAuto();
-      }, changeSlide);
-    }, delayTimerSlider)
-  };
-
-  startAutoScroll()
-
-})();
+} )();
 //=================validation form======================================
-(function () {
+( function () {
 
   const START_INDEX = 4;
   const CLOSE_BRACE = 6;
@@ -222,7 +227,7 @@
 
     if (e.key !== 'Tab' && e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && !e.ctrlKey) {
       e.preventDefault();
-      if (IsSelectionTrue) {
+      if (IsSelectionTrue && this.selectionStart !== this.selectionEnd) {
         let clearData = pattern.slice(startSelection, endSelection);
         result.splice(startSelection, endSelection - startSelection, ...clearData);
       }
@@ -238,7 +243,7 @@
           }
         }
         result[index] = e.key;
-        focus = (index === CLOSE_BRACE) ? CLOSE_BRACE + 2 : (separator - index === 1) ? index + 1 : index;
+        focus = ( index === CLOSE_BRACE ) ? CLOSE_BRACE + 2 : ( separator - index === 1 ) ? index + 1 : index;
 
       } else {
         if (e.key === 'Backspace') {
@@ -312,7 +317,7 @@
     inputsWraps.forEach(item => item.classList.remove('valid'));
   };
 
-   let onSubmit = function (e) {
+  let onSubmit = function (e) {
     showPreload();
     fetch('mail.php', {
       method: 'post',
@@ -351,9 +356,9 @@
     this.removeEventListener('submit', onSubmit);
 
     if (e.target === phone) {
-    phone.removeEventListener('paste', pasteValue);
-    phone.removeEventListener('select', selectValue);
-    phone.removeEventListener('keydown', enterValue);
+      phone.removeEventListener('paste', pasteValue);
+      phone.removeEventListener('select', selectValue);
+      phone.removeEventListener('keydown', enterValue);
     }
 
     if (e.target === name) {
@@ -365,4 +370,4 @@
     }
   });
 
-})();
+} )();
