@@ -152,8 +152,9 @@
         <source media="(min-width: 1366px)" srcset="img/bg/bg-MM-1920@1x.jpg 1x, img/bg/bg-MM-1920@2x.svg 2x">
         <source type="image/webp" media="(min-width: 768px)" srcset="img/bg/bg-MM-1366@1x.webp 1x, img/bg/bg-MM-1366@2x.webp 2x">
         <source media="(min-width: 768px)" srcset="img/bg/bg-MM-1366@1x.jpg 1x, img/bg/bg-MM-1366@2x.jpg 2x">
+        <source type="image/webp" media="(min-width: 320px)" srcset="img/bg/bg-MM-808@1x.webp 1x, img/bg/bg-MM-808@2x.webp 2x">
         <img class="header__bg-image" src="img/bg/bg-MM-808@1x.jpg"
-          srcset="img/bg/bg-MM-808@2x.jpg 2x, img/bg/bg-MM-808@1x.webp 1x, img/bg/bg-MM-808@2x.webp 2x"
+          srcset="img/bg/bg-MM-808@1x.jpg 1x, img/bg/bg-MM-808@2x.jpg 2x"
           alt="background image Magic Mug" width="808"
           height="420">
       </picture>
@@ -180,15 +181,15 @@
       </div>
       <div class="about-us__slider slider__no-js slider">
           <div class="slider__slides">
-            <picture class="slider__item" id="first">
-                            <source type="image/webp" srcset="img/slider/coffee@1x.webp 1x, img/slider/coffee@2x.webp 2x">
-              <img class="slider__img" src="img/slider/coffee@1x.jpg" srcset="img/slider/coffee@2x.jpg 2x" alt="slide one"></picture>
-            <picture class="slider__item" id="second">
-                            <source type="image/webp" srcset="img/slider/Lemonade@1x.webp 1x, img/slider/Lemonade@2x.webp 2x">
-              <img class="slider__img" src="img/slider/Lemonade@1x.jpg" srcset="img/slider/Lemonade@2x.jpg 2x" alt="slide two"></picture>
-            <picture class="slider__item" id="third">
-                            <source type="image/webp" srcset="img/slider/buter@1x.webp 1x, img/slider/buter@2x.webp 2x">
-              <img class="slider__img" src="img/slider/buter@1x.jpg" srcset="img/slider/buter@2x.jpg 2x" alt="slide third"></picture>
+            <?php
+            $dir = './img/slider/';
+            $arr_slides = scandir($dir);
+            unset($arr_slides[0], $arr_slides[1]);
+            foreach ($arr_slides as $value) : ?>
+              <picture class="slider__item">
+                <source type="image/webp" srcset="img/slider/<?= $value ?>/1x.webp 1x, img/slider/<?= $value ?>/2x.webp 2x">
+                <img class="slider__img" src="img/slider/<?= $value ?>/1x.jpg" srcset="img/slider/<?= $value ?>/1x.jpg 1x, img/slider/<?= $value ?>/2x.jpg 2x" alt="image for the slider"></picture>
+            <?php endforeach; ?>
           </div>
           <button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button>
           <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
@@ -292,13 +293,13 @@
               <div class="glob__btn-wrap price__no-js">
                 <label class="price__for-pseudo price__sign" aria-label="item selection"><select class="price__select">
                   <option id="col-2" value="2">2 hours</option>
-                  <option id="col-3" value="3">3hours Guests</option>
+                  <option id="col-3" value="3">Extra hour</option>
                   <option id="col-4" value="4">Add smoothies</option>
                 </select></label>
                 <svg width="160" height="40" class="glob__btn-bg">
                   <use xlink:href="#btn"></use>
                 </svg>
-                <p class="price__sign price__sign--hide">2 hour</p>
+                <p class="price__sign price__sign--hide">2 hours</p>
               </div>
             </th>
             <th class="price__head price__head--3 hide">
@@ -321,8 +322,8 @@
           <tr class="price__row">
             <td class="price__cell price__cell--1">1-35</td>
             <td class="price__cell price__cell--2">$425</td>
-            <td class="price__cell price__cell--4 hide">$30</td>
             <td class="price__cell price__cell--3 hide">$150</td>
+            <td class="price__cell price__cell--4 hide">$30</td>
           </tr>
           <tr class="price__row">
             <td class="price__cell price__cell--1">1-35</td>
@@ -421,11 +422,11 @@
         <div class="contact__images">
           <picture class="contact__img contact__img-1">
             <source type="image/webp" srcset="img/bg/1cup@1x.webp 1x, img/bg/1cup@2x.webp 2x">
-            <img src="img/bg/1cup@1x.jpg" srcset="img/bg/1cup@2x.jpg 2x" alt="cup of coffee" width="300"
+            <img src="img/bg/1cup@1x.jpg" srcset="img/bg/1cup@1x.jpg 1x, img/bg/1cup@2x.jpg 2x" alt="cup of coffee" width="300"
             height="300" loading="lazy"></picture>
           <picture class="contact__img contact__img-2">
             <source type="image/webp" srcset="img/bg/2cup@1x.webp 1x, img/bg/2cup@2x.webp 2x">
-            <img src="img/bg/2cup@1x.jpg" srcset="img/bg/2cup@2x.jpg 2x" alt="cup of coffee" width="300"
+            <img src="img/bg/2cup@1x.jpg" srcset="img/bg/2cup@1x.jpg 1x, img/bg/2cup@2x.jpg 2x" alt="cup of coffee" width="300"
             height="300" loading="lazy"></picture>
         </div>
         <address class="contact__address">
@@ -466,13 +467,11 @@
     <p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
   </div>
 </footer>
-<div class="success-send display-none">
+<div class="success-send display-none" role="dialog" aria-labelledby="modal">
   <div class="success-send__wrap">
-    <h1 class="success-send__title">Your application is accepted. Thanks!<br>We will contact you soon.</h1>
+    <h2 id="modal" class="success-send__title">Your application is accepted. Thanks!<br>We will contact you soon.</h2>
     <button class="success-send__button" aria-label="close">close</button>
   </div>
 </div>
-<!--<script src="js/workerLoader.js"></script>
-<script src="sw.js"></script>-->
 </body>
 </html>
