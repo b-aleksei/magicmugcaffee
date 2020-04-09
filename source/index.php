@@ -27,7 +27,7 @@
   <meta name="msapplication-navbutton-color" content="#efd283">
   <meta name="msapplication-starturl" content="/index.html">
   <meta name="theme-color" content="#efd283">
-<!--  <script defer src="js/script.min.js"></script>-->
+  <script defer src="js/script.min.js"></script>
 </head>
 <body>
 <div style="display: none;">
@@ -181,15 +181,21 @@
       </div>
       <div class="about-us__slider slider__no-js slider">
           <div class="slider__slides">
-            <picture class="slider__item" id="first">
+            <picture class="slider__item">
                             <source type="image/webp" srcset="img/slider/coffee@1x.webp 1x, img/slider/coffee@2x.webp 2x">
-              <img class="slider__img" src="img/slider/coffee@1x.jpg" srcset="img/slider/coffee@1x.jpg 1x, img/slider/coffee@2x.jpg 2x" alt="slide one"></picture>
-            <picture class="slider__item" id="second">
-                            <source type="image/webp" srcset="img/slider/Lemonade@1x.webp 1x, img/slider/Lemonade@2x.webp 2x">
-              <img class="slider__img" src="img/slider/Lemonade@1x.jpg" srcset="img/slider/Lemonade@1x.jpg 1x, img/slider/Lemonade@2x.jpg 2x" alt="slide two"></picture>
-            <picture class="slider__item" id="third">
-                            <source type="image/webp" srcset="img/slider/buter@1x.webp 1x, img/slider/buter@2x.webp 2x">
-              <img class="slider__img" src="img/slider/buter@1x.jpg" srcset="img/slider/buter@1x.jpg 1x, img/slider/buter@2x.jpg 2x" alt="slide third"></picture>
+              <img class="slider__img" src="img/slider/coffee@1x.jpg" srcset="img/slider/coffee@1x.jpg 1x, img/slider/coffee@2x.jpg 2x" alt="image for the slider"></picture>
+            <picture class="slider__item">
+                            <source type="image/webp" srcset="img/slider/2/Lemonade@1x.webp 1x, img/slider/2/Lemonade@2x.webp 2x">
+              <img class="slider__img" src="img/slider/2/Lemonade@1x.jpg" srcset="img/slider/2/Lemonade@1x.jpg 1x, img/slider/2/Lemonade@2x.jpg 2x" alt="image for the slider"></picture>
+            <picture class="slider__item">
+                            <source type="image/webp" srcset="img/slider/3/buter@1x.webp 1x, img/slider/3/buter@2x.webp 2x">
+              <img class="slider__img" src="img/slider/3/buter@1x.jpg" srcset="img/slider/3/buter@1x.jpg 1x, img/slider/3/buter@2x.jpg 2x" alt="image for the slider"></picture>
+            <picture class="slider__item">
+              <source type="image/webp" srcset="img/slider/4/buter@1x.webp 1x, img/slider/4/buter@2x.webp 2x">
+              <img class="slider__img" src="img/slider/4/buter@1x.jpg" srcset="img/slider/4/buter@1x.jpg 1x, img/slider/4/buter@2x.jpg 2x" alt="image for the slider"></picture>
+            <picture class="slider__item">
+              <source type="image/webp" srcset="img/slider/5/buter@1x.webp 1x, img/slider/5/buter@2x.webp 2x">
+              <img class="slider__img" src="img/slider/5/buter@1x.jpg" srcset="img/slider/5/buter@1x.jpg 1x, img/slider/5/buter@2x.jpg 2x" alt="image for the slider"></picture>
           </div>
           <button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button>
           <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
