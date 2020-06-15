@@ -187,6 +187,7 @@
   let preloader = form.querySelector('.sk-three-bounce');
 
   let checkValidity = function () {
+		this.value = this.value.trim()
     if (this.validity.patternMismatch || this.value === '') {
       this.style.borderColor = '#ba0b11';
       this.parentElement.classList.remove('valid')
