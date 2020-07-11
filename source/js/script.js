@@ -60,7 +60,6 @@
   let table = document.querySelector('.price');
   let select = table.querySelector(".price__select");
   let noJs = table.querySelector(".price__no-js");
-
   noJs.classList.remove("price__no-js");
 
   select.addEventListener('change', function () {
