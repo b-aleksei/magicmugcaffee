@@ -1,15 +1,15 @@
 .footer {
-  background-image: url("../img/bg/bg-orange.jpg");
-  background-repeat: repeat;
-  font-weight: 500;
+	background-image: url("../img/bg/bg-orange.jpg");
+	background-repeat: repeat;
+	font-weight: 500;
 }
 
 .footer .container {
-  padding: 20px 6%;
+	padding: 20px 6%;
 }
 
 @media (min-width: $tablet) {
-  .footer__copyright {
-    font-size: 16px;
-  }
+	.footer__copyright {
+		font-size: 16px;
+	}
 }

@@ -7,6 +7,9 @@
     "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
+    "editorconfig-checker": "^3.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-google": "^0.14.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -23,14 +26,15 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
     "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0",
-    "eslint": "^7.4.0",
-    "eslint-config-google": "^0.14.0"
+    "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
-    "ttt": "npm run editorconfig && npm run stylelint",
-    "test": "editorconfig-checker --exclude '.git|node_modules|.idea'",
+    "lint": "npm run js:lint && npm run css:lint",
+    "fix": "npm run js:fix && npm run css:fix",
+    "js:lint": "eslint source/js/**/*.js",
+    "css:lint": "stylelint source/**/*.scss",
+    "js:fix": "eslint source/js/script.js --fix",
+    "css:fix": "stylelint source/**/*.scss --fix",
     "build": "gulp build",
     "start": "gulp start",
     "derloy": "cd build && rsync --archive --compress --delete . wwwww@ssss.dev:/var/www/magicmugcafe.com/html/"
@@ -39,5 +43,10 @@
     "last 2 versions",
     "IE 11",
     "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/sass/**/*.{sass,scss}"
   ]
 }

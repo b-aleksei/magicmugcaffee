@@ -1,186 +1,186 @@
 .nav {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
 .nav__menu-opener {
-  position: relative;
-  width: 35px;
-  height: 30px;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
+	position: relative;
+	width: 35px;
+	height: 30px;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
 }
 
 .nav__button-icon {
-  display: inline-block;
-  position: absolute;
-  top: 12px;
-  right: 0;
-  width: 35px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: $textColor;
-  transition: 0.3s;
+	display: inline-block;
+	position: absolute;
+	top: 12px;
+	right: 0;
+	width: 35px;
+	height: 6px;
+	border-radius: 3px;
+	background-color: $textColor;
+	transition: 0.3s;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: -11px;
-    right: 0;
-    width: 35px;
-    height: 6px;
-    border-radius: 3px;
-    background-color: $textColor;
-    transition: 0.3s;
-  }
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: -11px;
+		right: 0;
+		width: 35px;
+		height: 6px;
+		border-radius: 3px;
+		background-color: $textColor;
+		transition: 0.3s;
+	}
 
-  &::after {
-    top: 11px;
-  }
+	&::after {
+		top: 11px;
+	}
 }
 
 .nav__list {
-  position: relative;
-  display: none;
-  background-color: #ffecb8;
-  text-align: center;
-  padding-top: 35px;
+	position: relative;
+	display: none;
+	background-color: #ffecb8;
+	text-align: center;
+	padding-top: 35px;
 
-  &::after {
-    content: "";
-    position: absolute;
-    height: 7px;
-    background-image: url("../img/wave.svg");
-    background-repeat: repeat-x;
-    background-size: 35px 7px;
-    bottom: -6px;
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
+	&::after {
+		content: "";
+		position: absolute;
+		height: 7px;
+		background-image: url("../img/wave.svg");
+		background-repeat: repeat-x;
+		background-size: 35px 7px;
+		bottom: -6px;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
 }
 
 .nav__item {
-  padding: 0 30px 25px;
+	padding: 0 30px 25px;
 }
 
 .nav__item:last-child {
-  padding-bottom: 15px;
+	padding-bottom: 15px;
 }
 
 .nav__link {
-  display: block;
-  width: auto;
-  font-family: "AdelleCyrillic-Extrabold", "Georgia", serif;
-  line-height: 1.5;
-  color: inherit;
-  text-decoration: none;
+	display: block;
+	width: auto;
+	font-family: AdelleCyrillic-Extrabold, Georgia, serif;
+	line-height: 1.5;
+	color: inherit;
+	text-decoration: none;
 
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    transform: scale(0);
-    background-color: rgba(103, 58, 39, 0.5);
-    transition: 0.3s;
-  }
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 1px;
+		transform: scale(0);
+		background-color: rgba(103, 58, 39, 0.5);
+		transition: 0.3s;
+	}
 
-  &:hover,
-  &:active {
-    color: $hoverColor;
-  }
+	&:hover,
+	&:active {
+		color: $hoverColor;
+	}
 
-  &:hover::after,
-  &:active::after {
-    transform: scale(1);
-  }
+	&:hover::after,
+	&:active::after {
+		transform: scale(1);
+	}
 }
 
 @media (min-width: $mobile) {
-  .nav__item {
-    padding: 0 0 0 30px;
-  }
+	.nav__item {
+		padding: 0 0 0 30px;
+	}
 
-  .nav__item:first-child {
-    padding-left: 0;
-  }
+	.nav__item:first-child {
+		padding-left: 0;
+	}
 }
 
 @media (min-width: $mobileWide) {
-  .nav__link {
-    font-size: $font16;
-  }
+	.nav__link {
+		font-size: $font16;
+	}
 }
 
 @media (min-width: $tablet) {
-  .nav__list {
-    padding-top: 40px;
+	.nav__list {
+		padding-top: 40px;
 
-    &::after {
-      height: 15px;
-      background-size: 50px 10px;
-      bottom: -15px;
-    }
-  }
+		&::after {
+			height: 15px;
+			background-size: 50px 10px;
+			bottom: -15px;
+		}
+	}
 
-  .nav__link {
-    font-size: $font18;
-  }
+	.nav__link {
+		font-size: $font18;
+	}
 }
 
 @media (min-width: $tabletWide) {
-  .nav__list {
-    padding-top: 40px;
-  }
+	.nav__list {
+		padding-top: 40px;
+	}
 
-  .nav__link {
-    font-size: $font22;
-  }
+	.nav__link {
+		font-size: $font22;
+	}
 
-  .nav__item:not(:first-child) {
-    padding-left: 40px;
-  }
+	.nav__item:not(:first-child) {
+		padding-left: 40px;
+	}
 }
 
 @media (min-width: $medium) {
-  .nav {
-    width: auto;
-    padding-top: 0;
-  }
+	.nav {
+		width: auto;
+		padding-top: 0;
+	}
 
-  .nav__menu-opener {
-    display: none;
-  }
+	.nav__menu-opener {
+		display: none;
+	}
 
-  .nav__list {
-    padding: 0;
-    display: flex;
-  }
+	.nav__list {
+		padding: 0;
+		display: flex;
+	}
 
-  .nav__item:last-child {
-    padding-bottom: 0;
-  }
+	.nav__item:last-child {
+		padding-bottom: 0;
+	}
 }
 
 @media (min-width: 1600px) {
-  .nav__link {
-    font-size: $font28;
-  }
+	.nav__link {
+		font-size: $font28;
+	}
 
-  .nav__item:not(:first-child) {
-    padding-left: 50px;
-  }
+	.nav__item:not(:first-child) {
+		padding-left: 50px;
+	}
 }
 
 @media (min-width: 1920px) {
-  .nav__link {
-    font-size: $font32;
-  }
+	.nav__link {
+		font-size: $font32;
+	}
 
-  .nav__item:not(:first-child) {
-    padding-left: 60px;
-  }
+	.nav__item:not(:first-child) {
+		padding-left: 60px;
+	}
 }

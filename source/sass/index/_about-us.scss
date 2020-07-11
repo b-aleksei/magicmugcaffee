@@ -1,99 +1,99 @@
 .about-us__info {
-  padding: 0 6%;
+	padding: 0 6%;
 }
 
 .about-us__content {
-  font-weight: $fw500;
-  margin-bottom: 40px;
+	font-weight: $fw500;
+	margin-bottom: 40px;
 }
 
 .about-us__content:first-of-type {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .about-us__item .about-us__content {
-  position: relative;
-  margin: 0;
-  padding-left: 2em;
-  font-weight: 400;
-  line-height: 3;
+	position: relative;
+	margin: 0;
+	padding-left: 2em;
+	font-weight: 400;
+	line-height: 3;
 
-  &::before {
-    content: url("../img/thumbs_up_icon.svg");
-    position: absolute;
-    top: calc(42% - 1em);
-    left: 0;
-    width: 1.1em;
-    height: 1em;
-  }
+	&::before {
+		content: url("../img/thumbs_up_icon.svg");
+		position: absolute;
+		top: calc(42% - 1em);
+		left: 0;
+		width: 1.1em;
+		height: 1em;
+	}
 }
 
 .about-us__title {
-  text-align: left;
+	text-align: left;
 }
 
 .about-us__subtitle {
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
 }
 
 .about-us__title strong {
-  display: block;
-  font-size: $font20;
+	display: block;
+	font-size: $font20;
 
-  @media (min-width: 414px) {
-    font-size: 26px;
-  }
+	@media (min-width: 414px) {
+		font-size: 26px;
+	}
 }
 
 @media (min-width: $mobileMini) {
-  .about-us__title strong {
-    font-size: 23px;
-  }
+	.about-us__title strong {
+		font-size: 23px;
+	}
 
-  .about-us__title {
-    text-align: center;
-  }
+	.about-us__title {
+		text-align: center;
+	}
 }
 
 @media (min-width: $mobileWide) {
-  .about-us__title strong {
-    font-size: $font30;
-  }
+	.about-us__title strong {
+		font-size: $font30;
+	}
 
-  .about-us__content {
-    font-size: 16px;
-  }
+	.about-us__content {
+		font-size: 16px;
+	}
 }
 
 @media (min-width: $tablet) {
-  .about-us__title strong {
-    font-size: $font34;
-  }
+	.about-us__title strong {
+		font-size: $font34;
+	}
 
-  .about-us__content {
-    font-size: 18px;
-  }
+	.about-us__content {
+		font-size: 18px;
+	}
 }
 
 @media (min-width: $tabletWide) {
-  .about-us .container {
-    display: flex;
-    align-items: center;
-  }
+	.about-us .container {
+		display: flex;
+		align-items: center;
+	}
 
-  .about-us__slider {
-    order: -1;
-    width: 50%;
-  }
+	.about-us__slider {
+		order: -1;
+		width: 50%;
+	}
 
-  .about-us__info {
-    width: 50%;
-  }
+	.about-us__info {
+		width: 50%;
+	}
 }
 
 @media (min-width: 1600px) {
-  .about-us__title strong {
-    font-size: $font44;
-  }
+	.about-us__title strong {
+		font-size: $font44;
+	}
 }

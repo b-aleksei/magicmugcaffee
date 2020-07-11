@@ -1,26 +1,29 @@
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat-v14-latin-500.woff2") format("woff2"),
-    url("../fonts/montserrat-v14-latin-500.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: Montserrat;
+	src:
+		url("../fonts/montserrat-v14-latin-500.woff2") format("woff2"),
+		url("../fonts/montserrat-v14-latin-500.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
-  url("../fonts/Montserrat-SemiBold.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: Montserrat;
+	src:
+		url("../fonts/Montserrat-SemiBold.woff2") format("woff2"),
+		url("../fonts/Montserrat-SemiBold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "AdelleCyrillic-Extrabold";
-  src: url("../fonts/AdelleCyrillic-Extrabold.woff2") format("woff2"),
-  url("../fonts/AdelleCyrillic-Extrabold.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: AdelleCyrillic-Extrabold;
+	src:
+		url("../fonts/AdelleCyrillic-Extrabold.woff2") format("woff2"),
+		url("../fonts/AdelleCyrillic-Extrabold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
