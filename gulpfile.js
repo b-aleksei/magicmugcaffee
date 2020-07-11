@@ -10,7 +10,6 @@ const gulp = require("gulp"),
   rename = require("gulp-rename"),
   svgstore = require("gulp-svgstore"),
   posthtml = require("gulp-posthtml"),
-  include = require("posthtml-include"),
   del = require("del"),
   autoprefixer = require("autoprefixer"),
   server = require("browser-sync").create(),
@@ -18,7 +17,6 @@ const gulp = require("gulp"),
   imagemin = require("gulp-imagemin"),
   imageminJpegRecompress = require("imagemin-jpeg-recompress"),
   pngquant = require("imagemin-pngquant"),
-  cache = require("gulp-cache"),
   terser = require('gulp-terser');
 
 gulp.task("css", function () {
