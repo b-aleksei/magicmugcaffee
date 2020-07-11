@@ -32,9 +32,11 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint",
+    "ttt": "npm run editorconfig && npm run stylelint",
+    "test": "editorconfig-checker --exclude '.git|node_modules|.idea'",
     "build": "gulp build",
-    "start": "gulp start"
+    "start": "gulp start",
+    "derloy": "cd build && rsync --archive --compress --delete . wwwww@ssss.dev:/var/www/magicmugcafe.com/html/"
   },
   "browserslist": [
     "last 2 versions",
