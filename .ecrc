@@ -1,0 +1,20 @@
+{
+  "Verbose": false,
+  "Debug": false,
+  "IgnoreDefaults": false,
+  "SpacesAftertabs": false,
+  "NoColor": false,
+  "Exclude": ["source/js/picturefill.min.js"],
+  "AllowedContentTypes": [],
+  "PassedFiles": [
+    "source/index.html",
+    "source/js",
+    "source/sass"
+  ],
+  "Disable": {
+    "EndOfLine": false,
+    "Indentation": false,
+    "InsertFinalNewline": false,
+    "TrimTrailingWhitespace": false
+  }
+}

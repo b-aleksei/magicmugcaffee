@@ -30,10 +30,11 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "scripts": {
-    "lint": "npm run js:lint && npm run css:lint",
-    "fix": "npm run js:fix && npm run css:fix",
+    "test": "npm run edc && npm run js:lint && npm run css:lint",
+    "edc": "editorconfig-checker",
     "js:lint": "eslint source/js/**/*.js",
     "css:lint": "stylelint source/**/*.scss",
+    "fix": "npm run js:fix && npm run css:fix",
     "js:fix": "eslint source/js/script.js --fix",
     "css:fix": "stylelint source/**/*.scss --fix",
     "build": "gulp build",
@@ -44,10 +45,5 @@
     "last 2 versions",
     "IE 11",
     "Firefox ESR"
-  ],
-  "editorconfig-cli": [
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/sass/**/*.{sass,scss}"
   ]
 }
