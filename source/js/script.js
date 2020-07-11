@@ -53,6 +53,7 @@
 		});
 	}
 } )();
+
 // =====================price===========================================
 ( function() {
 	const table = document.querySelector('.price');
