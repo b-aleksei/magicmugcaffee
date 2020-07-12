@@ -40,7 +40,7 @@
     "css:fix": "stylelint source/**/*.scss --fix",
     "build": "gulp build",
     "start": "gulp start",
-    "depl": "cd build && rsync --archive --compress --delete . pepelsbey@pepelsbey.dev:/var/www/pepelsbey.dev/html/"
+    "depl": "cd build/css && rsync --archive --compress --delete . magicmug@magicmugcafe.com:~/public_html/333/"
   },
   "browserslist": [
     "last 2 versions",
