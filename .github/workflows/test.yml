@@ -10,7 +10,6 @@ on:
 
 jobs:
   lint:
-    name: My Job
     runs-on: ubuntu-latest
     strategy:
       matrix:
