@@ -19,6 +19,7 @@
     "gulp-postcss": "8.0.x",
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^2.0.0",
+    "gulp-rsync": "0.0.9",
     "gulp-sass": "4.0.x",
     "gulp-sourcemaps": "2.6.x",
     "gulp-svgstore": "^7.0.1",
@@ -39,7 +40,7 @@
     "css:fix": "stylelint source/**/*.scss --fix",
     "build": "gulp build",
     "start": "gulp start",
-    "derloy": "cd build && rsync --archive --compress --delete . wwwww@ssss.dev:/var/www/magicmugcafe.com/html/"
+    "depl": "cd build && rsync --archive --compress --delete . pepelsbey@pepelsbey.dev:/var/www/pepelsbey.dev/html/"
   },
   "browserslist": [
     "last 2 versions",
