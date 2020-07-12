@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # Setup key
       - run: set -eu
-      - run: mkdir "$hOME/.ssh"
+      - run: mkdir "$HOME/.ssh"
       - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build
