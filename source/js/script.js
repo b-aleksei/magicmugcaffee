@@ -7,6 +7,8 @@
 	navButton.classList.remove('hide');
 	navMain.classList.remove('header__nav--no-js');
 	navButton.addEventListener('click', function() {
+		const invert = navButton.getAttribute('aria-expanded') === 'false' ? 'true' : 'false';
+		navButton.setAttribute('aria-expanded', invert);
 		navMain.classList.toggle('header__nav--menu-open');
 		navButton.classList.toggle('header__nav--menu-open');
 	});
