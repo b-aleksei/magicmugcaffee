@@ -127,8 +127,8 @@ gulp.task('copy', function() {
 		.pipe(gulp.dest('build'));
 });
 
-gulp.task('favicon', function() {
-	return gulp.src('source/favicon/**')
+gulp.task('static', function() {
+	return gulp.src('source/static/**')
 		.pipe(gulp.dest('build'));
 });
 
@@ -152,7 +152,7 @@ gulp.task('watch', function() {
 	gulp.watch('source/js/*.js', gulp.series('js')).on('change', server.reload);
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'favicon', 'minhtml', 'css', 'js'));
+gulp.task('build', gulp.series('clean', 'copy', 'static', 'minhtml', 'css', 'js'));
 gulp.task('updater', gulp.parallel('watch', 'server'));
 // gulp.task("start", gulp.parallel("server", "watch"));
 gulp.task('start', gulp.series('build', 'updater'));
