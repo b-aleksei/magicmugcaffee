@@ -37,7 +37,7 @@ module.exports = {
   context: PATHS.src,
   mode: 'development',
   entry: {
-    polyfill: '@babel/polyfill',
+    // polyfill: '@babel/polyfill',
     main: './index.js',
   },
   output: {
