@@ -1,0 +1,162 @@
+.offer .container {
+	position: relative;
+	padding: 35% 0;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 120px;
+		background-image: url("../img/png/palm-sprite@1x.png");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: -8px 0;
+	}
+
+	&::after {
+		top: auto;
+		bottom: 0;
+		background-position: 0 100%;
+	}
+}
+
+@media (min-width: 400px) {
+	.offer .container {
+		&::before,
+		&::after {
+			height: 140px;
+		}
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+	.offer .container {
+		&::before,
+		&::after {
+			background-image: url("../img/png/palm-sprite@2x.png");
+		}
+	}
+}
+
+.offer__rate,
+.offer__menu {
+	padding: 0 6%;
+}
+
+@media (min-width: $mobile) {
+	.offer .container {
+		&::before,
+		&::after {
+			height: 180px;
+		}
+	}
+}
+
+@media (min-width: 628px) {
+	.offer .container {
+		&::before,
+		&::after {
+			height: 200px;
+		}
+	}
+}
+
+@media (min-width: 667px) {
+	.offer .container {
+		padding: 50px 0;
+
+		&::before {
+			width: 477px;
+			height: 150px;
+			transform: rotate(-90deg);
+			top: 45%;
+			left: -164px;
+		}
+
+		&::after {
+			width: 1150px;
+			height: 150px;
+			transform: rotate(-90deg);
+			left: unset;
+			bottom: 40%;
+			right: -500px;
+			background-repeat: space;
+			background-size: 477px auto;
+		}
+	}
+}
+
+@media (min-width: $tablet) {
+	.offer .container {
+		padding: 80px 0;
+
+		&::before {
+			top: 52%;
+		}
+
+		&::after {
+			width: 1430px;
+			right: -640px;
+			bottom: 43%;
+		}
+	}
+}
+
+@media (min-width: $medium) {
+	.offer .container {
+		padding: 80px 0;
+
+		&::before {
+			top: 45%;
+		}
+
+		&::after {
+			width: 1278px;
+			right: -564px;
+		}
+	}
+}
+
+@media (min-width: 1680px) {
+	.offer .container {
+		&::before,
+		&::after {
+			top: 35%;
+			left: -280px;
+			height: 495px;
+			width: 666px;
+			background-image: url("../img/png/palm_1332.png");
+			background-position: 0 0;
+		}
+
+		&::after {
+			left: initial;
+			right: -840px;
+			width: 1680px;
+			background-size: 666px auto;
+		}
+	}
+}
+
+@media (min-width: 1921px) {
+	.offer .container {
+		&::before,
+		&::after {
+			top: 33%;
+			left: -250px;
+			height: 495px;
+			background-image: url("../img/png/palm_1332.png");
+			background-position: 0 0;
+		}
+
+		&::after {
+			left: initial;
+			right: -780px;
+			width: 1680px;
+			background-size: 666px auto;
+		}
+	}
+}

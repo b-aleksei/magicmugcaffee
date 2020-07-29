@@ -1,0 +1,35 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/index.html",
+  "name": "Magic Mug - a mobile Coffee Bar",
+  "short_name": "Magic Mug",
+  "description": "Magic Mug is a mobile coffee truck delivering and serving freshly roasted coffee, espresso drinks, tea , smoothies right to your doorstep",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#efd283",
+  "background_color": "#efd283",
+  "icons": [
+	   {
+      "src": "favicon.ico",
+      "sizes": "48x48"
+    }, {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }, {
+	  "src": "safari-pinned-tab.svg",
+	  "sizes": "1280x1280",
+	  "type": "image/svg"
+	}, {
+	  "src": "maskable_icon.png",
+	  "sizes": "196x196",
+	  "type": "image/png",
+	  "purpose": "any maskable"
+	}
+  ]
+}

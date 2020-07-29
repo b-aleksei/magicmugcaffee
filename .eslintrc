@@ -7,12 +7,12 @@
   },
   "extends": ["eslint:recommended", "google"],
   "rules": {
-    "indent": ["error", "tab"],
-    "no-tabs": "off",
-    "arrow-parens": "off",
-    "require-jsdoc": "off",
-    "no-trailing-spaces": "warn",
-    "no-invalid-this": "off",
-    "max-len": ["error", { "code": 100 }]
+	"indent": ["error", "tab"],
+	"no-tabs": "off",
+	"arrow-parens": "off",
+	"require-jsdoc": "off",
+	"no-trailing-spaces": "warn",
+	"no-invalid-this": "off",
+	"max-len": ["error", { "code": 100 }]
   }
 }

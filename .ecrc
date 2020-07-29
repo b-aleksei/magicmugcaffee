@@ -4,12 +4,12 @@
   "IgnoreDefaults": false,
   "SpacesAftertabs": false,
   "NoColor": false,
-  "Exclude": ["source/js/picturefill.min.js"],
+  "Exclude": [],
   "AllowedContentTypes": [],
   "PassedFiles": [
-    "source/index.html",
-    "source/js",
-    "source/sass"
+    "src/index.html",
+    "src/js",
+    "src/scss"
   ],
   "Disable": {
     "EndOfLine": false,

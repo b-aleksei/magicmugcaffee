@@ -1,0 +1,63 @@
+.social-net {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.social-net__item {
+	display: block;
+}
+
+.social-net__item:not(:last-child) {
+	margin-right: 8px;
+}
+
+.social-net__icon {
+	display: block;
+	color: $textColor;
+	line-height: 24px;
+	transition: color .3s;
+}
+
+.social-net__item:hover .social-net__icon {
+	color: $hoverColor;
+}
+
+.social-net__item A:active .social-net__icon {
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 5px #FFECB8, inset 0 0 0 30px #DBA101;
+}
+
+@media (min-width: $mobile) {
+	.social-net__item:not(:last-child) {
+		margin-right: 20px;
+	}
+}
+
+@media (min-width: $tablet) {
+	.social-net__icon {
+		width: 30px;
+		height: 29px;
+	}
+
+	.social-net__item:not(:last-child) {
+		margin-right: 30px;
+	}
+}
+
+@media (min-width: $tabletWide) {
+	.social-net__icon {
+		width: 42px;
+		height: 41px;
+	}
+
+	.social-net__item:not(:last-child) {
+		margin-right: 40px;
+	}
+}
+
+@media (min-width: $medium) {
+	.social-net__icon {
+		width: 50px;
+		height: 49px;
+	}
+}
