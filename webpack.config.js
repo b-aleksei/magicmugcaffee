@@ -66,10 +66,10 @@ module.exports = {
         {from: PATHS.static, to: PATHS.dist},
       ],
     }),
-	  new WorkboxPlugin.GenerateSW({
+/*	  new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
-    }),
+    }),*/
   ],
   resolve: {
     // extensions: ['.js'],
