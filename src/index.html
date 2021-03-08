@@ -368,16 +368,32 @@
 			<h2 class="contact__title glob-h2"><strong class="glob-h2-red">Contact us </strong>Today</h2>
 			<div class="contact__wrap">
 				<form class="contact__form" id="form" action="mail.php" method="post">
-					<label class="contact__label">Your name<sup>*</sup> <input class="contact__input" id="name" type="text" name="user_name" placeholder="Name" pattern="[A-z, А-я]{2,}" required /></label>
-					<label class="contact__label">Your phone<sup>*</sup> <input class="contact__input" type="tel" name="user_phone" id="phone" pattern="\+1 \(\d{3}\) \d{3}-\d{2}-\d{2}" placeholder="+1 (999) 999-99-99" required /></label>
-					<label class="contact__label">Your email<sup>*</sup> <input class="contact__input" id="email" type="email" name="user_email" pattern="(^[\w.-]{2,}@[\w-]+\.[A-z]{2,8})$" placeholder="address@example.com" required /></label>
-					<label class="contact__label">Subject<textarea class="contact__comment" name="user_message" cols="30" rows="10"></textarea></label>
+					<label class="contact__label">
+						<span class="contact__field-title">Your name<sup>*</sup> </span>
+						<input class="contact__input" id="name" type="text" name="user_name" placeholder="Name" data-validate="" required />
+						<span data-error=""></span>
+					</label>
+					<label class="contact__label">
+						<span class="contact__field-title">Your phone<sup>*</sup></span>
+						<input class="contact__input" type="tel" name="user_phone" id="phone" placeholder="+1 (999) 999-99-99" data-validate="phone" required />
+						<span data-error=""></span>
+						</label>
+					<label class="contact__label">
+						<span class="contact__field-title">Your email<sup>*</sup></span>
+						<input class="contact__input" id="email" type="text" name="user_email" placeholder="address@example.com" data-validate="email" required />
+						<span data-error=""></span>
+					</label>
+					<label class="contact__label">
+						<span class="contact__field-title">Subject<sup>*</sup></span>
+						<textarea class="contact__comment" name="user_message" cols="30" rows="10" data-validate="" required></textarea>
+						<span data-error=""></span>
+					</label>
 					<button class="contact__btn glob__btn" type="submit" aria-label="send form">
 						<span class="contact__btn-wrap glob__btn-wrap">
 							<span class="contact__btn-name">Send</span> <svg width="240" height="65" class="contact__btn-bg glob__btn-bg"><use xlink:href="#btn"></use></svg>
 						</span>
 						<!--            preloader css-->
-						<span class="sk-three-bounce display-none"><span class="sk-bounce-1 sk-child"></span> <span class="sk-bounce-2 sk-child"></span> <span class="sk-bounce-3 sk-child"></span></span>
+						<span class="sk-three-bounce"><span class="sk-bounce-1 sk-child"></span> <span class="sk-bounce-2 sk-child"></span> <span class="sk-bounce-3 sk-child"></span></span>
 					</button>
 				</form>
 				<div class="contact__images">
@@ -421,11 +437,10 @@
 		<p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
 	</div>
 </footer>
-<div class="success-send display-none">
+<div class="success-send">
 	<div class="success-send__wrap">
 		<h2 class="success-send__title">
-			Your application is accepted. Thanks!<br />
-			We will contact you soon.
+			Your application is accepted. Thanks! We will contact you soon.
 		</h2>
 		<button class="success-send__button" aria-label="close">close</button>
 	</div>

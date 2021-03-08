@@ -27,7 +27,8 @@ module.exports = {
     path: PATHS.dist,
 	  // publicPath: "/",
   },
-  devtool: isDev ? 'cheap-module-source-map' : false,
+  // devtool: isDev ? 'cheap-module-source-map' : false,
+  devtool: isDev ? 'inline-source-map' : false,
   devServer: {
     // writeToDisk: true,
     contentBase: PATHS.dist,
@@ -47,6 +48,7 @@ module.exports = {
         new CopyPlugin({
       patterns: [
         {from: PATHS.static, to: PATHS.dist},
+        {from: PATHS.src + '/data', to: PATHS.dist + '/data'},
       ],
     }),
   ],
@@ -68,8 +70,9 @@ module.exports = {
               reloadAll: isDev,
             },
           },
-          'css-loader',
-          'sass-loader',
+	        {loader: 'css-loader', options: {sourceMap: isDev}},
+	        {loader: 'postcss-loader', options: {sourceMap: isDev}},
+	        {loader: 'sass-loader', options: {sourceMap: isDev}},
         ],
       },
       {test: /\.js$/i,

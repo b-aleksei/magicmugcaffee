@@ -1,0 +1,5 @@
+{
+  "success": "Your application is accepted. Thanks! We will contact you soon.",
+  "bad": "The remote server not found.",
+  "error": "There are network problems. Check your internet connection."
+}
