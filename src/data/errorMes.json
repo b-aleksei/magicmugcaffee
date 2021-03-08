@@ -1,0 +1,5 @@
+{
+  "required": "The field should not be empty",
+  "phone": "the number isn't correct",
+  "email": "the email isn't correct"
+}

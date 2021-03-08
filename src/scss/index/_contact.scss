@@ -4,6 +4,7 @@
 }
 
 .contact__form {
+	--input-height: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -11,23 +12,74 @@
 	margin: 0 auto 70px auto;
 }
 
-.contact__form SUP {
+.contact__form sup {
 	color: #F00F00;
 }
 
 .contact__label {
 	position: relative;
 	width: 100%;
+	margin-bottom: 20px;
+	cursor: pointer;
+
+	[data-error] {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: var(--input-height);
+		width: 100%;
+		pointer-events: none;
+
+		&::after {
+		  content: attr(data-error);
+			position: absolute;
+			top: 100%;
+			left: 16px;
+			font-size: 12px;
+			line-height: 1.5;
+			color: $colorError;
+			opacity: 0;
+			transition: opacity $delay-default;
+		}
+
+		&::before {
+			content: url("../img/green-tick.svg");
+			position: absolute;
+			top: 50%;
+			width: 34px;
+			height: 30px;
+			bottom: 31%;
+			right: 5px;
+			pointer-events: none;
+			transform: translateY(-50%) scale3d(0, 0, 0);
+			transition: transform $delay-default;
+		}
+
+/*		@media (max-width: $tablet) {
+			left: 0;
+		}*/
+	}
 }
 
-.valid::after {
-	content: url("../img/green-tick.svg");
-	position: absolute;
-	width: 34px;
-	height: 30px;
-	bottom: 31%;
-	right: 5px;
+.valid {
+	input:valid {
+		& + span:before {
+			transform: translateY(-50%) scale3d(1, 1, 1);
+		}
+	}
 }
+
+.validate {
+	input:invalid,
+	textarea:invalid {
+		border-color: $colorError;
+
+		& + span:after {
+			opacity: 1;
+		}
+	}
+}
+
 
 .contact__input,
 .contact__comment {
@@ -40,15 +92,21 @@
 	box-shadow: 4px 2px 4px 1px rgba(0, 0, 0, .2);
 	font: inherit;
 	letter-spacing: 1.2px;
+	transition: border-color $delay-default;
 }
 
 .contact__input {
-	height: 50px;
-	margin-bottom: 20px;
+	height: var(--input-height);
 	padding-right: 40px;
 
 	&:focus {
 		outline: none;
+	}
+}
+
+.validate {
+	input:invalid {
+		border-color: $colorError;
 	}
 }
 
@@ -58,8 +116,11 @@
 
 .contact__comment {
 	height: 144px;
-	margin-bottom: 40px;
 	padding: 15px;
+}
+
+.contact__btn {
+	margin-top: 40px;
 }
 
 .contact__btn-wrap {
@@ -179,12 +240,10 @@
 
 	.contact__label {
 		font-size: $font20;
-		padding-bottom: 10px;
 	}
 
-	.contact__input,
-	.contact__comment {
-		margin-top: 10px;
+	.contact__field-title {
+		margin-bottom: 10px;
 	}
 
 	.catering__btn-name,
