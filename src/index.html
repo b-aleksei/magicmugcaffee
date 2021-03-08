@@ -4,8 +4,7 @@
 	<title>Magic Mug - a mobile Coffee Bar</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-	<link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<link rel="preload" href="fonts/AdelleCyrillic-Extrabold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 	<link rel="manifest" href="manifest.json" />
 	<meta name="description" content="Magic Mug is a mobile coffee truck delivering and serving freshly roasted coffee, espresso drinks, tea , smoothies right to your doorstep" />
@@ -120,9 +119,9 @@
 					</a>
 				</li>
 			</ul>
-			<a class="header__logo" id="top" aria-label="Logo Magic Mug">
-				<svg class="header__img-logo" width="55" height="35"><use xlink:href="#logo"></use></svg>
-			</a>
+			<div class="header__logo" id="top">
+				<svg class="header__img-logo" width="55" height="35" aria-label="Logo Magic Mug"><use xlink:href="#logo"></use></svg>
+			</div>
 			<div class="header__btn-wrap">
 				<button class="nav__menu-opener hide" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="menu button"><span class="nav__button-icon" aria-hidden="true"></span></button>
 			</div>
@@ -170,15 +169,15 @@
 				<div class="slider__slides">
 					<picture class="slider__item" id="first">
 						<source type="image/webp" srcset="img/slider/cups/800x450.webp, img/slider/cups/1600x900.webp 2x" />
-						<img class="slider__img" src="img/slider/cups/800x450.jpg" srcset="img/slider/cups/800x450.jpg, img/slider/cups/1600x900.jpg 2x" alt="slide one" />
+						<img class="slider__img" src="img/slider/cups/800x450.jpg" srcset="img/slider/cups/800x450.jpg, img/slider/cups/1600x900.jpg 2x" alt="slide one" loading="lazy" decoding="async"/>
 					</picture>
 					<picture class="slider__item" id="second">
 						<source type="image/webp" srcset="img/slider/lemon/800x450.webp, img/slider/lemon/1600x900.webp 2x" />
-						<img class="slider__img" src="img/slider/lemon/800x450.jpg" srcset="img/slider/lemon/800x450.jpg, img/slider/lemon/1600x900.jpg 2x" alt="slide two" />
+						<img class="slider__img" src="img/slider/lemon/800x450.jpg" srcset="img/slider/lemon/800x450.jpg, img/slider/lemon/1600x900.jpg 2x" alt="slide two" loading="lazy" decoding="async"/>
 					</picture>
 					<picture class="slider__item" id="third">
 						<source type="image/webp" srcset="img/slider/burger/800x450.webp, img/slider/burger/1600x900.webp 2x" />
-						<img class="slider__img" src="img/slider/burger/800x450.jpg" srcset="img/slider/burger/800x450.jpg, img/slider/burger/1600x900.jpg 2x" alt="slide third" />
+						<img class="slider__img" src="img/slider/burger/800x450.jpg" srcset="img/slider/burger/800x450.jpg, img/slider/burger/1600x900.jpg 2x" alt="slide third" loading="lazy" decoding="async"/>
 					</picture>
 				</div>
 				<button class="glob__btn slider__arrow-back" type="button" aria-label="slide back"></button> <button class="glob__btn slider__arrow-forward" type="button" aria-label="slide forward"></button>
@@ -399,11 +398,11 @@
 				<div class="contact__images">
 					<picture class="contact__img contact__img-1">
 						<source type="image/webp" srcset="img/bg/1cup@1x.webp, img/bg/1cup@2x.webp 2x" />
-						<img src="img/bg/1cup@1x.jpg" srcset="img/bg/1cup@1x.jpg, img/bg/1cup@2x.jpg 2x" alt="cup of coffee" width="300" height="300" loading="lazy" />
+						<img src="img/bg/1cup@1x.jpg" srcset="img/bg/1cup@1x.jpg, img/bg/1cup@2x.jpg 2x" alt="cup of coffee" width="300" height="300"  loading="lazy" decoding="async"/>
 					</picture>
 					<picture class="contact__img contact__img-2">
 						<source type="image/webp" srcset="img/bg/2cup@1x.webp, img/bg/2cup@2x.webp 2x" />
-						<img src="img/bg/2cup@1x.jpg" srcset="img/bg/2cup@1x.jpg, img/bg/2cup@2x.jpg 2x" alt="cup of coffee" width="300" height="300" loading="lazy" />
+						<img src="img/bg/2cup@1x.jpg" srcset="img/bg/2cup@1x.jpg, img/bg/2cup@2x.jpg 2x" alt="cup of coffee" width="300" height="300" loading="lazy" decoding="async"/>
 					</picture>
 				</div>
 				<address class="contact__address">
