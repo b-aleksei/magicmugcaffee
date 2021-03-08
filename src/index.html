@@ -100,7 +100,7 @@
 		</symbol>
 	</svg>
 </div>
-<header class="header">
+<header id="header" class="header">
 	<div class="container">
 		<div class="header__wrap">
 			<ul class="header__social social-net">
@@ -120,7 +120,7 @@
 					</a>
 				</li>
 			</ul>
-			<a href="#" onclick="return false" class="header__logo" id="top" aria-label="Logo Magic Mug">
+			<a class="header__logo" id="top" aria-label="Logo Magic Mug">
 				<svg class="header__img-logo" width="55" height="35"><use xlink:href="#logo"></use></svg>
 			</a>
 			<div class="header__btn-wrap">
@@ -150,10 +150,10 @@
 </header>
 <main>
 	<h1 class="visually-hidden">information about us</h1>
-	<section class="about-us">
+	<section id="about" class="about-us">
 		<div class="container">
 			<div class="about-us__info">
-				<h2 class="about-us__title glob-h2" id="about">We are<strong class="glob-h2-red"> mobile coffee truck</strong></h2>
+				<h2 class="about-us__title glob-h2">We are<strong class="glob-h2-red"> mobile coffee truck</strong></h2>
 				<p class="about-us__content">Let the “Magic Mug” bring an espresso bar to your next event. Our mobile coffee truck is the best choice for an espresso catering experience!</p>
 				<h3 class="about-us__subtitle">We provide:</h3>
 				<ul class="about-us__list">
@@ -186,9 +186,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="catering">
+	<section id="catering" class="catering">
 		<div class="container">
-			<h2 class="catering__title glob-h2" id="catering">We do <strong class="glob-h2-red">Catering!</strong></h2>
+			<h2 class="catering__title glob-h2">We do <strong class="glob-h2-red">Catering!</strong></h2>
 			<ul class="catering__list">
 				<li class="catering__item catering__item--event">Events</li>
 				<li class="catering__item catering__item--festival">Festivals</li>
@@ -205,11 +205,11 @@
 			</a>
 		</div>
 	</section>
-	<section class="offer">
+	<section id="menu" class="offer">
 		<h2 class="visually-hidden">Menu and Price</h2>
 		<div class="container">
 			<section class="offer__menu menu">
-				<h2 class="menu__title glob-h2-red" id="menu">MENU</h2>
+				<h2 class="menu__title glob-h2-red">MENU</h2>
 				<ul class="menu__unit">
 					<li class="menu__subunit menu__subunit--big">
 						<div class="menu__subtitle-top glob__btn-wrap">
@@ -341,9 +341,9 @@
 			</section>
 		</div>
 	</section>
-	<section class="advantages">
+	<section id="why" class="advantages">
 		<div class="container">
-			<h2 class="advantages__title glob-h2-red" id="why">Why we?</h2>
+			<h2 class="advantages__title glob-h2-red">Why we?</h2>
 			<ul class="advantages__list">
 				<li class="advantages__item">
 					<div class="advantages__img advantages__img--one"></div>
@@ -363,9 +363,9 @@
 			</ul>
 		</div>
 	</section>
-	<section class="contact">
+	<section id="contact" class="contact">
 		<div class="container">
-			<h2 class="contact__title glob-h2" id="contact"><strong class="glob-h2-red">Contact us </strong>Today</h2>
+			<h2 class="contact__title glob-h2"><strong class="glob-h2-red">Contact us </strong>Today</h2>
 			<div class="contact__wrap">
 				<form class="contact__form" id="form" action="mail.php" method="post">
 					<label class="contact__label">Your name<sup>*</sup> <input class="contact__input" id="name" type="text" name="user_name" placeholder="Name" pattern="[A-z, А-я]{2,}" required /></label>
@@ -417,16 +417,16 @@
 </main>
 <footer class="footer">
 	<div class="container">
-		<a class="to_top" title="to top">&#9650;</a>
+		<a class="to_top scroll-to" href="#header" title="to top">&#9650;</a>
 		<p class="footer__copyright">© 2020 Magic Mug. All rights reserved</p>
 	</div>
 </footer>
 <div class="success-send display-none">
 	<div class="success-send__wrap">
-		<h1 class="success-send__title">
+		<h2 class="success-send__title">
 			Your application is accepted. Thanks!<br />
 			We will contact you soon.
-		</h1>
+		</h2>
 		<button class="success-send__button" aria-label="close">close</button>
 	</div>
 </div>

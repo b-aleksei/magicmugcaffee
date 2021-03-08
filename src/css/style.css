@@ -250,7 +250,8 @@ ul {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   right: 1px; }
-  .header__nav--menu-open .nav__button-icon::before, .header__nav--menu-open .nav__button-icon::after {
+  .header__nav--menu-open .nav__button-icon::before,
+  .header__nav--menu-open .nav__button-icon::after {
     width: 42px;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
