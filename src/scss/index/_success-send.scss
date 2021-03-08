@@ -13,6 +13,7 @@
 	transition-property: visibility, opacity, transform;
 	transition-duration: $delay-default;
 	z-index: 999;
+  contain: content;
 
 	&--active {
 		opacity: 1;
