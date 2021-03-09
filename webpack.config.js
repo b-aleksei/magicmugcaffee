@@ -13,7 +13,6 @@ const PATHS = {
   src: path.resolve(__dirname, 'src'),
   dist: path.resolve(__dirname, 'build'),
   static: path.resolve(__dirname, 'src/static'),
-	fonts: path.resolve(__dirname, 'src/fonts'),
 };
 
 module.exports = {
@@ -87,13 +86,12 @@ module.exports = {
 	    {
 		    test: /\.(woff(2)?|ttf|eot)$/i,
 		    loader: "file-loader",
-		    // loader: 'file?prefix=fonts/'
 		    options: {
 			    name: "[path][name].[ext]"
 		    }
 	    },
 	    {
-		    test: /\.(png|jpe?g|gif|svg|webp)$/i,
+		    test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
 		    use: [
 			    {
 				    loader: "file-loader",
