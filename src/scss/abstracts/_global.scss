@@ -22,6 +22,12 @@ body {
 	background-color: #ffecb8;
 }
 
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow-x: hidden;
+}
+
 ul {
 	margin: 0;
 	padding: 0;
